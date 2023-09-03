@@ -17,6 +17,8 @@ if not packages:
 print(f'Packages are {packages}')
 # potential dependencies
 install_reqs = [
+    'pillow',
+    'segno',
 ]
 
 # get long description from the README.md

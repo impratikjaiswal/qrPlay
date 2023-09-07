@@ -10,7 +10,7 @@ class Defaults:
     PRINT_OUTPUT = True
     QUITE_MODE = False
     QR_CODE_VERSION = 40
-    SCALE = 10
+    SCALE = 5
     IMAGE_FORMAT = Formats.PNG
     SPLIT_QRS = True
     EXECUTION_MODE = PhExecutionModes.USER

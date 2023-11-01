@@ -60,7 +60,6 @@ def process_data(execution_mode, error_handling_mode):
         data_type.set_image_format()
         data_type.set_scale()
         data_type.set_qr_code_version()
-
         data_type.set_data_pool()
         if isinstance(data_type, UnitTesting):
             error_handling_mode = PhErrorHandlingModes.CONTINUE_ON_ERROR

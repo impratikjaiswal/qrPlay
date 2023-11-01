@@ -31,6 +31,10 @@ def parse_or_update_any_data(data, meta_data=None):
         meta_data.output_file = PhUtil.append_in_file_name(meta_data.output_file,
                                                            new_ext=PhFileExtensions.SVG if data.image_format == Formats.SVG else PhFileExtensions.PNG)
         PhUtil.makedirs(PhUtil.get_file_name_and_extn(meta_data.output_file, only_path=True))
+    print(f'full data_length is {len(data.raw_data)}')
+    # TODO: for debugging
+    # PhUtil.to_file(output_lines=data.raw_data, back_up_file=True)
+    PhUtil.print_iter(data, header='data')
     if data.split_qrs:
         qrcode_split = segno.make_sequence(data.raw_data, version=data.qr_code_version)
         sequence_count = len(qrcode_split)
@@ -46,13 +50,13 @@ def parse_or_update_any_data(data, meta_data=None):
                 temp_output.append(meta_data.parsed_data)
         meta_data.parsed_data = temp_output
     else:
-        qrcode = segno.make(data.raw_data)
+        qrcode = segno.make(data.raw_data, version=data.qr_code_version)
         handle_individual_qr_code(data, meta_data, qrcode, meta_data.file_based)
     converter.print_data(data, meta_data)
 
 
 def handle_individual_qr_code(data, meta_data, qrcode, file_path):
-    print(f'data_length is {len(data.raw_data)}')
+    print(f'individual data_length is {len(data.raw_data)}')
     print(f'mode is {qrcode.mode}')
     print(f'error is {qrcode.error}')
     print(f'version is {qrcode.version}')

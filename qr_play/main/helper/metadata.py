@@ -8,3 +8,10 @@ class MetaData:
         self.file_based = None
         self.output_file = None
         self.output_dic = OrderedDict()
+
+    def get_info_data(self):
+        if self.output_dic:
+            info = self.output_dic.get(PhKeys.INFO, None)
+            if info is not None:
+                return str(info)
+        return PhConstants.STR_EMPTY

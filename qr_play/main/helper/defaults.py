@@ -9,7 +9,7 @@ class Defaults:
     PRINT_INPUT = False
     PRINT_OUTPUT = True
     QUITE_MODE = False
-    QR_CODE_VERSION = 40
+    QR_CODE_VERSION = 5
     SCALE = 5
     IMAGE_FORMAT = Formats.PNG
     SPLIT_QRS = True

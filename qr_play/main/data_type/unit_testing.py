@@ -42,6 +42,13 @@ class UnitTesting(DataTypeMaster):
     def set_data_pool(self):
         data_pool_positive = [
             #
+            {
+                'remarks_list': 'Simple Qr Png',
+                'raw_data': 'small_data',
+                'scale': '10',
+                'qr_code_version': '40',
+                'image_format': 'png',
+            },
         ]
         data_pool_negative = [
             #

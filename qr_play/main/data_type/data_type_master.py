@@ -5,7 +5,6 @@ from python_helpers.ph_constants import PhConstants
 from python_helpers.ph_data_master import PhMasterData
 from python_helpers.ph_exception_helper import PhExceptionHelper
 from python_helpers.ph_modes_error_handling import PhErrorHandlingModes
-from python_helpers.ph_util import PhUtil
 
 from qr_play.main.convert import converter
 from qr_play.main.convert.converter import read_web_request
@@ -24,7 +23,7 @@ class DataTypeMaster(object):
         self.image_format = None
         self.scale = None
         self.qr_code_version = None
-        self.split_qrs = None		
+        self.split_qrs = None
         self.data_pool = []
         self.__master_data = (Data(raw_data=None), MetaData(raw_data_org=None), PhExceptionHelper(msg_key=None))
 

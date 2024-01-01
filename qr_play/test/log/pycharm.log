@@ -7,16 +7,47 @@ User Name is Pratik Jaiswal
 --------------------------------------------------------------------------------
 User Account is impra
 --------------------------------------------------------------------------------
-Time Stamp is Sunday, Dec 31 2023, 14:57:49:072158, IST (GMT+0530)
+Time Stamp is Monday, Jan 01 2024, 17:46:37:315547, IST (GMT+0530)
 --------------------------------------------------------------------------------
 IPV4 is 49.37.241.88
-IPV6 is 2405:201:d005:d029:5d34:c78d:cfa6:c9aa
+IPV6 is 2405:201:d005:d029:500e:fdc1:9fe9:1756
 --------------------------------------------------------------------------------
 pythonHelpers version is v3.0.0
 --------------------------------------------------------------------------------
-qrPlay version is v2.0.0
+qrPlay version is v2.3.0
 --------------------------------------------------------------------------------
 -------------------------------------------------------- AnyData -------------------------------------------------------
+***************************************************** Simple Qr Png ****************************************************
+full data_length is 17
+data:
+raw_data: Welcome To QrPlay
+qr_code_version: 5
+scale: 10
+image_format: png
+split_qrs: True
+print_input: False
+print_output: True
+print_info: True
+quite_mode: False
+_Data__auto_generated_remarks: 
+_Data__one_time_remarks: None
+_Data__extended_remarks_needed: None
+remarks_list:
+Simple Qr Png
+sequence_count is 1
+individual data_length is 17
+mode is byte
+error is H
+version is 5
+default_border_size is 4
+designator is 5-H
+is_micro is False
+
+Remarks List: Simple Qr Png
+Info => Image Format: png; Scale: 10; Qr Code Version: 5; Split Qrs: True
+Output Data:
+[]
+--------------------------------------------------------------------------------
 ***************************************************** Simple Qr Png ****************************************************
 full data_length is 17
 data:

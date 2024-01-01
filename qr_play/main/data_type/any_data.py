@@ -362,6 +362,14 @@ class AnyData(DataTypeMaster):
             ),
             #
             Data(
+                remarks_list='Simple Qr Png',
+                raw_data=small_data,
+                scale=10,
+                image_format=Formats.PNG,
+                qr_code_version=40,
+            ),
+            #
+            Data(
                 remarks_list='Simple Qr Png; version 20',
                 raw_data=small_data,
                 scale=10,
@@ -373,6 +381,7 @@ class AnyData(DataTypeMaster):
                 remarks_list='Simple Qr Svg',
                 raw_data=small_data,
                 scale=10,
+                qr_code_version=40,
                 image_format=Formats.SVG
             ),
             #
@@ -380,6 +389,7 @@ class AnyData(DataTypeMaster):
                 remarks_list='Simple Qr Png Uri',
                 raw_data=small_data,
                 scale=10,
+                qr_code_version=40,
                 image_format=Formats.PNG_URI
             ),
             #
@@ -387,23 +397,27 @@ class AnyData(DataTypeMaster):
                 remarks_list='Simple Qr Svg Uri',
                 raw_data=small_data,
                 scale=10,
+                qr_code_version=40,
                 image_format=Formats.SVG_URI
             ),
             #
             Data(
                 remarks_list='Bulk Data Single Qr',
+                qr_code_version=40,
                 raw_data=bulk_data_1,
             ),
             #
             Data(
                 remarks_list='Bulk Data Single Qr',
                 raw_data=bulk_data_1,
+                qr_code_version=40,
                 image_format=Formats.PNG_URI,
             ),
             #
             Data(
                 remarks_list='Bulk Data Split Qrs',
                 split_qrs=True,
+                qr_code_version=40,
                 raw_data=bulk_data_2,
             ),
             #
@@ -411,6 +425,7 @@ class AnyData(DataTypeMaster):
                 remarks_list='Bulk Data Split Qrs',
                 split_qrs=True,
                 raw_data=bulk_data_2,
+                qr_code_version=40,
                 image_format=Formats.PNG_URI,
             ),
         ]

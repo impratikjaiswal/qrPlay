@@ -7,7 +7,7 @@ class Data:
                  qr_code_version=None,
                  scale=None,
                  image_format=None,
-				 split_qrs=None,
+                 split_qrs=None,
                  print_input=None,
                  print_output=None,
                  print_info=None,

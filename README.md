@@ -29,3 +29,9 @@ There are various ways to Get Started:
     - Code can be directly run from ```qrPlay/qr_play/main/qrplay.py``` using any IDE
     - Local Web Server App [amenitypj](https://github.com/impratikjaiswal/amenitypj) can be used
 
+# Help
+Issue tracker can be found [here](CONTRIBUTING.md#issue-tracker).
+
+# Contributing
+ - Code of Conduct can be found [here](CODE_OF_CONDUCT.md).
+ - Contributing Guidelines can be found [here](CONTRIBUTING.md).

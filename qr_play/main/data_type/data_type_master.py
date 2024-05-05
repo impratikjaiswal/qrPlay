@@ -1,6 +1,6 @@
+import binascii
 import traceback
 
-import binascii
 from python_helpers.ph_constants import PhConstants
 from python_helpers.ph_data_master import PhMasterData
 from python_helpers.ph_exception_helper import PhExceptionHelper

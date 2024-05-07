@@ -20,6 +20,8 @@ install_reqs = [
     'incremental',
     'click',
     'twisted',
+    'pillow',
+    'segno',
 ]
 
 setup_reqs = [

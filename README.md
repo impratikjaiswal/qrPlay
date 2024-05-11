@@ -12,7 +12,10 @@ Qr Code Generator based on [Segno](https://github.com/heuer/segno).
 [![Website](https://img.shields.io/website?url=https://amenitypj.in/qrPlay&label=website%20status)](https://amenitypj.in/qrPlay)
 
 [![Static Badge](https://img.shields.io/badge/impratikjaiswal.github.io/qrPlay-a?label=gihub%20website%20url)](https://impratikjaiswal.github.io/qrPlay)
-[![Website](https://img.shields.io/website?url=https://amenitypj.in/qrPlay&label=website%20status)](https://impratikjaiswal.github.io/qrPlay)
+[![Website](https://img.shields.io/website?url=https://impratikjaiswal.github.io/qrPlay&label=website%20status)](https://impratikjaiswal.github.io/qrPlay)
+
+# Url(s) of AmenityPj 
+Refer [Url(s) of AmenityPj](https://impratikjaiswal.github.io/amenitypj/#urls-of-amenitypj) for details.
 
 # Screen Shot(s) of Web App [![Static Badge](https://img.shields.io/badge/amenitypj.in-a)](https://amenitypj.in/) 
 ![sample_web_1](https://github.com/impratikjaiswal/qrPlay/blob/main/static/images/sample_web_1.gif?raw=true)

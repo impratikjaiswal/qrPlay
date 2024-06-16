@@ -2,6 +2,8 @@ import os
 
 import segno
 from PIL import Image
+from python_helpers.ph_constants import PhConstants
+from python_helpers.ph_exception_helper import PhExceptionHelper
 from python_helpers.ph_file_extensions import PhFileExtensions
 from python_helpers.ph_util import PhUtil
 
@@ -17,12 +19,17 @@ def parse_or_update_any_data(data, meta_data=None):
     :param data:
     :return:
     """
+    """
+    Individual
+    """
     converter.set_defaults_for_printing(data)
     if meta_data is None:
-        meta_data = MetaData(raw_data_org=data.raw_data)
+        meta_data = MetaData(input_data_org=data.input_data)
     data.set_auto_generated_remarks_if_needed()
     PhUtil.print_heading(data.get_remarks_as_str(), heading_level=2)
     converter.set_defaults(data, meta_data)
+    if not data.input_data:
+        raise ValueError(PhExceptionHelper(msg_key=PhConstants.MISSING_INPUT_DATA))
     remarks = data.get_remarks_as_str()
     meta_data.file_based = True if data.image_format in [Formats.PNG, Formats.SVG] else False
     if meta_data.file_based:
@@ -31,12 +38,12 @@ def parse_or_update_any_data(data, meta_data=None):
         meta_data.output_file = PhUtil.append_in_file_name(meta_data.output_file,
                                                            new_ext=PhFileExtensions.SVG if data.image_format == Formats.SVG else PhFileExtensions.PNG)
         PhUtil.makedirs(PhUtil.get_file_name_and_extn(meta_data.output_file, only_path=True))
-    print(f'full data_length is {len(data.raw_data)}')
+    print(f'full data_length is {len(data.input_data)}')
     # TODO: for debugging
-    # PhUtil.to_file(output_lines=data.raw_data, back_up_file=True)
+    # PhUtil.to_file(output_lines=data.input_data, back_up_file=True)
     PhUtil.print_iter(data, header='data')
     if data.split_qrs:
-        qrcode_split = segno.make_sequence(data.raw_data, version=data.qr_code_version)
+        qrcode_split = segno.make_sequence(data.input_data, version=data.qr_code_version)
         sequence_count = len(qrcode_split)
         print(f'sequence_count is {sequence_count}')
         # qrcode_split.save(file_path, scale=data.scale)
@@ -50,13 +57,13 @@ def parse_or_update_any_data(data, meta_data=None):
                 temp_output.append(meta_data.parsed_data)
         meta_data.parsed_data = temp_output
     else:
-        qrcode = segno.make(data.raw_data, version=data.qr_code_version)
+        qrcode = segno.make(data.input_data, version=data.qr_code_version)
         handle_individual_qr_code(data, meta_data, qrcode, meta_data.file_based)
     converter.print_data(data, meta_data)
 
 
 def handle_individual_qr_code(data, meta_data, qrcode, file_path):
-    print(f'individual data_length is {len(data.raw_data)}')
+    print(f'individual data_length is {len(data.input_data)}')
     print(f'mode is {qrcode.mode}')
     print(f'error is {qrcode.error}')
     print(f'version is {qrcode.version}')

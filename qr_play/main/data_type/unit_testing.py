@@ -19,9 +19,9 @@ class UnitTesting(DataTypeMaster):
         quite_mode = None
         super().set_quiet_mode(quite_mode)
 
-    def set_remarks_list(self):
-        remarks_list = None
-        super().set_remarks_list(remarks_list)
+    def set_remarks(self):
+        remarks = None
+        super().set_remarks(remarks)
 
     def set_image_format(self):
         image_format = None
@@ -43,8 +43,8 @@ class UnitTesting(DataTypeMaster):
         data_pool_positive = [
             #
             {
-                'remarks_list': 'Simple Qr Png',
-                'raw_data': 'small_data',
+                'remarks': 'Simple Qr Png',
+                'input_data': 'small_data',
                 'scale': '10',
                 'qr_code_version': '40',
                 'image_format': 'png',

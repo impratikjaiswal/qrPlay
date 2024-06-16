@@ -1,3 +1,7 @@
+from collections import OrderedDict
+
+from python_helpers.ph_util import PhUtil
+
 from qr_play.main.data_type.data_type_master import DataTypeMaster
 from qr_play.main.helper.data import Data
 from qr_play.main.helper.formats import Formats
@@ -313,7 +317,7 @@ if application is not accessible (time out error), then its a SG issue.
 if There's a connection refused; This means the instance is reachable, Nota"""
 
 
-class AnyData(DataTypeMaster):
+class Sample(DataTypeMaster):
 
     def set_print_input(self):
         print_input = None
@@ -331,9 +335,9 @@ class AnyData(DataTypeMaster):
         quite_mode = None
         super().set_quiet_mode(quite_mode)
 
-    def set_remarks_list(self):
-        remarks_list = None
-        super().set_remarks_list(remarks_list)
+    def set_remarks(self):
+        remarks = None
+        super().set_remarks(remarks)
 
     def set_image_format(self):
         image_format = None
@@ -355,78 +359,90 @@ class AnyData(DataTypeMaster):
         data_pool = [
             #
             Data(
-                remarks_list='Simple Qr Png',
-                raw_data=small_data,
+                remarks='Simple Qr Png',
+                input_data=small_data,
                 scale=10,
                 image_format=Formats.PNG
             ),
             #
             Data(
-                remarks_list='Simple Qr Png',
-                raw_data=small_data,
+                remarks='Simple Qr Png',
+                input_data=small_data,
                 scale=10,
                 image_format=Formats.PNG,
                 qr_code_version=40,
             ),
             #
             Data(
-                remarks_list='Simple Qr Png; version 20',
-                raw_data=small_data,
+                remarks='Simple Qr Png; version 20',
+                input_data=small_data,
                 scale=10,
                 image_format=Formats.PNG,
                 qr_code_version=20
             ),
             #
             Data(
-                remarks_list='Simple Qr Svg',
-                raw_data=small_data,
+                remarks='Simple Qr Svg',
+                input_data=small_data,
                 scale=10,
                 qr_code_version=40,
                 image_format=Formats.SVG
             ),
             #
             Data(
-                remarks_list='Simple Qr Png Uri',
-                raw_data=small_data,
+                remarks='Simple Qr Png Uri',
+                input_data=small_data,
                 scale=10,
                 qr_code_version=40,
                 image_format=Formats.PNG_URI
             ),
             #
             Data(
-                remarks_list='Simple Qr Svg Uri',
-                raw_data=small_data,
+                remarks='Simple Qr Svg Uri',
+                input_data=small_data,
                 scale=10,
                 qr_code_version=40,
                 image_format=Formats.SVG_URI
             ),
             #
             Data(
-                remarks_list='Bulk Data Single Qr',
+                remarks='Bulk Data Single Qr',
                 qr_code_version=40,
-                raw_data=bulk_data_1,
+                input_data=bulk_data_1,
             ),
             #
             Data(
-                remarks_list='Bulk Data Single Qr',
-                raw_data=bulk_data_1,
+                remarks='Bulk Data Single Qr',
+                input_data=bulk_data_1,
                 qr_code_version=40,
                 image_format=Formats.PNG_URI,
             ),
             #
             Data(
-                remarks_list='Bulk Data Split Qrs',
+                remarks='Bulk Data Split Qrs',
                 split_qrs=True,
                 qr_code_version=40,
-                raw_data=bulk_data_2,
+                input_data=bulk_data_2,
             ),
             #
             Data(
-                remarks_list='Bulk Data Split Qrs',
+                remarks='Bulk Data Split Qrs',
                 split_qrs=True,
-                raw_data=bulk_data_2,
+                input_data=bulk_data_2,
                 qr_code_version=40,
                 image_format=Formats.PNG_URI,
             ),
+            #
         ]
         super().set_data_pool(data_pool)
+
+    def get_sample_data_pool_for_web(self):
+        if not self.data_pool:
+            self.set_data_pool()
+        sample_data_dic = OrderedDict()
+        for data in self.data_pool:
+            key, data.data_group = PhUtil.generate_key_and_data_group(data.remarks)
+            if key in sample_data_dic:
+                raise ValueError(f'Duplicate Sample Remarks {key}')
+            sample_data_dic.update({key: super().to_dic(data)})
+        return sample_data_dic

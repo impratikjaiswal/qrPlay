@@ -20,9 +20,9 @@ class UserData(DataTypeMaster):
         quite_mode = None
         super().set_quiet_mode(quite_mode)
 
-    def set_remarks_list(self):
-        remarks_list = None
-        super().set_remarks_list(remarks_list)
+    def set_remarks(self):
+        remarks = None
+        super().set_remarks(remarks)
 
     def set_image_format(self):
         image_format = None
@@ -44,8 +44,8 @@ class UserData(DataTypeMaster):
         data_pool = [
             #
             Data(
-                remarks_list='Simple Qr',
-                raw_data='Welcome To QrPlay',
+                remarks='Simple Qr',
+                input_data='Welcome To QrPlay',
                 scale=2,
             ),
         ]

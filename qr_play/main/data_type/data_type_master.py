@@ -1,13 +1,15 @@
 import binascii
+import subprocess
 import traceback
 
 from python_helpers.ph_constants import PhConstants
 from python_helpers.ph_data_master import PhMasterData
 from python_helpers.ph_exception_helper import PhExceptionHelper
+from python_helpers.ph_keys import PhKeys
 from python_helpers.ph_modes_error_handling import PhErrorHandlingModes
 
 from qr_play.main.convert import converter
-from qr_play.main.convert.converter import read_web_request
+from qr_play.main.convert.converter import read_web_request, set_defaults
 from qr_play.main.convert.parser import parse_or_update_any_data
 from qr_play.main.helper.data import Data
 from qr_play.main.helper.metadata import MetaData
@@ -19,13 +21,13 @@ class DataTypeMaster(object):
         self.print_output = None
         self.print_info = None
         self.quite_mode = None
-        self.remarks_list = None
+        self.remarks = None
         self.image_format = None
         self.scale = None
         self.qr_code_version = None
         self.split_qrs = None
         self.data_pool = []
-        self.__master_data = (Data(raw_data=None), MetaData(raw_data_org=None), PhExceptionHelper(msg_key=None))
+        self.__master_data = (Data(input_data=None), MetaData(input_data_org=None), PhExceptionHelper(msg_key=None))
 
     def set_print_input(self, print_input):
         self.print_input = print_input
@@ -39,8 +41,8 @@ class DataTypeMaster(object):
     def set_quiet_mode(self, quite_mode):
         self.quite_mode = quite_mode
 
-    def set_remarks_list(self, remarks_list):
-        self.remarks_list = remarks_list
+    def set_remarks(self, remarks):
+        self.remarks = remarks
 
     def set_image_format(self, image_format):
         self.image_format = image_format
@@ -86,13 +88,13 @@ class DataTypeMaster(object):
         except Exception as e:
             known = False
             summary_msg = None
-            exception_object = e.args[0]
+            exception_object = e.args[0] if len(e.args) > 0 else e
             if not isinstance(exception_object, PhExceptionHelper):
                 # for scenarios like FileExistsError where a touple is returned, (17, 'Cannot create a file when that file already exists')
                 exception_object = PhExceptionHelper(exception=e)
             if isinstance(e, binascii.Error):
                 known = True
-                summary_msg = PhConstants.INVALID_RAW_DATA
+                summary_msg = PhConstants.INVALID_INPUT_DATA
             elif isinstance(e, ValueError):
                 known = True
             elif isinstance(e, PermissionError):
@@ -101,6 +103,13 @@ class DataTypeMaster(object):
             elif isinstance(e, FileExistsError):
                 known = True
                 summary_msg = PhConstants.WRITE_PATH_ERROR
+            elif isinstance(e, subprocess.TimeoutExpired):
+                known = True
+                summary_msg = PhConstants.TIME_OUT_ERROR
+            elif isinstance(e, subprocess.CalledProcessError):
+                known = True
+                summary_msg = e.stderr if e.stderr else PhConstants.NON_ZERO_EXIT_STATUS_ERROR
+            exception_object.set_summary_msg(summary_msg)
             self.__master_data = (
                 self.__master_data[PhMasterData.INDEX_DATA], self.__master_data[PhMasterData.INDEX_META_DATA],
                 exception_object)
@@ -126,25 +135,25 @@ class DataTypeMaster(object):
             data.print_output = data.print_output if data.print_output is not None else self.print_output
             data.print_info = data.print_info if data.print_info is not None else self.print_info
             data.quite_mode = data.quite_mode if data.quite_mode is not None else self.quite_mode
-            data.remarks_list = data.remarks_list if data.remarks_list is not None else self.remarks_list
+            data.remarks = data.remarks if data.remarks is not None else self.remarks
             data.qr_code_version = data.qr_code_version if data.qr_code_version is not None else self.qr_code_version
             data.scale = data.scale if data.scale is not None else self.scale
             data.image_format = data.image_format if data.image_format is not None else self.image_format
             data.split_qrs = data.split_qrs if data.split_qrs is not None else self.split_qrs
         else:
             data = Data(
-                raw_data=data,
+                input_data=data,
                 print_input=self.print_input,
                 print_output=self.print_output,
                 print_info=self.print_info,
                 quite_mode=self.quite_mode,
-                remarks_list=self.remarks_list,
+                remarks=self.remarks,
                 qr_code_version=self.qr_code_version,
                 scale=self.scale,
                 image_format=self.image_format,
                 split_qrs=self.split_qrs,
             )
-        meta_data = MetaData(raw_data_org=data.raw_data)
+        meta_data = MetaData(input_data_org=data.input_data)
         self.__master_data = (data, meta_data)
         parse_or_update_any_data(data, meta_data)
 
@@ -167,3 +176,19 @@ class DataTypeMaster(object):
             output_data = exception_data.get_details() if isinstance(exception_data,
                                                                      PhExceptionHelper) else exception_data
         return output_data if only_output else (output_data, info_data)
+
+    def to_dic(self, data):
+        """
+
+        :param data:
+        :return:
+        """
+        set_defaults(data, None)
+        return {
+            PhKeys.INPUT_DATA: data.input_data,
+            PhKeys.REMARKS: data.get_remarks_as_str(),
+            PhKeys.QR_CODE_VERSION: data.qr_code_version,
+            PhKeys.SCALE: data.scale,
+            PhKeys.IMAGE_FORMAT: data.image_format,
+            PhKeys.SPLIT_QRS: data.split_qrs,
+        }

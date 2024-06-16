@@ -366,7 +366,7 @@ class Sample(DataTypeMaster):
             ),
             #
             Data(
-                remarks='Simple Qr Png',
+                remarks='Simple Qr Png; version 40',
                 input_data=small_data,
                 scale=10,
                 image_format=Formats.PNG,
@@ -407,12 +407,12 @@ class Sample(DataTypeMaster):
             #
             Data(
                 remarks='Bulk Data Single Qr',
-                qr_code_version=40,
                 input_data=bulk_data_1,
+                qr_code_version=40,
             ),
             #
             Data(
-                remarks='Bulk Data Single Qr',
+                remarks='Bulk Data Single Qr; PNG URI',
                 input_data=bulk_data_1,
                 qr_code_version=40,
                 image_format=Formats.PNG_URI,
@@ -421,12 +421,12 @@ class Sample(DataTypeMaster):
             Data(
                 remarks='Bulk Data Split Qrs',
                 split_qrs=True,
-                qr_code_version=40,
                 input_data=bulk_data_2,
+                qr_code_version=40,
             ),
             #
             Data(
-                remarks='Bulk Data Split Qrs',
+                remarks='Bulk Data Split Qrs; PNG URI',
                 split_qrs=True,
                 input_data=bulk_data_2,
                 qr_code_version=40,
@@ -443,6 +443,6 @@ class Sample(DataTypeMaster):
         for data in self.data_pool:
             key, data.data_group = PhUtil.generate_key_and_data_group(data.remarks)
             if key in sample_data_dic:
-                raise ValueError(f'Duplicate Sample Remarks {key}')
+                raise ValueError(f'Duplicate Sample Remarks: {key}')
             sample_data_dic.update({key: super().to_dic(data)})
         return sample_data_dic

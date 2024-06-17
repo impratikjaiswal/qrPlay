@@ -1,4 +1,6 @@
 from qr_play.main.data_type.data_type_master import DataTypeMaster
+from qr_play.main.data_type.sample import bulk_data_1
+from qr_play.main.helper.data import Data
 
 
 class Dev(DataTypeMaster):
@@ -41,6 +43,13 @@ class Dev(DataTypeMaster):
 
     def set_data_pool(self):
         data_pool = [
-            #
+            # Part of Sample Data
+            # TODO: Web App; when submitted data size grows (Auto Submit: 1 QR, Manual Submit: 2 QR)
+            Data(
+                remarks='Bulk Data Single Qr',
+                input_data=bulk_data_1,
+                qr_code_version=40,
+                split_qrs=False,
+            ),
         ]
         super().set_data_pool(data_pool)

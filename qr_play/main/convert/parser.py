@@ -11,6 +11,8 @@ from qr_play.main.convert import converter
 from qr_play.main.helper.formats import Formats
 from qr_play.main.helper.metadata import MetaData
 
+show_image = False
+
 
 def parse_or_update_any_data(data, meta_data=None):
     """
@@ -41,7 +43,7 @@ def parse_or_update_any_data(data, meta_data=None):
     print(f'full data_length is {len(data.input_data)}')
     # TODO: for debugging
     # PhUtil.to_file(output_lines=data.input_data, back_up_file=True)
-    PhUtil.print_iter(data, header='data')
+    # PhUtil.print_iter(data, header='data')
     if data.split_qrs:
         qrcode_split = segno.make_sequence(data.input_data, version=data.qr_code_version)
         sequence_count = len(qrcode_split)
@@ -53,8 +55,7 @@ def parse_or_update_any_data(data, meta_data=None):
                                                                                         str(index)]) if meta_data.file_based else meta_data.output_file
             handle_individual_qr_code(data, meta_data, qrcode, output_file)
             print()
-            if not meta_data.file_based:
-                temp_output.append(meta_data.parsed_data)
+            temp_output.append(meta_data.parsed_data)
         meta_data.parsed_data = temp_output
     else:
         qrcode = segno.make(data.input_data, version=data.qr_code_version)
@@ -64,18 +65,20 @@ def parse_or_update_any_data(data, meta_data=None):
 
 def handle_individual_qr_code(data, meta_data, qrcode, file_path):
     print(f'individual data_length is {len(data.input_data)}')
-    print(f'mode is {qrcode.mode}')
-    print(f'error is {qrcode.error}')
-    print(f'version is {qrcode.version}')
-    print(f'default_border_size is {qrcode.default_border_size}')
-    print(f'designator is {qrcode.designator}')
-    print(f'is_micro is {qrcode.is_micro}')
+    # print(f'mode is {qrcode.mode}')
+    # print(f'error is {qrcode.error}')
+    # print(f'version is {qrcode.version}')
+    # print(f'default_border_size is {qrcode.default_border_size}')
+    # print(f'designator is {qrcode.designator}')
+    # print(f'is_micro is {qrcode.is_micro}')
     if data.image_format == Formats.SVG_URI:
         meta_data.parsed_data = qrcode.svg_data_uri(scale=data.scale)
     elif data.image_format == Formats.PNG_URI:
         meta_data.parsed_data = qrcode.png_data_uri(scale=data.scale)
     else:
+        meta_data.parsed_data = file_path
         qrcode.save(file_path, scale=data.scale)
-    if data.image_format == Formats.PNG and data.print_output and not data.quite_mode:
-        with Image.open(file_path) as img:
-            img.show()
+    if show_image:
+        if data.image_format == Formats.PNG and data.print_output and not data.quite_mode:
+            with Image.open(file_path) as img:
+                img.show()

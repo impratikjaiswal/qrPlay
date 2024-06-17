@@ -2,7 +2,7 @@ from python_helpers.ph_modes_error_handling import PhErrorHandlingModes
 from python_helpers.ph_modes_execution import PhExecutionModes
 from python_helpers.ph_util import PhUtil
 
-from qr_play.main.data_type.any_data import AnyData
+from qr_play.main.convert import parser
 from qr_play.main.data_type.data_type_master import DataTypeMaster
 from qr_play.main.data_type.dev import Dev
 from qr_play.main.data_type.sample import Sample
@@ -35,7 +35,6 @@ def process_data(execution_mode, error_handling_mode):
         #####
         # Sample With Plenty vivid Examples
         #####
-        AnyData(),
         Sample(),
     ]
     data_type_unit_testing = [
@@ -85,6 +84,7 @@ def main():
     # Validate & Print Sample Data For Web
     PhUtil.print_iter(Sample().get_sample_data_pool_for_web(), header='Sample Data', depth_level=1)
     # Process Data
+    parser.show_image = False
     process_data(execution_mode, error_handling_mode)
     PhUtil.print_done()
 

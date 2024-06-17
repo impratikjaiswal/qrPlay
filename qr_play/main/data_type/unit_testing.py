@@ -1,4 +1,8 @@
+from python_helpers.ph_keys import PhKeys
+
 from qr_play.main.data_type.data_type_master import DataTypeMaster
+from qr_play.main.data_type.sample import small_data
+from qr_play.main.helper.data import Data
 
 
 class UnitTesting(DataTypeMaster):
@@ -43,12 +47,31 @@ class UnitTesting(DataTypeMaster):
         data_pool_positive = [
             #
             {
-                'remarks': 'Simple Qr Png',
-                'input_data': 'small_data',
-                'scale': '10',
-                'qr_code_version': '40',
-                'image_format': 'png',
+                PhKeys.REMARKS: 'Simple Qr Png',
+                PhKeys.INPUT_DATA: 'small_data',
+                PhKeys.SCALE: '10',
+                PhKeys.QR_CODE_VERSION: '40',
             },
+            #
+            Data(
+                remarks='Simple Qr Png',
+                input_data=small_data,
+                scale=10,
+                qr_code_version=40,
+            ),
+            #
+            Data(
+                remarks='Simple Qr Png',
+                input_data=small_data,
+                scale=10,
+            ),
+            #
+            Data(
+                remarks='Simple Qr; qr_code_version=33; scale=8 ',
+                input_data=small_data,
+                scale=8,
+                qr_code_version=33,
+            ),
         ]
         data_pool_negative = [
             #

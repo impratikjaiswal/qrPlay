@@ -13,5 +13,5 @@ class Defaults:
     ERROR_HANDLING_MODE = PhErrorHandlingModes.CONTINUE_ON_ERROR
     QR_CODE_VERSION = 5
     SCALE = 5
-    IMAGE_FORMAT = Formats.PNG
+    IMAGE_FORMAT = Formats.PNG_URI
     SPLIT_QRS = True

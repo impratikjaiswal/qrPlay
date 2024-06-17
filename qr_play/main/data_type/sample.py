@@ -4,6 +4,7 @@ from python_helpers.ph_util import PhUtil
 
 from qr_play.main.data_type.data_type_master import DataTypeMaster
 from qr_play.main.helper.data import Data
+from qr_play.main.helper.defaults import Defaults
 from qr_play.main.helper.formats import Formats
 
 small_data = 'Welcome To QrPlay'
@@ -359,78 +360,48 @@ class Sample(DataTypeMaster):
         data_pool = [
             #
             Data(
-                remarks='Simple Qr Png',
-                input_data=small_data,
-                scale=10,
-                image_format=Formats.PNG
-            ),
-            #
-            Data(
-                remarks='Simple Qr Png; version 40',
-                input_data=small_data,
-                scale=10,
+                remarks='Simple Qr (LPA)',
+                input_data='LPA:1$SMDP.EXAMPLE.COM$04386-AGYFT-A74Y8-3F815',
+                scale=Defaults.SCALE,
+                split_qrs=False,
+                qr_code_version=Defaults.QR_CODE_VERSION,
                 image_format=Formats.PNG,
-                qr_code_version=40,
             ),
             #
             Data(
-                remarks='Simple Qr Png; version 20',
-                input_data=small_data,
-                scale=10,
+                remarks='Simple Qr (Google Pay/GPay)',
+                input_data='upi://pay?pa=impratikjaiswal@okicici&pn=Pratik%20Jaiswal&aid=uGICAgICw6tuJBw',
+                scale=Defaults.SCALE,
+                split_qrs=False,
+                qr_code_version=Defaults.QR_CODE_VERSION,
                 image_format=Formats.PNG,
-                qr_code_version=20
             ),
             #
             Data(
-                remarks='Simple Qr Svg',
+                remarks='Simple Qr',
                 input_data=small_data,
-                scale=10,
-                qr_code_version=40,
-                image_format=Formats.SVG
-            ),
-            #
-            Data(
-                remarks='Simple Qr Png Uri',
-                input_data=small_data,
-                scale=10,
-                qr_code_version=40,
-                image_format=Formats.PNG_URI
-            ),
-            #
-            Data(
-                remarks='Simple Qr Svg Uri',
-                input_data=small_data,
-                scale=10,
-                qr_code_version=40,
-                image_format=Formats.SVG_URI
+                scale=8,
+                split_qrs=False,
+                image_format=Formats.PNG,
+                qr_code_version=33,
             ),
             #
             Data(
                 remarks='Bulk Data Single Qr',
                 input_data=bulk_data_1,
+                scale=Defaults.SCALE,
+                image_format=Formats.PNG,
                 qr_code_version=40,
-            ),
-            #
-            Data(
-                remarks='Bulk Data Single Qr; PNG URI',
-                input_data=bulk_data_1,
-                qr_code_version=40,
-                image_format=Formats.PNG_URI,
+                split_qrs=False,
             ),
             #
             Data(
                 remarks='Bulk Data Split Qrs',
-                split_qrs=True,
                 input_data=bulk_data_2,
-                qr_code_version=40,
-            ),
-            #
-            Data(
-                remarks='Bulk Data Split Qrs; PNG URI',
+                scale=Defaults.SCALE,
                 split_qrs=True,
-                input_data=bulk_data_2,
                 qr_code_version=40,
-                image_format=Formats.PNG_URI,
+                image_format=Formats.PNG,
             ),
             #
         ]

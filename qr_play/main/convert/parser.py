@@ -58,7 +58,7 @@ def parse_or_update_any_data(data, meta_data=None):
         meta_data.parsed_data = temp_output
     else:
         qrcode = segno.make(data.input_data, version=data.qr_code_version)
-        handle_individual_qr_code(data, meta_data, qrcode, meta_data.file_based)
+        handle_individual_qr_code(data, meta_data, qrcode, meta_data.output_file)
     converter.print_data(data, meta_data)
 
 

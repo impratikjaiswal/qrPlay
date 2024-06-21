@@ -30,6 +30,8 @@ def print_data(data, meta_data):
                 get_dic_data_and_print(PhKeys.REMARKS_GENERATED, PhConstants.SEPERATOR_ONE_LINE,
                                        remarks_generated))
         info = PhConstants.SEPERATOR_MULTI_OBJ.join(filter(None, [
+            get_dic_data_and_print(PhKeys.TRANSACTION_ID, PhConstants.SEPERATOR_ONE_LINE, meta_data.transaction_id,
+                                   dic_format=False, print_also=False),
             get_dic_data_and_print(PhKeys.IMAGE_FORMAT, PhConstants.SEPERATOR_ONE_LINE, data.image_format,
                                    dic_format=False, print_also=False) if data.image_format else None,
             get_dic_data_and_print(PhKeys.SCALE, PhConstants.SEPERATOR_ONE_LINE, data.scale,

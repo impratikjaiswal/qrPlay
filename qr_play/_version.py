@@ -7,5 +7,5 @@ Provides qr_play version information.
 
 from incremental import Version
 
-__version__ = Version("qr_play", 3, 1, 1)
+__version__ = Version("qr_play", 3, 1, 2)
 __all__ = ["__version__"]

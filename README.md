@@ -1,6 +1,5 @@
 # qrPlay
-Qr Code Generator based on [Segno](https://github.com/heuer/segno).
-<BR>Can Generate Single as well as Multiple Qr codes.
+Qr Code Generator. Multiple Qr codes can be generated automatically if input text does not fit in one.
 
 [![GitHub License](https://img.shields.io/github/license/impratikjaiswal/qrPlay)](LICENSE)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)

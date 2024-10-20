@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="qrplay" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+  <configuration default="false" name="qrplay" type="PythonConfigurationType" factoryName="Python" folderName="qrPlay" nameIsGenerated="true">
     <output_file path="$PROJECT_DIR$/../../Github_Personal/AmenityPjRaw/TempFiles/pycharm.log" is_save="true" />
     <module name="qrPlay" />
     <option name="ENV_FILES" value="" />
@@ -13,6 +13,7 @@
     <option name="IS_MODULE_SDK" value="true" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
+    <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
     <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../qrPlay/qr_play/main/qrplay.py" />
     <option name="PARAMETERS" value="" />
     <option name="SHOW_COMMAND_LINE" value="false" />

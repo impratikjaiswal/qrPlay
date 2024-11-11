@@ -24,6 +24,22 @@ class UserData(DataTypeMaster):
         remarks = None
         super().set_remarks(remarks)
 
+    def set_encoding(self):
+        encoding = None
+        super().set_encoding(encoding)
+
+    def set_encoding_errors(self):
+        encoding_errors = None
+        super().set_encoding_errors(encoding_errors)
+
+    def set_archive_output(self):
+        archive_output = None
+        super().set_archive_output(archive_output)
+
+    def set_archive_output_format(self):
+        archive_output_format = None
+        super().set_archive_output_format(archive_output_format)
+
     def set_image_format(self):
         image_format = None
         super().set_image_format(image_format)
@@ -48,5 +64,11 @@ class UserData(DataTypeMaster):
                 input_data='Welcome To QrPlay',
                 scale=2,
             ),
+            #
+            Data(
+                remarks='Simple Qr; Default Values',
+                input_data='Welcome To QrPlay',
+            ),
+            #
         ]
         super().set_data_pool(data_pool)

@@ -1,0 +1,47 @@
+--------------------------------------------------------------------------------
+Python version is v3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]
+Python executable Path is D:\Other\Github_Self\qrPlay\venv\Scripts
+--------------------------------------------------------------------------------
+User Name is Pratik Jaiswal
+User Account is impra
+--------------------------------------------------------------------------------
+Time Stamp is Monday, Nov 11 2024, 07:46:24:466062, IST (GMT+0530)
+--------------------------------------------------------------------------------
+Git Summary is 5e4176c;  (HEAD -> main, tag: v3.1.4, origin/main, origin/HEAD); 2024-10-27 00:11:14 +0530; imPratik <impratikjaiswal@gmail.com>; v3.1.4
+--------------------------------------------------------------------------------
+pythonHelpers version is v5.1.0
+--------------------------------------------------------------------------------
+qrPlay version is v3.2.0
+--------------------------------------------------------------------------------
+------------------------------------------------------- UserData -------------------------------------------------------
+******************************************************* Simple Qr ******************************************************
+full data_length is 17
+sequence_count is 1
+individual data_length is 17
+
+Remarks: Simple Qr
+Info => Transaction Id: 635frqydugnu; Image Format: png_uri; Scale: 2; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace
+Input Data: Welcome To QrPlay
+Output Data:
+['data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaAQAAAAAQ03yvAAABGElEQVR42r2UvWpAMQiFpa6CryK4BvLqgmvAVwm4Bmw6tdSsrUu4fCSe48+F+g6Dv/wAPCdkC0z7gJ9RM000K6sRUZQ1juKDUJTVk1hs8cRHnmCY+MgDqF/x0Fbl43jOa+EXOXK2JZQ3MkpXhMpur1FSkAueRnTaQa2hjex0skFbGllzHprznt2P49m3dN0P+22BizfiQoAw0ro2zit4UnYF+4CWWVd9vWIeNup+4OAylvm6U0HDuJF0U9gbsdV6jttNzU29P1C8zR93bl2CkqFPCGzFxc6r5zmcwBLcX0vF22/opG7l9m0Q1GPe4k6PymsX0JRm9yM6w5XhRYQsw+SxC0somF87d2bFMnvMTqYViz524T/+FJ9WbafY7GxvKwAAAABJRU5ErkJggg==']
+--------------------------------------------------------------------------------
+*********************************************** Simple Qr; Default Values **********************************************
+full data_length is 17
+sequence_count is 1
+individual data_length is 17
+
+Remarks: Simple Qr; Default Values
+Info => Transaction Id: ebad2lirzatr; Image Format: png_uri; Scale: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace
+Input Data: Welcome To QrPlay
+Output Data:
+['data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhAQAAAAAWyO/XAAACC0lEQVR42u1YMY7DMAxTL0PGPME/ST4WoAXysfYnfkLGDEF1JO1bOxzuIA0pUCOJF4KiKcrmH34Pu3av3d/u7mZ2c6/+njYfn9Np4xOfRux+2aff/+0S1d39BXzAshY8uWuJRrXa+NqtgKatju/Ja3vNgGqoxwKGDptAUxZUqCBQUVLTA2VMgEq62tyWnRoHoBS64hnc14K6/SwJzmD3iCKhHzc/Wbz2LRRVhZrgV5CUUVImkB6tq0rJl2OGix6LKkgrDUY1VG/OwAUKa1Yf7gxyAfO3wQ90/N62RjsDXIodp9gMXQEQqEPvCT+D6DMyLQJqT+1bvF+RKwUH0nTMdq/xfmULrYCAzNBx1HaiUREGise3gj+MQsEm/AyCq7NAV3dkBizQ/Vni1e70dryscnQ7LN4Z9m6ldmuEDSRsqPF+BY07UW2VgBDeUcYkXLGWkBTU3qBFc1WQXx4K7+ZszIhbFp8ZnNFK5DArn3QuURecr6grWumJ4zfR5RNw1VuMkgwzjctPE6idA6rOoHoPlq3G60oupXCMQQfUgTWPr6BzstGgo5hsdAZPMOP0Zmj0Kx+9jxQJ5kFO9G3Q4VCY5U7GupUqkIb7Vbv9QIjh8Ru7MyRBhRg6a0pFM2SSsRR3Mhgf2GdkCv0eJIGuNJY6y8g4M8UnZM04Z5HkmWlcd5Ep7mSuu+tr9w93vwEowtlHNsUB2gAAAABJRU5ErkJggg==']
+--------------------------------------------------------------------------------
+---------------------------------- Time Details ----------------------------------
+Current Time Stamp: 2024-11-11 07:46:24.499060+05:30
+Execution Time: 00:00:00; Milliseconds: 36.00025177001953
+Execution Time CPU: 00:00:00; Milliseconds: 31.25
+Timer State: TIMER_OFF
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+              All Done.              
+--------------------------------------------------------------------------------

@@ -1,33 +1,45 @@
+from python_helpers.ph_constants import PhConstants
 from python_helpers.ph_keys import PhKeys
 from python_helpers.ph_util import PhUtil
 
 
 class Data:
     def __init__(self,
+                 # Common Param
                  input_data=None,
                  print_input=None,
                  print_output=None,
                  print_info=None,
                  quite_mode=None,
                  remarks=[],
-                 qr_code_version=None,
-                 scale=None,
+                 encoding=None,
+                 encoding_errors=None,
+                 archive_output=None,
+                 archive_output_format=None,
+                 # Specific Param
                  image_format=None,
+                 scale=None,
+                 qr_code_version=None,
                  split_qrs=None,
+                 # Unknown Param
                  **kwargs,
                  ):
         """
         Instantiate the Data Object for further Processing.
 
-        :param input_data: Input Data
-        :param print_input: Printing of input needed ?
-        :param print_output: Printing of output needed ?
-        :param print_info:  Printing of info needed ?
-        :param quite_mode: Quite mode needed ? if yes, no printing at all.
+        :param input_data: Input Data; File Path(s), Dir Paths(s)
+        :param print_input: Printing of input needed?
+        :param print_output: Printing of output needed?
+        :param print_info:  Printing of info needed?
+        :param quite_mode: Quite mode needed? If yes, no printing at all.
         :param remarks: Remarks for Input Data
-        :param qr_code_version:
-        :param scale:
+        :param encoding: Encoding for Input/Output Data
+        :param encoding_errors: Encoding Errors Handling for Input/Output Data
+        :param archive_output: Archiving of output needed?
+        :param archive_output_format: Archive Output Format
         :param image_format:
+        :param scale:
+        :param qr_code_version:
         :param split_qrs:
         :param kwargs: To Handle unwanted/deprecated/internal/additional arguments (See Description)
         ----------
@@ -45,9 +57,13 @@ class Data:
         self.print_info = print_info
         self.quite_mode = quite_mode
         self.remarks = remarks
-        self.qr_code_version = qr_code_version
-        self.scale = scale
+        self.encoding = encoding
+        self.encoding_errors = encoding_errors
+        self.archive_output = archive_output
+        self.archive_output_format = archive_output_format
         self.image_format = image_format
+        self.scale = scale
+        self.qr_code_version = qr_code_version
         self.split_qrs = split_qrs
         # Handle kwargs
         if self.input_data is None and PhKeys.RAW_DATA in kwargs:
@@ -56,6 +72,7 @@ class Data:
             self.remarks = kwargs[PhKeys.REMARKS_LIST]
         self.data_group = kwargs.get(PhKeys.DATA_GROUP, None)
         # Handle Internal args
+        self.__input_modes_hierarchy = []
         self.__auto_generated_remarks = None
         self.__one_time_remarks = None
         self.__extended_remarks_needed = None
@@ -109,3 +126,15 @@ class Data:
 
     def set_one_time_remarks(self, one_time_remarks):
         self.__one_time_remarks = one_time_remarks
+
+    def append_input_modes_hierarchy(self, input_mode_hierarchy):
+        self.__input_modes_hierarchy.append(input_mode_hierarchy)
+
+    def get_input_modes_hierarchy_as_str(self):
+        return PhConstants.SEPERATOR_MULTI_OBJ.join(self.__input_modes_hierarchy)
+
+    def get_input_modes_hierarchy(self):
+        return self.__input_modes_hierarchy
+
+    def validate_if_input_modes_hierarchy(self, input_mode_hierarchy):
+        return True if input_mode_hierarchy in self.__input_modes_hierarchy else False

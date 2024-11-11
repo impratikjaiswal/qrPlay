@@ -27,6 +27,22 @@ class UnitTesting(DataTypeMaster):
         remarks = None
         super().set_remarks(remarks)
 
+    def set_encoding(self):
+        encoding = None
+        super().set_encoding(encoding)
+
+    def set_encoding_errors(self):
+        encoding_errors = None
+        super().set_encoding_errors(encoding_errors)
+
+    def set_archive_output(self):
+        archive_output = None
+        super().set_archive_output(archive_output)
+
+    def set_archive_output_format(self):
+        archive_output_format = None
+        super().set_archive_output_format(archive_output_format)
+
     def set_image_format(self):
         image_format = None
         super().set_image_format(image_format)
@@ -71,6 +87,18 @@ class UnitTesting(DataTypeMaster):
                 input_data=small_data,
                 scale=8,
                 qr_code_version=33,
+            ),
+            #
+            Data(
+                remarks='Simple Qr; qr_code_version=20',
+                input_data=small_data,
+                qr_code_version=20,
+            ),
+            #
+            Data(
+                remarks='Simple Qr; qr_code_version=40',
+                input_data=small_data,
+                qr_code_version=40,
             ),
         ]
         data_pool_negative = [

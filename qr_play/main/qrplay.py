@@ -77,13 +77,14 @@ def process_data():
         PhExecutionModes.UNIT_TESTING: data_type_unit_testing,
         PhExecutionModes.UNIT_TESTING_EXTERNAL: data_type_unit_testing_external,
         PhExecutionModes.DEV: data_type_dev,
-        PhExecutionModes.ALL: data_type_user +
-                              data_types_samples +
-                              data_types_sample_generic +
-                              data_types_sample_specific +
-                              data_type_unit_testing +
-                              data_type_unit_testing_external +
-                              data_type_dev,
+        PhExecutionModes.ALL: data_type_user
+                              + data_types_samples
+                              + data_types_sample_generic
+                              + data_types_sample_specific
+                              + data_type_unit_testing
+                              + data_type_unit_testing_external
+        # + data_type_dev
+        ,
     }
     data_types = data_types_pool.get(execution_mode, Defaults.EXECUTION_MODE)
     if data_cli:
@@ -117,6 +118,7 @@ def process_data():
             data_type.set_scale()
             data_type.set_qr_code_version()
             data_type.set_split_qrs()
+            data_type.set_decorate_qr()
             #
             data_type.set_data_pool()
         DataTypeMaster.process_safe(data_type, error_handling_mode)

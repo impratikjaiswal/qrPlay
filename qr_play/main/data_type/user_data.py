@@ -56,6 +56,10 @@ class UserData(DataTypeMaster):
         split_qrs = None
         super().set_split_qrs(split_qrs)
 
+    def set_decorate_qr(self):
+        decorate_qr = None
+        super().set_decorate_qr(decorate_qr)
+
     def set_data_pool(self):
         data_pool = [
             #

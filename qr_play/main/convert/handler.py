@@ -51,6 +51,7 @@ def handle_qr_code(data, meta_data, info_data):
         res = temp_output
     else:
         qrcode = segno.make(data.input_data, version=data.qr_code_version)
+        # qrcode = segno.make(data.input_data, error='h')
         res = handle_individual_qr_code(data, meta_data, qrcode, meta_data.output_file)
     return res
 

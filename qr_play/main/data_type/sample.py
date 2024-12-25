@@ -7,6 +7,8 @@ from qr_play.main.helper.data import Data
 from qr_play.main.helper.formats import Formats
 
 # Data has to be declared in global, so that it can be used by other classes
+apj_url = 'https://amenitypj.in/'
+
 small_data = 'Welcome To QrPlay'
 
 bulk_data_1 = """}**************************************************{ ToDO
@@ -60,6 +62,58 @@ allow rules; control how traffic is allowed in & out of EC2 instance
 can be refence by IP of other SG
 if application is not accessible (time out error), then its a SG issue.
 if There's a connection refused; This means the instance is reachable, Not an SG issue; its application g"""
+
+bulk_data_1_utf_8_defaults = """}**************************************************{ ToDO
+}+++++++++++++++++++++++++{ Explore 
+CLI
+Cloudshell;  CLI Browser
+SDK
+ENI is available automatically?
+Instance with Custom EBS volume only (EBS snapshot)
+}----------------------------------------------------------------------------------------------------{ 
+AWS Global Infrastructure
+- AWS Regions (e.g. ap-southeast-2 => asia specific Sydney )
+- AWS Availability Zones (e.g. ap-southeast-2a, ap-southeast-2b, ap-southeast-2c)
+- AWS Data Centers
+- AWS Edge Locations /Points of Presence
+}----------------------------------------------------------------------------------------------------{ 
+Many services are Region-scoped, but few are global (like IAM, Route53)
+}----------------------------------------------------------------------------------------------------{ 
+Each AZ: one ore more discreate Data centers with redundant power, networking , connectivity. isolated from disasters.
+}**************************************************{ IAM: Global Service 
+Least Privilege Principle
+    Don't give more permission than a user need
+One user can be part of multiple groups
+Inline IAM Policy (Direct to individual)
+    VS 
+IAM Policy inheritance (inherit from group)
+}**************************************************{ Access AWS
+    AWS Management Console  (Access: Password & MFA)
+    AWS CLI                 (Access: Access Keys (Access Key ID, Secret Access Key))
+    AWS SDK                 (Access: Access Keys)
+}**************************************************{     
+IAM User    (Permission to user to perform action)
+    Vs 
+IAM Role    (Permission to service to perform action on your behalf)
+}**************************************************{ IAM Security Tools
+IAM Credential Report (Account Level)
+IAM Access Advisor (User level)
+    All service permissions granted and last accessed. helpful to revise policies
+}----------------------------------------------------------------------------------------------------{ AWS Billing
+Billing Information has to be enabled for IAM Access (if needed)
+Bills page has option for "charges by Service"; region specific data is available.
+Free tier usage balance
+}**************************************************{ Budget
+Email Triggers: Actual 85% & 100% or forecast is 100%
+}----------------------------------------------------------------------------------------------------{ EC2
+If a instance is stopped, AWS is not going to bill it. 
+If a instance is stopped & Started, Public IP may changed. Private is fixed.
+SSH is not allowed with Private IP unless VPN is not established.
+}**************************************************{ SG: Security Group
+allow rules; control how traffic is allowed in & out of EC2 instance
+can be refence by IP of other SG
+if application is not accessible (time out error), then its a SG issue.
+if There's a connection refused; This means the instance is reachable, Not an SG issue; its application issue  in"""
 
 bulk_data_2 = """}**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
@@ -387,8 +441,17 @@ class Sample(DataTypeMaster):
         split_qrs = None
         super().set_split_qrs(split_qrs)
 
+    def set_decorate_qr(self):
+        decorate_qr = None
+        super().set_decorate_qr(decorate_qr)
+
     def set_data_pool(self):
         data_pool = [
+            #
+            Data(
+                remarks='Amenity Pj Qr (Web Site Address)',
+                input_data=apj_url,
+            ),
             #
             Data(
                 remarks='Simple Qr (LPA)',

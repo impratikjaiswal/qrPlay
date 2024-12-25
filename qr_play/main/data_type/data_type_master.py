@@ -34,6 +34,7 @@ class DataTypeMaster(object):
         self.scale = None
         self.qr_code_version = None
         self.split_qrs = None
+        self.decorate_qr = None
         self.data_pool = []
         self.__master_data = PhMasterData(
             data=Data(input_data=None),
@@ -80,6 +81,9 @@ class DataTypeMaster(object):
 
     def set_split_qrs(self, split_qrs):
         self.split_qrs = split_qrs
+
+    def set_decorate_qr(self, decorate_qr):
+        self.decorate_qr = decorate_qr
 
     def set_data_pool(self, data_pool):
         self.data_pool = data_pool
@@ -165,6 +169,7 @@ class DataTypeMaster(object):
             data.scale = data.scale if data.scale is not None else self.scale
             data.qr_code_version = data.qr_code_version if data.qr_code_version is not None else self.qr_code_version
             data.split_qrs = data.split_qrs if data.split_qrs is not None else self.split_qrs
+            data.decorate_qr = data.decorate_qr if data.decorate_qr is not None else self.decorate_qr
         else:
             data = Data(
                 input_data=data,
@@ -181,6 +186,7 @@ class DataTypeMaster(object):
                 scale=self.scale,
                 qr_code_version=self.qr_code_version,
                 split_qrs=self.split_qrs,
+                decorate_qr=self.decorate_qr,
             )
         meta_data = MetaData(input_data_org=data.input_data)
         info_data = InfoData()
@@ -213,5 +219,6 @@ class DataTypeMaster(object):
             PhKeys.SCALE: data.scale,
             PhKeys.QR_CODE_VERSION: data.qr_code_version,
             PhKeys.SPLIT_QRS: data.split_qrs,
+            PhKeys.DECORATE_QR: data.decorate_qr,
         }
         return PhUtil.dict_clean(common_data)

@@ -21,6 +21,7 @@ class Data:
                  scale=None,
                  qr_code_version=None,
                  split_qrs=None,
+                 decorate_qr=None,
                  # Unknown Param
                  **kwargs,
                  ):
@@ -41,6 +42,7 @@ class Data:
         :param scale:
         :param qr_code_version:
         :param split_qrs:
+        :param decorate_qr:
         :param kwargs: To Handle unwanted/deprecated/internal/additional arguments (See Description)
         ----------
 
@@ -65,6 +67,7 @@ class Data:
         self.scale = scale
         self.qr_code_version = qr_code_version
         self.split_qrs = split_qrs
+        self.decorate_qr = decorate_qr
         # Handle kwargs
         if self.input_data is None and PhKeys.RAW_DATA in kwargs:
             self.input_data = kwargs[PhKeys.RAW_DATA]

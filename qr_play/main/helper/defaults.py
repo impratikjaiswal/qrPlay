@@ -21,3 +21,4 @@ class Defaults:
     SCALE = 5
     QR_CODE_VERSION = 5
     SPLIT_QRS = True
+    DECORATE_QR = True

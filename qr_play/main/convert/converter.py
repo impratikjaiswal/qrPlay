@@ -143,6 +143,7 @@ def set_defaults(data, meta_data):
     data.scale = PhUtil.set_if_none(data.scale, Defaults.SCALE)
     data.qr_code_version = PhUtil.set_if_none(data.qr_code_version, Defaults.QR_CODE_VERSION)
     data.split_qrs = PhUtil.set_if_none(data.split_qrs, Defaults.SPLIT_QRS)
+    data.decorate_qr = PhUtil.set_if_none(data.decorate_qr, Defaults.DECORATE_QR)
     if meta_data is None:
         return
 

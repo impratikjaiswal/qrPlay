@@ -6,7 +6,8 @@ from python_helpers.ph_keys import PhKeys
 from python_helpers.ph_util import PhUtil
 
 from qr_play.main.convert import converter
-from qr_play.main.convert.handler import process_data
+from qr_play.main.convert.handler import handle_data
+from qr_play.main.helper.formats_group import FormatsGroup
 from qr_play.main.helper.infodata import InfoData
 from qr_play.main.helper.metadata import MetaData
 
@@ -91,13 +92,15 @@ def process_all_data_types(data, meta_data=None, info_data=None):
     # Needed for a scenario when remarks will be fetched from YML
     data.set_auto_generated_remarks_if_needed()
     converter.set_defaults(data, meta_data)
+    data.set_user_remarks_expand_variables()
     converter.set_output_file_path(data, meta_data)
     """
     Data Processing
     """
-    process_data(data=data, meta_data=meta_data, info_data=info_data)
+    handle_data(data=data, meta_data=meta_data, info_data=info_data)
     converter.print_data(data=data, meta_data=meta_data, info_data=info_data)
-    if meta_data.output_file_path:
-        PhUtil.make_dirs(file_path=meta_data.output_file_path)
-        converter.write_output_file(data=data, meta_data=meta_data, info_data=info_data)
+    # if meta_data.output_file_path:
+    #     if data.output_format not in FormatsGroup.OUTPUT_FORMATS_IMAGE_FILES:
+    #         PhUtil.make_dirs(file_path=meta_data.output_file_path)
+    #         converter.write_output_file(data=data, meta_data=meta_data, info_data=info_data)
     return meta_data.parsed_data

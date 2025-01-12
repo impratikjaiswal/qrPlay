@@ -389,6 +389,9 @@ class Sample(DataTypeMaster):
             sample_data_dic.update({key: super().to_dic(data)})
         return sample_data_dic
 
+    def __init__(self):
+        super().__init__()
+
     def set_print_input(self):
         print_input = None
         super().set_print_input(print_input)
@@ -417,6 +420,14 @@ class Sample(DataTypeMaster):
         encoding_errors = None
         super().set_encoding_errors(encoding_errors)
 
+    def set_output_path(self):
+        output_path = None
+        super().set_output_path(output_path)
+
+    def set_output_file_name_keyword(self):
+        output_file_name_keyword = None
+        super().set_output_file_name_keyword(output_file_name_keyword)
+
     def set_archive_output(self):
         archive_output = None
         super().set_archive_output(archive_output)
@@ -425,13 +436,13 @@ class Sample(DataTypeMaster):
         archive_output_format = None
         super().set_archive_output_format(archive_output_format)
 
-    def set_image_format(self):
-        image_format = None
-        super().set_image_format(image_format)
+    def set_output_format(self):
+        output_format = None
+        super().set_output_format(output_format)
 
-    def set_scale(self):
-        scale = None
-        super().set_scale(scale)
+    def set_size(self):
+        size = None
+        super().set_size(size)
 
     def set_qr_code_version(self):
         qr_code_version = None
@@ -464,33 +475,40 @@ class Sample(DataTypeMaster):
             ),
             #
             Data(
-                remarks='Simple Qr; qr_code_version=20; scale=8',
+                remarks='Simple Qr; qr_code_version=20; size=8',
                 input_data=small_data,
-                scale=10,
+                size=10,
                 qr_code_version=20,
             ),
             #
             Data(
                 remarks='Simple Qr; png uri',
                 input_data=small_data,
-                image_format=Formats.PNG_URI,
+                output_format=Formats.PNG_URI,
             ),
             #
             Data(
                 remarks='Simple Qr; svg',
                 input_data=small_data,
-                image_format=Formats.SVG,
+                output_format=Formats.SVG,
             ),
             #
             Data(
                 remarks='Simple Qr; svg uri',
                 input_data=small_data,
-                image_format=Formats.SVG_URI,
+                output_format=Formats.SVG_URI,
             ),
             #
             Data(
                 remarks='Bulk Data Single Qr',
                 input_data=bulk_data_1,
+                qr_code_version=40,
+                split_qrs=False,
+            ),
+            #
+            Data(
+                remarks='Bulk Data (utf8) Single Qr',
+                input_data=bulk_data_1_utf_8_defaults,
                 qr_code_version=40,
                 split_qrs=False,
             ),
@@ -507,7 +525,7 @@ class Sample(DataTypeMaster):
                 input_data=bulk_data_1,
                 qr_code_version=40,
                 split_qrs=False,
-                image_format=Formats.PNG_URI,
+                output_format=Formats.PNG_URI,
             ),
             #
             Data(
@@ -515,7 +533,7 @@ class Sample(DataTypeMaster):
                 input_data=bulk_data_2,
                 qr_code_version=40,
                 split_qrs=True,
-                image_format=Formats.PNG_URI,
+                output_format=Formats.PNG_URI,
             ),
             #
         ]

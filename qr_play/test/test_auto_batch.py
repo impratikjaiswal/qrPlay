@@ -18,14 +18,14 @@ class TestAutoBatch:
         PhKeys.VAR_EXECUTION_MODE: r'qr_play\main\qrplay.py',
         PhKeys.VAR_ERROR_HANDLING_MODE: r'qr_play\main\qrplay.py',
         PhKeys.VAR_TOP_FOLDER_PATH: r'qr_play\main\helper\folders.py',
-        PhKeys.IMAGE_FORMAT: r'qr_play\main\helper\defaults.py',
+        PhKeys.OUTPUT_FORMAT: r'qr_play\main\helper\defaults.py',
     }
 
     get_target_str = {
         PhKeys.VAR_EXECUTION_MODE: 'execution_mode = PhExecutionModes.',
         PhKeys.VAR_ERROR_HANDLING_MODE: 'error_handling_mode = PhErrorHandlingModes.',
         PhKeys.VAR_TOP_FOLDER_PATH: 'top_folder_path = ',
-        PhKeys.IMAGE_FORMAT: 'IMAGE_FORMAT = Formats.',
+        PhKeys.OUTPUT_FORMAT: 'OUTPUT_FORMAT = Formats.',
     }
 
     @classmethod
@@ -64,7 +64,7 @@ class TestAutoBatch:
             PhKeys.VAR_EXECUTION_MODE,
             PhKeys.VAR_ERROR_HANDLING_MODE,
             PhKeys.VAR_TOP_FOLDER_PATH,
-            PhKeys.IMAGE_FORMAT,
+            PhKeys.OUTPUT_FORMAT,
         ]
         for target_key in target_keys:
             if target_key not in test_case_data:

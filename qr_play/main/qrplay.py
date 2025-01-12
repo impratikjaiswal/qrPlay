@@ -5,7 +5,7 @@ from python_helpers.ph_time import PhTime
 from python_helpers.ph_util import PhUtil
 
 from qr_play.main.convert import handler
-from qr_play.main.convert.converter import read_web_request
+from qr_play.main.convert.converter import handle_web_request
 from qr_play.main.data_type.data_type_master import DataTypeMaster
 from qr_play.main.data_type.dev import Dev
 from qr_play.main.data_type.sample import Sample
@@ -114,14 +114,29 @@ def process_data():
             data_type.set_archive_output()
             data_type.set_archive_output_format()
             #
-            data_type.set_image_format()
-            data_type.set_scale()
+            data_type.set_output_format()
+            data_type.set_size()
             data_type.set_qr_code_version()
             data_type.set_split_qrs()
             data_type.set_decorate_qr()
             #
             data_type.set_data_pool()
         DataTypeMaster.process_safe(data_type, error_handling_mode)
+
+
+def handle_cli_request(**kwargs):
+    """
+
+    :param kwargs:
+    :return:
+    """
+    global data_cli
+    data_cli = handle_web_request(kwargs)
+
+
+def print_configurations():
+    # Print Versions
+    PhUtil.print_version(ConfigConst.TOOL_NAME, ConfigConst.TOOL_VERSION)
 
 
 def set_configurations():
@@ -137,20 +152,6 @@ def set_configurations():
     error_handling_mode = PhErrorHandlingModes.CONTINUE_ON_ERROR
     handler.show_image = False
 
-
-def print_configurations():
-    # Print Versions
-    PhUtil.print_version(ConfigConst.TOOL_NAME, ConfigConst.TOOL_VERSION)
-
-
-def handle_args(**kwargs):
-    """
-
-    :param kwargs:
-    :return:
-    """
-    global data_cli
-    data_cli = read_web_request(kwargs)
 
 
 def main():
@@ -173,7 +174,7 @@ def main():
             # Print Configurations
             print_configurations()
             standalone_mode = True
-        handle_args(standalone_mode=standalone_mode)
+        handle_cli_request(standalone_mode=standalone_mode)
     """
     Configurations
     """

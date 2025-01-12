@@ -13,6 +13,7 @@ if not packages:
     packages = [
         "qr_play.main",
         "qr_play.test",
+        "qr_play.res",
     ]
 print(f'Packages are {packages}')
 # potential dependencies
@@ -49,6 +50,12 @@ setup(
     license="MIT",
     python_requires=">=3.9",
     packages=packages,
-    install_requires=install_reqs
+    install_requires=install_reqs,
+    # Needed for Manifest.in
+    # include_package_data=True,
+    package_data={
+        # REf:
+        "qr_play.res.images": ["*.png"],
+    },
     # test_suite="test.sample_package",
 )

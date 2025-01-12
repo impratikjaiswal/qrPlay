@@ -16,16 +16,18 @@ class Folders:
     DIR_SAMPLE_DATA = 3
     DIR_SAMPLE_DATA_GENERIC = 34
 
-    DIR_IMAGES = 8
+    DIR_RES = 8
+    DIR_RES_IMAGES = 81
 
     DIR_TEST = 9
     DIR_TEST_LOGS = 91
 
     LOCATIONS_MAPPING = {
         #
-        DIR_DATA: ['data'],
+        DIR_RES: [PACKAGE_NAME, 'res'],
+        DIR_RES_IMAGES: [PACKAGE_NAME, 'res', 'images'],
         #
-        DIR_IMAGES: ['data', 'images'],
+        DIR_DATA: ['data'],
         #
         DIR_SAMPLE_DATA: ['data', 'sample_data'],
         DIR_SAMPLE_DATA_GENERIC: ['data', 'sample_data', 'Generic'],
@@ -38,8 +40,8 @@ class Folders:
     }
 
     @classmethod
-    def in_images(cls, relative_path=''):
-        return cls.get_path(Folders.DIR_IMAGES, relative_path)
+    def in_res_images(cls, relative_path=''):
+        return cls.get_path(Folders.DIR_RES_IMAGES, relative_path)
 
     @classmethod
     def in_test(cls, relative_path=''):

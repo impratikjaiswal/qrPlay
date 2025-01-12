@@ -2,6 +2,8 @@ from python_helpers.ph_constants import PhConstants
 from python_helpers.ph_keys import PhKeys
 from python_helpers.ph_util import PhUtil
 
+from qr_play.main.helper.variables import Variables
+
 
 class Data:
     def __init__(self,
@@ -14,21 +16,23 @@ class Data:
                  remarks=[],
                  encoding=None,
                  encoding_errors=None,
+                 output_path=None,
+                 output_file_name_keyword=None,
                  archive_output=None,
                  archive_output_format=None,
                  # Specific Param
-                 image_format=None,
-                 scale=None,
+                 output_format=None,
+                 size=None,
                  qr_code_version=None,
                  split_qrs=None,
                  decorate_qr=None,
-                 # Unknown Param
+                 # Unknown/System Param
                  **kwargs,
                  ):
         """
         Instantiate the Data Object for further Processing.
 
-        :param input_data: Input Data; File Path(s), Dir Paths(s)
+        :param input_data: Input Data; String(s), File Path(s), Dir Paths(s)
         :param print_input: Printing of input needed?
         :param print_output: Printing of output needed?
         :param print_info:  Printing of info needed?
@@ -36,10 +40,12 @@ class Data:
         :param remarks: Remarks for Input Data
         :param encoding: Encoding for Input/Output Data
         :param encoding_errors: Encoding Errors Handling for Input/Output Data
+        :param output_path: Output Path
+        :param output_file_name_keyword:
         :param archive_output: Archiving of output needed?
         :param archive_output_format: Archive Output Format
-        :param image_format:
-        :param scale:
+        :param output_format: Output Format
+        :param size:
         :param qr_code_version:
         :param split_qrs:
         :param decorate_qr:
@@ -49,6 +55,8 @@ class Data:
         kwargs -- (handled arguments description)
             raw_data -- @Deprecated!!! Use input_data instead \n
             remarks_list -- @Deprecated!!! Use remarks instead \n
+            image_format -- @Deprecated!!! Use output_format instead \n
+            scale -- @Deprecated!!! Use size instead \n
             data_group -- Used for Web App
         ----------
         """
@@ -61,10 +69,12 @@ class Data:
         self.remarks = remarks
         self.encoding = encoding
         self.encoding_errors = encoding_errors
+        self.output_path = output_path
+        self.output_file_name_keyword = output_file_name_keyword
         self.archive_output = archive_output
         self.archive_output_format = archive_output_format
-        self.image_format = image_format
-        self.scale = scale
+        self.output_format = output_format
+        self.size = size
         self.qr_code_version = qr_code_version
         self.split_qrs = split_qrs
         self.decorate_qr = decorate_qr
@@ -73,6 +83,10 @@ class Data:
             self.input_data = kwargs[PhKeys.RAW_DATA]
         if self.remarks is None and PhKeys.REMARKS_LIST in kwargs:
             self.remarks = kwargs[PhKeys.REMARKS_LIST]
+        if self.output_format is None and PhKeys.IMAGE_FORMAT in kwargs:
+            self.output_format = kwargs[PhKeys.IMAGE_FORMAT]
+        if self.size is None and PhKeys.SCALE in kwargs:
+            self.size = kwargs[PhKeys.SCALE]
         self.data_group = kwargs.get(PhKeys.DATA_GROUP, None)
         # Handle Internal args
         self.__input_modes_hierarchy = []
@@ -84,6 +98,48 @@ class Data:
 
     def set_user_remarks(self, remarks):
         self.remarks = PhUtil.to_list(remarks, trim_data=True, all_str=True)
+
+    def set_user_remarks_expand_variables(self):
+        def __set_value(x, var_name, var_value, key_name_needed, key_):
+            if var_name in x and var_value is not None:
+                var_value = str(var_value)
+                y = '_'.join([key_, var_value]) if key_name_needed else var_value
+                return x.replace(var_name, y)
+            return x
+
+        def __expand_variable(x):
+            key_name_needed = True if Variables.KEY_NAME in x else False
+            if key_name_needed:
+                x = x.replace(Variables.KEY_NAME, '')
+            #
+            var_name = Variables.OUTPUT_FORMAT
+            var_value = self.output_format
+            key_ = PhKeys.OUTPUT_FORMAT
+            x = __set_value(x=x, var_name=var_name, var_value=var_value, key_name_needed=key_name_needed, key_=key_)
+            #
+            var_name = Variables.SIZE
+            var_value = self.size
+            key_ = PhKeys.SIZE
+            x = __set_value(x=x, var_name=var_name, var_value=var_value, key_name_needed=key_name_needed, key_=key_)
+            #
+            var_name = Variables.QR_CODE_VERSION
+            var_value = self.qr_code_version
+            key_ = PhKeys.QR_CODE_VERSION
+            x = __set_value(x=x, var_name=var_name, var_value=var_value, key_name_needed=key_name_needed, key_=key_)
+            #
+            var_name = Variables.SPLIT_QRS
+            var_value = self.split_qrs
+            key_ = PhKeys.SPLIT_QRS
+            x = __set_value(x=x, var_name=var_name, var_value=var_value, key_name_needed=key_name_needed, key_=key_)
+            #
+            var_name = Variables.DECORATE_QR
+            var_value = self.decorate_qr
+            key_ = PhKeys.DECORATE_QR
+            x = __set_value(x=x, var_name=var_name, var_value=var_value, key_name_needed=key_name_needed, key_=key_)
+            #
+            return x
+
+        self.remarks = [__expand_variable(x) for x in self.remarks]
 
     def __get_default_remarks(self):
         str_input_data = PhUtil.combine_list_items(self.input_data)

@@ -2,15 +2,18 @@ import os
 
 from python_helpers.ph_constants import PhConstants
 from python_helpers.ph_data_master import PhMasterData, PhMasterDataKeys
+from python_helpers.ph_defaults import PhDefaultTypesExclude
 from python_helpers.ph_exception_helper import PhExceptionHelper
 from python_helpers.ph_file_extensions import PhFileExtensions
 from python_helpers.ph_keys import PhKeys
 from python_helpers.ph_util import PhUtil
 
 from qr_play.main.helper.data import Data
-from qr_play.main.helper.defaults import Defaults
+from qr_play.main.helper.defaults import Defaults, DefaultTypesInclude
+from qr_play.main.helper.folders import Folders
 from qr_play.main.helper.formats import Formats
 from qr_play.main.helper.keywords import KeyWords
+from qr_play.main.helper.variables import Variables
 
 
 def print_data(data=None, meta_data=None, info_data=None, master_data=None):
@@ -29,7 +32,8 @@ def print_data(data=None, meta_data=None, info_data=None, master_data=None):
     if data.quite_mode:
         return
     input_sep = PhConstants.SEPERATOR_ONE_LINE
-    output_sep = PhConstants.SEPERATOR_MULTI_LINE
+    output_sep = PhConstants.SEPERATOR_ONE_LINE
+    len_sep = PhConstants.SEPERATOR_ONE_LINE
     if data.print_info:
         remarks_original = data.get_remarks_as_str(user_original_remarks=True)
         remarks_generated = data.get_remarks_as_str()
@@ -54,26 +58,32 @@ def print_data(data=None, meta_data=None, info_data=None, master_data=None):
             if info_msg:
                 sep = PhConstants.SEPERATOR_MULTI_LINE_TABBED if info_count > 1 else PhConstants.SEPERATOR_ONE_LINE
                 meta_data.output_dic.update(PhUtil.get_dic_data_and_print(PhKeys.INFO_DATA, sep, info_msg))
+                meta_data.output_dic.update(
+                    PhUtil.get_dic_data_and_print(PhKeys.INFO_DATA, len_sep, info_msg, length_needed=True))
         info = PhConstants.SEPERATOR_MULTI_OBJ.join(filter(None, [
             PhUtil.get_dic_data_and_print(PhKeys.TRANSACTION_ID, PhConstants.SEPERATOR_ONE_LINE,
                                           meta_data.transaction_id, dic_format=False, print_also=False),
-            PhUtil.get_dic_data_and_print(PhKeys.IMAGE_FORMAT, PhConstants.SEPERATOR_ONE_LINE, data.image_format,
-                                          dic_format=False, print_also=False) if data.image_format else None,
-            PhUtil.get_dic_data_and_print(PhKeys.SCALE, PhConstants.SEPERATOR_ONE_LINE, data.scale,
-                                          dic_format=False, print_also=False) if data.scale else None,
+            PhUtil.get_dic_data_and_print(PhKeys.OUTPUT_PATH, PhConstants.SEPERATOR_ONE_LINE, data.output_path,
+                                          dic_format=False, print_also=False) if data.output_path else None,
+            PhUtil.get_dic_data_and_print(PhKeys.OUTPUT_FORMAT, PhConstants.SEPERATOR_ONE_LINE, data.output_format,
+                                          dic_format=False, print_also=False) if data.output_format else None,
+            PhUtil.get_dic_data_and_print(PhKeys.SIZE, PhConstants.SEPERATOR_ONE_LINE, data.size,
+                                          dic_format=False, print_also=False) if data.size else None,
             PhUtil.get_dic_data_and_print(PhKeys.QR_CODE_VERSION, PhConstants.SEPERATOR_ONE_LINE, data.qr_code_version,
                                           dic_format=False, print_also=False) if data.qr_code_version else None,
             PhUtil.get_dic_data_and_print(PhKeys.SPLIT_QRS, PhConstants.SEPERATOR_ONE_LINE, data.split_qrs,
                                           dic_format=False, print_also=False) if data.split_qrs else None,
+            PhUtil.get_dic_data_and_print(PhKeys.DECORATE_QR, PhConstants.SEPERATOR_ONE_LINE, data.decorate_qr,
+                                          dic_format=False, print_also=False) if data.decorate_qr else None,
             PhUtil.get_dic_data_and_print(PhKeys.ENCODING, PhConstants.SEPERATOR_ONE_LINE, data.encoding,
                                           dic_format=False, print_also=False) if data.encoding else None,
             PhUtil.get_dic_data_and_print(PhKeys.ENCODING_ERRORS, PhConstants.SEPERATOR_ONE_LINE, data.encoding_errors,
                                           dic_format=False, print_also=False) if data.encoding_errors else None,
-            # PhUtil.get_dic_data_and_print(PhKeys.ARCHIVE_OUTPUT, PhConstants.SEPERATOR_ONE_LINE, data.archive_output,
-            #                               dic_format=False, print_also=False) if data.archive_output else None,
-            # PhUtil.get_dic_data_and_print(PhKeys.ARCHIVE_OUTPUT_FORMAT, PhConstants.SEPERATOR_ONE_LINE,
-            #                               data.archive_output_format,
-            #                               dic_format=False, print_also=False) if data.archive_output_format else None,
+            PhUtil.get_dic_data_and_print(PhKeys.ARCHIVE_OUTPUT, PhConstants.SEPERATOR_ONE_LINE, data.archive_output,
+                                          dic_format=False, print_also=False) if data.archive_output else None,
+            PhUtil.get_dic_data_and_print(PhKeys.ARCHIVE_OUTPUT_FORMAT, PhConstants.SEPERATOR_ONE_LINE,
+                                          data.archive_output_format,
+                                          dic_format=False, print_also=False) if data.archive_output_format else None,
             PhUtil.get_dic_data_and_print(PhKeys.QUITE_MODE, PhConstants.SEPERATOR_ONE_LINE, data.quite_mode,
                                           dic_format=False, print_also=False) if data.quite_mode else None,
         ]))
@@ -81,11 +91,15 @@ def print_data(data=None, meta_data=None, info_data=None, master_data=None):
     if data.print_input:
         meta_data.output_dic.update(
             PhUtil.get_dic_data_and_print(PhKeys.INPUT_DATA, input_sep, meta_data.input_data_org))
+        meta_data.output_dic.update(
+            PhUtil.get_dic_data_and_print(PhKeys.INPUT_DATA, len_sep, meta_data.input_data_org, length_needed=True))
     output_present = meta_data.parsed_data
     print_output = data.print_output
     if data.print_output and print_output:  # and meta_data.parsed_data:
         meta_data.output_dic.update(
             PhUtil.get_dic_data_and_print(PhKeys.OUTPUT_DATA, output_sep, meta_data.parsed_data))
+        meta_data.output_dic.update(
+            PhUtil.get_dic_data_and_print(PhKeys.OUTPUT_DATA, len_sep, meta_data.parsed_data, length_needed=True))
     PhUtil.print_separator()
 
 
@@ -100,12 +114,33 @@ def set_includes_excludes_files(data, meta_data):
     # Include Everything for now
 
 
-def parse_config(config_data):
-    data_types = {
-        PhKeys.QR_CODE_VERSION: int,
-        PhKeys.SCALE: int,
+def dict_to_data(config_data):
+    data_types_include = {
+        # Common Param
+        # PhKeys.INPUT_DATA:
+        PhKeys.PRINT_INPUT: DefaultTypesInclude.PRINT_INPUT,
+        PhKeys.PRINT_OUTPUT: DefaultTypesInclude.PRINT_OUTPUT,
+        PhKeys.PRINT_INFO: DefaultTypesInclude.PRINT_INFO,
+        PhKeys.QUITE_MODE: DefaultTypesInclude.QUITE_MODE,
+        PhKeys.ENCODING: DefaultTypesInclude.ENCODING,
+        PhKeys.ENCODING_ERRORS: DefaultTypesInclude.ENCODING_ERRORS,
+        PhKeys.ARCHIVE_OUTPUT: DefaultTypesInclude.ARCHIVE_OUTPUT,
+        PhKeys.ARCHIVE_OUTPUT_FORMAT: DefaultTypesInclude.ARCHIVE_OUTPUT_FORMAT,
+        # Specific Param
+        PhKeys.OUTPUT_FORMAT: DefaultTypesInclude.OUTPUT_FORMAT,
+        PhKeys.SIZE: DefaultTypesInclude.SIZE,
+        PhKeys.QR_CODE_VERSION: DefaultTypesInclude.QR_CODE_VERSION,
+        PhKeys.SPLIT_QRS: DefaultTypesInclude.SPLIT_QRS,
+        PhKeys.DECORATE_QR: DefaultTypesInclude.DECORATE_QR,
     }
-    config_data = PhUtil.parse_config(config_data, data_types=data_types)
+    data_types_exclude = {
+        # Common Param
+        PhKeys.INPUT_DATA: PhDefaultTypesExclude.INPUT_DATA,
+        # PhKeys.REMARKS: ,
+    }
+
+    config_data = PhUtil.dict_to_data(user_dict=config_data, data_types_include=data_types_include,
+                                      data_types_exclude=data_types_exclude, trim_data=False)
     # PhUtil.print_iter(config_data, 'config_data initial', verbose=True)
     for k, v in config_data.items():
         if not v:
@@ -128,6 +163,7 @@ def set_defaults_for_common_objects(data):
     data.print_info = PhUtil.set_if_none(data.print_info, Defaults.PRINT_INFO)
     data.encoding = PhUtil.set_if_none(data.encoding, Defaults.ENCODING)
     data.encoding_errors = PhUtil.set_if_none(data.encoding_errors, Defaults.ENCODING_ERRORS)
+    data.output_path = PhUtil.set_if_none(data.output_path, Defaults.OUTPUT_PATH)
     data.archive_output = PhUtil.set_if_none(data.archive_output, Defaults.ARCHIVE_OUTPUT)
     data.archive_output_format = PhUtil.set_if_none(data.archive_output_format, Defaults.ARCHIVE_OUTPUT_FORMAT)
 
@@ -139,17 +175,23 @@ def set_defaults(data, meta_data):
     :param meta_data:
     :return:
     """
-    data.image_format = PhUtil.set_if_none(data.image_format, Defaults.IMAGE_FORMAT)
-    data.scale = PhUtil.set_if_none(data.scale, Defaults.SCALE)
+    data.output_format = PhUtil.set_if_none(data.output_format, Defaults.OUTPUT_FORMAT)
+    data.size = PhUtil.set_if_none(data.size, Defaults.SIZE)
     data.qr_code_version = PhUtil.set_if_none(data.qr_code_version, Defaults.QR_CODE_VERSION)
     data.split_qrs = PhUtil.set_if_none(data.split_qrs, Defaults.SPLIT_QRS)
     data.decorate_qr = PhUtil.set_if_none(data.decorate_qr, Defaults.DECORATE_QR)
     if meta_data is None:
         return
+    default_output_file_mapping = {
+        Formats.PNG: PhFileExtensions.PNG,
+        Formats.SVG: PhFileExtensions.SVG,
+    }
+    meta_data.output_file_ext_default = default_output_file_mapping.get(data.output_format, Defaults.OUTPUT_FILE_EXT)
+    meta_data.output_file_location_default = Folders.in_user()
 
 
-def read_web_request(request_form):
-    return Data(**parse_config(request_form))
+def handle_web_request(request_form):
+    return Data(**dict_to_data(request_form))
 
 
 def set_output_file_path(data, meta_data):
@@ -158,14 +200,53 @@ def set_output_file_path(data, meta_data):
     :param data:
     :param meta_data:
     """
-    remarks = data.get_remarks_as_str()
-    meta_data.file_based = True if data.image_format in [Formats.PNG, Formats.SVG] else False
-    if meta_data.file_based:
-        meta_data.output_file = os.sep.join(
-            [PhUtil.path_default_out_folder, PhUtil.get_python_friendly_name(remarks if remarks else 'qr_code')])
-        meta_data.output_file = PhUtil.append_in_file_name(meta_data.output_file,
-                                                           new_ext=PhFileExtensions.SVG if data.image_format == Formats.SVG else PhFileExtensions.PNG)
-        PhUtil.make_dirs(PhUtil.get_file_name_and_extn(meta_data.output_file, only_path=True))
+    remarks_needed = False
+    remarks_with_indexes = False
+    sample_file_name_from_input_file = False
+    sample_file_name = ''
+    name_as_per_remarks = ''
+    output_file_name = ''
+    # if not (meta_data.input_mode_key == PhKeys.INPUT_YML or data.output_path):
+    #     return
+    output_path = data.output_path
+    output_file_location = meta_data.output_file_location_default
+    if not output_path:
+        # Image File writing is needed, But output_path is not Provided, so Dest Folder will be default folder
+        output_path = PhUtil.path_default_out_folder
+    if output_path:
+        sample_file_ext = PhUtil.get_file_name_and_extn(output_path, only_extn=True)
+        sample_file_folder = PhUtil.get_file_name_and_extn(output_path, only_path=True)
+        sample_file_name = PhUtil.get_file_name_and_extn(output_path)
+        if Variables.ITEM_INDEX in sample_file_name:
+            remarks_with_indexes = True
+            sample_file_name = sample_file_name.replace(Variables.ITEM_INDEX, '')
+        if sample_file_name == Variables.REMARKS:
+            # Only Target Directory is provided; Remarks usage is explicitly mentioned
+            remarks_needed = True
+            sample_file_name = sample_file_name.replace(Variables.REMARKS, '')
+            output_file_location = sample_file_folder
+        elif sample_file_ext:
+            # Target File Provided
+            output_file_name = sample_file_name
+            output_file_location = sample_file_folder
+        else:
+            # Only Target Directory is provided
+            output_file_location = os.sep.join([sample_file_folder, sample_file_name])
+            # Remarks usage is implicit
+            remarks_needed = True
+            sample_file_name = ''
+    if remarks_needed or sample_file_name_from_input_file:
+        if remarks_needed:
+            if data.get_extended_remarks_available():
+                remarks_with_indexes = True
+            name_as_per_remarks = PhUtil.get_python_friendly_name(
+                data.get_remarks_as_str(user_original_remarks=not remarks_with_indexes,
+                                        force_mode=True), case_sensitive=False)
+        output_file_name = PhUtil.append_in_file_name(str_file_path=sample_file_name,
+                                                      str_append=[name_as_per_remarks,
+                                                                  data.output_file_name_keyword],
+                                                      new_ext=meta_data.output_file_ext_default)
+    meta_data.output_file_path = os.sep.join([output_file_location, output_file_name])
 
 
 def read_input_file(data, meta_data, info_data):

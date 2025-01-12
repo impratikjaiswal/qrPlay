@@ -33,19 +33,19 @@ class TestData:
             },
         'default_png':
             {
-                PhKeys.IMAGE_FORMAT: 'PNG',
+                PhKeys.OUTPUT_FORMAT: 'PNG',
             },
         'default_png_uri':
             {
-                PhKeys.IMAGE_FORMAT: 'PNG_URI',
+                PhKeys.OUTPUT_FORMAT: 'PNG_URI',
             },
         'default_svg_uri':
             {
-                PhKeys.IMAGE_FORMAT: 'SVG_URI',
+                PhKeys.OUTPUT_FORMAT: 'SVG_URI',
             },
         'default_svg':
             {
-                PhKeys.IMAGE_FORMAT: 'SVG',
+                PhKeys.OUTPUT_FORMAT: 'SVG',
             },
     }
 

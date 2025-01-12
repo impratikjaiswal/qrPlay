@@ -1,5 +1,5 @@
 from qr_play.main.data_type.data_type_master import DataTypeMaster
-from qr_play.main.data_type.sample import bulk_data_1, bulk_data_1_utf_8_defaults
+from qr_play.main.data_type.sample import bulk_data_1, bulk_data_1_utf_8_defaults, apj_url
 from qr_play.main.helper.data import Data
 from qr_play.main.helper.formats import Formats
 

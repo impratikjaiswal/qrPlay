@@ -1,4 +1,5 @@
 import sys
+from python_helpers.ph_constants import PhConstants
 from python_helpers.ph_modes_error_handling import PhErrorHandlingModes
 from python_helpers.ph_modes_execution import PhExecutionModes
 from python_helpers.ph_time import PhTime
@@ -137,6 +138,7 @@ def handle_cli_request(**kwargs):
 def print_configurations():
     # Print Versions
     PhUtil.print_version(ConfigConst.TOOL_NAME, ConfigConst.TOOL_VERSION)
+    PhUtil.print_version(PhConstants.MODULE_SEGNO_NAME, fetch_tool_version=True)
 
 
 def set_configurations():
@@ -151,7 +153,6 @@ def set_configurations():
     execution_mode = PhExecutionModes.USER
     error_handling_mode = PhErrorHandlingModes.CONTINUE_ON_ERROR
     handler.show_image = False
-
 
 
 def main():

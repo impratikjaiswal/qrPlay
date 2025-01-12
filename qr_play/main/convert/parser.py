@@ -7,7 +7,6 @@ from python_helpers.ph_util import PhUtil
 
 from qr_play.main.convert import converter
 from qr_play.main.convert.handler import handle_data
-from qr_play.main.helper.formats_group import FormatsGroup
 from qr_play.main.helper.infodata import InfoData
 from qr_play.main.helper.metadata import MetaData
 

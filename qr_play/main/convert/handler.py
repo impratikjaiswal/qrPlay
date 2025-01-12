@@ -73,6 +73,10 @@ def __handle_data(data, meta_data, info_data):
 
 
 def handle_individual_qr_code(data, meta_data, qrcode, logo, file_path):
+    # Default Border
+    border = None
+    # PlayGround
+    # border = 1
     print(f'individual data_length is {len(data.input_data)}')
     # print(f'mode is {qrcode.mode}')
     # print(f'error is {qrcode.error}')
@@ -81,17 +85,17 @@ def handle_individual_qr_code(data, meta_data, qrcode, logo, file_path):
     # print(f'designator is {qrcode.designator}')
     # print(f'is_micro is {qrcode.is_micro}')
     if data.output_format == Formats.SVG_URI:
-        output = qrcode.svg_data_uri(scale=data.size)
+        output = qrcode.svg_data_uri(scale=data.size, border=border)
     elif data.output_format == Formats.PNG_URI:
-        output = qrcode.png_data_uri(scale=data.size)
+        output = qrcode.png_data_uri(scale=data.size, border=border)
     else:
         output = file_path
-        qrcode.save(file_path, scale=data.size)
+        qrcode.save(file_path, scale=data.size, border=border)
     #
     if logo and data.output_format in FormatsGroup.OUTPUT_FORMATS_PNG_IMAGES:
         qrcode_io_bytes = io.BytesIO()
         # Nothing special here, let Segno generate the QR code and save it as PNG in a buffer
-        qrcode.save(qrcode_io_bytes, scale=data.size, kind='png')
+        qrcode.save(qrcode_io_bytes, scale=data.size, kind='png', border=border)
         qrcode_io_bytes.seek(0)  # Important to let Pillow load the PNG
         output = attach_logo(data, meta_data, qrcode_io_bytes, logo, file_path)
     open_image(data, output)
@@ -145,6 +149,7 @@ def prepare_logo(logo_path=None, file_path=None):
         logo_img = QrUtil.add_corners(logo_img, corner_radios_logo)  # Ensure Corners
     if save_logo:
         logo_image_path = PhUtil.append_in_file_name(file_path, str_append=['logo'])
+        PhUtil.make_dirs(file_path=logo_image_path)
         logo_img.save(fp=logo_image_path)
     return logo_img
 

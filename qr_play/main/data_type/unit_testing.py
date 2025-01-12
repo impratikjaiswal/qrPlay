@@ -189,8 +189,7 @@ class UnitTesting(DataTypeMaster):
                 split_qrs=False,
                 decorate_qr=True,
                 size=3,
-                # TODO: Hard code path
-                output_path=r'D:\Other\Github_Self\amenitypj',
+                output_path=r'D:\Other\Github_Self\qrPlay\out',
             ),
         ]
         data_pool_negative = [

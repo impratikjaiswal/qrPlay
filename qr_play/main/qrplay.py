@@ -2,6 +2,7 @@ import sys
 from python_helpers.ph_constants import PhConstants
 from python_helpers.ph_modes_error_handling import PhErrorHandlingModes
 from python_helpers.ph_modes_execution import PhExecutionModes
+from python_helpers.ph_modules import PhModules
 from python_helpers.ph_time import PhTime
 from python_helpers.ph_util import PhUtil
 
@@ -138,7 +139,7 @@ def handle_cli_request(**kwargs):
 def print_configurations():
     # Print Versions
     PhUtil.print_version(ConfigConst.TOOL_NAME, ConfigConst.TOOL_VERSION)
-    PhUtil.print_version(PhConstants.MODULE_SEGNO_NAME, fetch_tool_version=True)
+    PhUtil.print_version(PhModules.SEGNO, fetch_tool_version=True, no_additional_info=True)
 
 
 def set_configurations():

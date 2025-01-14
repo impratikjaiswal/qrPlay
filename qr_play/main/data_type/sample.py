@@ -9,7 +9,7 @@ from qr_play.main.helper.formats import Formats
 # Data has to be declared in global, so that it can be used by other classes
 apj_url = 'https://amenitypj.in/'
 
-small_data = 'Welcome To QrPlay'
+text_msg_small_data = 'Welcome To QrPlay'
 
 bulk_data_1 = """}**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
@@ -460,42 +460,66 @@ class Sample(DataTypeMaster):
         data_pool = [
             #
             Data(
-                remarks='Amenity Pj Qr (Web Site Address)',
+                remarks='Website Url; Amenity Pj; with Logo; Decorate Qr',
                 input_data=apj_url,
+                decorate_qr=True,
             ),
             #
             Data(
-                remarks='Simple Qr (LPA)',
+                remarks='Website Url; Amenity Pj; No Logo',
+                input_data=apj_url,
+                decorate_qr=False,
+            ),
+            #
+            Data(
+                remarks='LPA',
                 input_data='LPA:1$SMDP.EXAMPLE.COM$04386-AGYFT-A74Y8-3F815',
             ),
             #
             Data(
-                remarks='Simple Qr (Google Pay/GPay)',
+                remarks='UPI; Google Pay/GPay',
                 input_data='upi://pay?pa=impratikjaiswal@okicici&pn=Pratik%20Jaiswal&aid=uGICAgICw6tuJBw',
             ),
             #
             Data(
-                remarks='Simple Qr; qr_code_version=20; size=8',
-                input_data=small_data,
+                remarks='UPI; Google Pay/GPay; with Logo; Decorate Qr',
+                input_data='upi://pay?pa=impratikjaiswal@okicici&pn=Pratik%20Jaiswal&aid=uGICAgICw6tuJBw',
+                decorate_qr=True,
+            ),
+            #
+            Data(
+                remarks='Text Message',
+                input_data=text_msg_small_data,
+            ),
+            #
+            Data(
+                remarks='Text Message; with Logo; Decorate Qr',
+                input_data=text_msg_small_data,
+                decorate_qr=True,
+            ),
+            #
+            Data(
+                remarks='Text Message; qr_code_version=20; size=8',
+                input_data=text_msg_small_data,
                 size=10,
                 qr_code_version=20,
             ),
             #
             Data(
-                remarks='Simple Qr; png uri',
-                input_data=small_data,
+                remarks='Text Message; png uri',
+                input_data=text_msg_small_data,
                 output_format=Formats.PNG_URI,
             ),
             #
             Data(
-                remarks='Simple Qr; svg',
-                input_data=small_data,
+                remarks='Text Message; svg',
+                input_data=text_msg_small_data,
                 output_format=Formats.SVG,
             ),
             #
             Data(
-                remarks='Simple Qr; svg uri',
-                input_data=small_data,
+                remarks='Text Message; svg uri',
+                input_data=text_msg_small_data,
                 output_format=Formats.SVG_URI,
             ),
             #
@@ -534,6 +558,15 @@ class Sample(DataTypeMaster):
                 qr_code_version=40,
                 split_qrs=True,
                 output_format=Formats.PNG_URI,
+            ),
+            #
+            Data(
+                remarks='Bulk Data Split Qrs; PNG URI; with Logo; Decorate Qr',
+                input_data=bulk_data_2,
+                qr_code_version=40,
+                split_qrs=True,
+                output_format=Formats.PNG_URI,
+                decorate_qr=True
             ),
             #
         ]

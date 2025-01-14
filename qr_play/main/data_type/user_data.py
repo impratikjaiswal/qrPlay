@@ -1,5 +1,6 @@
 from qr_play.main.data_type.data_type_master import DataTypeMaster
 from qr_play.main.helper.data import Data
+from qr_play.main.helper.formats import Formats
 
 
 class UserData(DataTypeMaster):
@@ -75,14 +76,20 @@ class UserData(DataTypeMaster):
         data_pool = [
             #
             Data(
-                remarks='Simple Qr',
-                input_data='Welcome To QrPlay',
-                size=2,
+                remarks='Website Url; Amenity Pj',
+                input_data='https://amenitypj.in/',
             ),
             #
             Data(
-                remarks='Simple Qr; Default Values',
+                remarks='Website Url; Amenity Pj; with out logo',
+                input_data='https://amenitypj.in/',
+                decorate_qr=False,
+            ),
+            #
+            Data(
+                remarks='Text Message',
                 input_data='Welcome To QrPlay',
+                output_format=Formats.PNG_URI,
             ),
             #
         ]

@@ -55,14 +55,15 @@ def __handle_data(data, meta_data, info_data):
     if data.split_qrs:
         qrcode_split = segno.make_sequence(data.input_data, version=data.qr_code_version)
         sequence_count = len(qrcode_split)
-        print(f'sequence_count is {sequence_count}')
+        multi_qrs = True if sequence_count > 1 else False
+        if multi_qrs:
+            print(f'sequence_count is {sequence_count}')
         # qrcode_split.save(file_path, scale=data.size)
         temp_output = []
-
         for index, qrcode in enumerate(qrcode_split, start=1):
-            output_file = PhUtil.append_in_file_name(meta_data.output_file_path, str_append=['item', str(index)])
+            output_file = PhUtil.append_in_file_name(meta_data.output_file_path, str_append=['item',
+                                                                                             str(index)]) if multi_qrs else meta_data.output_file_path
             res_curr = handle_individual_qr_code(data, meta_data, qrcode, logo, output_file)
-            print()
             temp_output.append(res_curr)
         res = temp_output
     else:
@@ -77,10 +78,12 @@ def handle_individual_qr_code(data, meta_data, qrcode, logo, file_path):
     border = None
     # PlayGround
     # border = 1
-    print(f'individual data_length is {len(data.input_data)}')
-    # print(f'mode is {qrcode.mode}')
-    # print(f'error is {qrcode.error}')
+    #
+    # Debug data
+    #
     # print(f'version is {qrcode.version}')
+    # print(f'error is {qrcode.error}')
+    # print(f'mode is {qrcode.mode}')
     # print(f'default_border_size is {qrcode.default_border_size}')
     # print(f'designator is {qrcode.designator}')
     # print(f'is_micro is {qrcode.is_micro}')
@@ -123,7 +126,7 @@ def prepare_logo(logo_path=None, file_path=None):
     if logo_path is None:
         resource_path = files('qr_play.res')
         logo_path = resource_path.joinpath(os.sep.join(['images', 'pj_crop.png']))
-        print(f'logo_path: {logo_path}')
+        # print(f'logo_path: {logo_path}')
     corner_radios_logo = 0
     source_color_rgb = (255, 255, 255)  # white
     target_color_rgb = None
@@ -149,7 +152,6 @@ def prepare_logo(logo_path=None, file_path=None):
         logo_img = QrUtil.add_corners(logo_img, corner_radios_logo)  # Ensure Corners
     if save_logo:
         logo_image_path = PhUtil.append_in_file_name(file_path, str_append=['logo'])
-        PhUtil.make_dirs(file_path=logo_image_path)
         logo_img.save(fp=logo_image_path)
     return logo_img
 

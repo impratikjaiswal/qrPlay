@@ -27,11 +27,11 @@ class Defaults:
     ARCHIVE_OUTPUT = PhDefaults.ARCHIVE_OUTPUT
     ARCHIVE_OUTPUT_FORMAT = PhDefaults.ARCHIVE_OUTPUT_FORMAT
     #
-    OUTPUT_FORMAT = Formats.PNG_URI
+    OUTPUT_FORMAT = Formats.PNG
     SIZE = 5
     QR_CODE_VERSION = 5
     SPLIT_QRS = True
-    DECORATE_QR = True
+    DECORATE_QR = False
 
 
 class DefaultTypesInclude:

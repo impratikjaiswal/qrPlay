@@ -1,5 +1,5 @@
 from qr_play.main.data_type.data_type_master import DataTypeMaster
-from qr_play.main.data_type.sample import bulk_data_1, bulk_data_1_utf_8_defaults, apj_url
+from qr_play.main.data_type.sample import bulk_data_1, bulk_data_1_utf_8_defaults
 from qr_play.main.helper.data import Data
 from qr_play.main.helper.formats import Formats
 
@@ -76,15 +76,24 @@ class Dev(DataTypeMaster):
     def set_data_pool(self):
         data_pool = [
             # Part of Sample Data
-            # TODO: Web App; when submitted data size grows (Auto Submit: 1 QR, Manual Submit: 2 QR)
+            # TODO: Web App; when submitted data size grows (input data length) (Auto Submit: 1 QR, Manual Submit: 2 QR)
             Data(
                 remarks='Bulk Data Single Qr',
                 input_data=bulk_data_1,
                 qr_code_version=40,
                 split_qrs=False,
             ),
+            #
             Data(
                 remarks='Bulk Data Single Qr',
+                input_data=bulk_data_1,
+                qr_code_version=40,
+                output_format=Formats.PNG_URI,
+                split_qrs=False,
+            ),
+            #
+            Data(
+                remarks='Bulk Data Single Qr Utf8 defaults',
                 input_data=bulk_data_1_utf_8_defaults,
                 output_format=Formats.PNG,
                 qr_code_version=40,

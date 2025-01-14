@@ -5,20 +5,21 @@ Python executable Path is D:\Other\Github_Self\qrPlay\venv\Scripts
 User Name is Pratik Jaiswal
 User Account is impra
 --------------------------------------------------------------------------------
-Time Stamp is Monday, Nov 11 2024, 07:46:30:112261, IST (GMT+0530)
+Time Stamp is Tuesday, Jan 14 2025, 12:10:15:132008, IST (GMT+0530)
 --------------------------------------------------------------------------------
-Git Summary is 5e4176c;  (HEAD -> main, tag: v3.1.4, origin/main, origin/HEAD); 2024-10-27 00:11:14 +0530; imPratik <impratikjaiswal@gmail.com>; v3.1.4
+Git Summary is 671d5d1;  (HEAD -> main, origin/main, origin/HEAD); 2025-01-12 12:59:20 +0530; imPratik <impratikjaiswal@gmail.com>; experiments with border
 --------------------------------------------------------------------------------
-pythonHelpers version is v5.1.0
+pythonHelpers version is v5.2.0.dev33
 --------------------------------------------------------------------------------
-qrPlay version is v3.2.0
+qrPlay version is v4.0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+segno version is v1.6.1
 --------------------------------------------------------------------------------
 ---------------------------------------------------------- Dev ---------------------------------------------------------
 ************************************************** Bulk Data Single Qr *************************************************
-full data_length is 2945
-individual data_length is 2945
 Remarks: Bulk Data Single Qr
-Info => Transaction Id: uznlkjhp5oki; Image Format: png_uri; Scale: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace
+Info => Transaction Id: s025m8b4cbvq; Output Format: png; Size: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: }**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
 CLI
@@ -70,13 +71,130 @@ allow rules; control how traffic is allowed in & out of EC2 instance
 can be refence by IP of other SG
 if application is not accessible (time out error), then its a SG issue.
 if There's a connection refused; This means the instance is reachable, Not an SG issue; its application g
-Output Data:
-data:image/png;base64,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
+Input Data Length: 2945
+Output Data: data/\user_data\Bulk_Data_Single_Qr.png
+Output Data Length: 39
+--------------------------------------------------------------------------------
+************************************************** Bulk Data Single Qr *************************************************
+Remarks: Bulk Data Single Qr
+Info => Transaction Id: c4r81gmu63sa; Output Format: png_uri; Size: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Input Data: }**************************************************{ ToDO
+}+++++++++++++++++++++++++{ Explore 
+CLI
+Cloudshell;  CLI Browser
+SDK
+ENI is available automatically?
+Instance with Custom EBS volume only (EBS snapshot)
+}----------------------------------------------------------------------------------------------------{ 
+AWS Global Infrastructure
+- AWS Regions (e.g. ap-southeast-2 => asia specific Sydney )
+- AWS Availability Zones (e.g. ap-southeast-2a, ap-southeast-2b, ap-southeast-2c)
+- AWS Data Centers
+- AWS Edge Locations /Points of Presence
+}----------------------------------------------------------------------------------------------------{ 
+Many services are Region-scoped, but few are global (like IAM, Route53)
+}----------------------------------------------------------------------------------------------------{ 
+Each AZ: one ore more discreate Data centers with redundant power, networking , connectivity. isolated from disasters.
+}**************************************************{ IAM: Global Service 
+Least Privilege Principle
+    Don't give more permission than a user need
+One user can be part of multiple groups
+Inline IAM Policy (Direct to individual)
+    VS 
+IAM Policy inheritance (inherit from group)
+}**************************************************{ Access AWS
+    AWS Management Console  (Access: Password & MFA)
+    AWS CLI                 (Access: Access Keys (Access Key ID, Secret Access Key))
+    AWS SDK                 (Access: Access Keys)
+}**************************************************{     
+IAM User    (Permission to user to perform action)
+    Vs 
+IAM Role    (Permission to service to perform action on your behalf)
+}**************************************************{ IAM Security Tools
+IAM Credential Report (Account Level)
+IAM Access Advisor (User level)
+    All service permissions granted and last accessed. helpful to revise policies
+}----------------------------------------------------------------------------------------------------{ AWS Billing
+Billing Information has to be enabled for IAM Access (if needed)
+Bills page has option for "charges by Service"; region specific data is available.
+Free tier usage balance
+}**************************************************{ Budget
+Email Triggers: Actual 85% & 100% or forecast is 100%
+}----------------------------------------------------------------------------------------------------{ EC2
+If a instance is stopped, AWS is not going to bill it. 
+If a instance is stopped & Started, Public IP may changed. Private is fixed.
+SSH is not allowed with Private IP unless VPN is not established.
+}**************************************************{ SG: Security Group
+allow rules; control how traffic is allowed in & out of EC2 instance
+can be refence by IP of other SG
+if application is not accessible (time out error), then its a SG issue.
+if There's a connection refused; This means the instance is reachable, Not an SG issue; its application g
+Input Data Length: 2945
+Output Data: data:image/png;base64,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
+Output Data Length: 10962
+--------------------------------------------------------------------------------
+******************************************* Bulk Data Single Qr Utf8 defaults ******************************************
+Remarks: Bulk Data Single Qr Utf8 defaults
+Info => Transaction Id: khtbbr1nngck; Output Format: png; Size: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Input Data: }**************************************************{ ToDO
+}+++++++++++++++++++++++++{ Explore 
+CLI
+Cloudshell;  CLI Browser
+SDK
+ENI is available automatically?
+Instance with Custom EBS volume only (EBS snapshot)
+}----------------------------------------------------------------------------------------------------{ 
+AWS Global Infrastructure
+- AWS Regions (e.g. ap-southeast-2 => asia specific Sydney )
+- AWS Availability Zones (e.g. ap-southeast-2a, ap-southeast-2b, ap-southeast-2c)
+- AWS Data Centers
+- AWS Edge Locations /Points of Presence
+}----------------------------------------------------------------------------------------------------{ 
+Many services are Region-scoped, but few are global (like IAM, Route53)
+}----------------------------------------------------------------------------------------------------{ 
+Each AZ: one ore more discreate Data centers with redundant power, networking , connectivity. isolated from disasters.
+}**************************************************{ IAM: Global Service 
+Least Privilege Principle
+    Don't give more permission than a user need
+One user can be part of multiple groups
+Inline IAM Policy (Direct to individual)
+    VS 
+IAM Policy inheritance (inherit from group)
+}**************************************************{ Access AWS
+    AWS Management Console  (Access: Password & MFA)
+    AWS CLI                 (Access: Access Keys (Access Key ID, Secret Access Key))
+    AWS SDK                 (Access: Access Keys)
+}**************************************************{     
+IAM User    (Permission to user to perform action)
+    Vs 
+IAM Role    (Permission to service to perform action on your behalf)
+}**************************************************{ IAM Security Tools
+IAM Credential Report (Account Level)
+IAM Access Advisor (User level)
+    All service permissions granted and last accessed. helpful to revise policies
+}----------------------------------------------------------------------------------------------------{ AWS Billing
+Billing Information has to be enabled for IAM Access (if needed)
+Bills page has option for "charges by Service"; region specific data is available.
+Free tier usage balance
+}**************************************************{ Budget
+Email Triggers: Actual 85% & 100% or forecast is 100%
+}----------------------------------------------------------------------------------------------------{ EC2
+If a instance is stopped, AWS is not going to bill it. 
+If a instance is stopped & Started, Public IP may changed. Private is fixed.
+SSH is not allowed with Private IP unless VPN is not established.
+}**************************************************{ SG: Security Group
+allow rules; control how traffic is allowed in & out of EC2 instance
+can be refence by IP of other SG
+if application is not accessible (time out error), then its a SG issue.
+if There's a connection refused; This means the instance is reachable, Not an SG issue; its application issue  in
+Input Data Length: 2953
+Output Data: data/\user_data\Bulk_Data_Single_Qr_Utf8_defaults.png
+Output Data Length: 53
 --------------------------------------------------------------------------------
 ---------------------------------- Time Details ----------------------------------
-Current Time Stamp: 2024-11-11 07:46:30.380305+05:30
-Execution Time: 00:00:00; Milliseconds: 263.9966011047363
-Execution Time CPU: 00:00:00; Milliseconds: 265.625
+Current Time Stamp: 2025-01-14 12:10:15.877081+05:30
+Execution Time: 00:00:00; Milliseconds: 733.6206436157227
+Execution Time CPU: 00:00:00; Milliseconds: 734.375
 Timer State: TIMER_OFF
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

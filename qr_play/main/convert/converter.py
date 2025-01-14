@@ -212,7 +212,7 @@ def set_output_file_path(data, meta_data):
     output_file_location = meta_data.output_file_location_default
     if not output_path:
         # Image File writing is needed, But output_path is not Provided, so Dest Folder will be default folder
-        output_path = PhUtil.path_default_out_folder
+        output_path = output_file_location
     if output_path:
         sample_file_ext = PhUtil.get_file_name_and_extn(output_path, only_extn=True)
         sample_file_folder = PhUtil.get_file_name_and_extn(output_path, only_path=True)
@@ -247,6 +247,7 @@ def set_output_file_path(data, meta_data):
                                                                   data.output_file_name_keyword],
                                                       new_ext=meta_data.output_file_ext_default)
     meta_data.output_file_path = os.sep.join([output_file_location, output_file_name])
+    PhUtil.make_dirs(dir_path=output_file_location)
 
 
 def read_input_file(data, meta_data, info_data):

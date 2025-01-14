@@ -5,13 +5,16 @@ Python executable Path is D:\Other\Github_Self\qrPlay\venv\Scripts
 User Name is Pratik Jaiswal
 User Account is impra
 --------------------------------------------------------------------------------
-Time Stamp is Monday, Nov 11 2024, 00:52:05:546761, IST (GMT+0530)
+Time Stamp is Tuesday, Jan 14 2025, 12:09:59:273577, IST (GMT+0530)
 --------------------------------------------------------------------------------
-Git Summary is 5e4176c;  (HEAD -> main, tag: v3.1.4, origin/main, origin/HEAD); 2024-10-27 00:11:14 +0530; imPratik <impratikjaiswal@gmail.com>; v3.1.4
+Git Summary is 671d5d1;  (HEAD -> main, origin/main, origin/HEAD); 2025-01-12 12:59:20 +0530; imPratik <impratikjaiswal@gmail.com>; experiments with border
 --------------------------------------------------------------------------------
-pythonHelpers version is v5.0.0
+pythonHelpers version is v5.2.0.dev33
 --------------------------------------------------------------------------------
-qrPlay version is v3.2.0
+qrPlay version is v4.0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+segno version is v1.6.1
 --------------------------------------------------------------------------------
 ----------------------------------------------------- unit_testing -----------------------------------------------------
 test_case_data:
@@ -27,11 +30,11 @@ execution_mode: value_original was USER; target_value is UNIT_TESTING
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 Executing "run_tc.bat"
 Iteration 1
-Time Stamp is: 11-11-2024  0:52:05.58
+Time Stamp is: 14-01-2025 12:09:59.29
 impra
-LAPTOP-AO84OQO2
+PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5011]
+Microsoft Windows [Version 10.0.19045.5247]
 
 
 
@@ -60,11 +63,11 @@ top_folder_path: []
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 Executing "run_tc.bat"
 Iteration 2
-Time Stamp is: 11-11-2024  0:52:07.71
+Time Stamp is: 14-01-2025 12:10:06.21
 impra
-LAPTOP-AO84OQO2
+PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5011]
+Microsoft Windows [Version 10.0.19045.5247]
 
 
 
@@ -93,11 +96,11 @@ execution_mode: value_original was USER; target_value is SAMPLES_LIST
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 Executing "run_tc.bat"
 Iteration 3
-Time Stamp is: 11-11-2024  0:52:08.90
+Time Stamp is: 14-01-2025 12:10:07.32
 impra
-LAPTOP-AO84OQO2
+PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5011]
+Microsoft Windows [Version 10.0.19045.5247]
 
 
 
@@ -127,11 +130,11 @@ execution_mode: value_original was USER; target_value is DEV
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 Executing "run_tc.bat"
 Iteration 4
-Time Stamp is: 11-11-2024  0:52:13.09
+Time Stamp is: 14-01-2025 12:10:14.21
 impra
-LAPTOP-AO84OQO2
+PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5011]
+Microsoft Windows [Version 10.0.19045.5247]
 
 
 
@@ -161,11 +164,11 @@ execution_mode: value_original was USER; target_value is UNIT_TESTING_EXTERNAL
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 Executing "run_tc.bat"
 Iteration 5
-Time Stamp is: 11-11-2024  0:52:15.67
+Time Stamp is: 14-01-2025 12:10:15.97
 impra
-LAPTOP-AO84OQO2
+PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5011]
+Microsoft Windows [Version 10.0.19045.5247]
 
 
 
@@ -195,11 +198,11 @@ execution_mode: value_original was USER; target_value is ALL
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 Executing "run_tc.bat"
 Iteration 6
-Time Stamp is: 11-11-2024  0:52:17.25
+Time Stamp is: 14-01-2025 12:10:17.02
 impra
-LAPTOP-AO84OQO2
+PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5011]
+Microsoft Windows [Version 10.0.19045.5247]
 
 
 
@@ -215,12 +218,12 @@ Attempting to deactivate existing (and activated) Virtual Environment
 ******************************************************* clean_up *******************************************************
 execution_mode: value_original was ALL; target_value is USER
 top_folder_path: value_original was []; target_value is [os.pardir, os.pardir]
------------------------------------------------------- default_png -----------------------------------------------------
+----------------------------------------------- default_output_format_png ----------------------------------------------
 test_case_data:
-test_case_id: default_png
-test_case_name: default_png
-test_case_file_name: default_png.log
-image_format: PNG
+test_case_id: default_output_format_png
+test_case_name: default_output_format_png
+test_case_file_name: default_output_format_png.log
+output_format: PNG
 execution_mode: ALL
 error_handling_mode: CONTINUE_ON_ERROR
 top_folder_path: []
@@ -228,19 +231,18 @@ top_folder_path: []
 *********************************************** update_variables_in_file ***********************************************
 execution_mode: value_original was USER; target_value is ALL
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
-image_format: value_original was PNG_URI; target_value is PNG
 Executing "run_tc.bat"
 Iteration 7
-Time Stamp is: 11-11-2024  0:52:23.97
+Time Stamp is: 14-01-2025 12:10:28.63
 impra
-LAPTOP-AO84OQO2
+PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5011]
-
-
+Microsoft Windows [Version 10.0.19045.5247]
 
 
-"default_png"
+
+
+"default_output_format_png"
 Attempting to activate existing Virtual Environment
 Attempting to deactivate existing (and activated) Virtual Environment
 
@@ -251,13 +253,12 @@ Attempting to deactivate existing (and activated) Virtual Environment
 ******************************************************* clean_up *******************************************************
 execution_mode: value_original was ALL; target_value is USER
 top_folder_path: value_original was []; target_value is [os.pardir, os.pardir]
-image_format: value_original was PNG; target_value is PNG_URI
----------------------------------------------------- default_png_uri ---------------------------------------------------
+--------------------------------------------- default_output_format_png_uri --------------------------------------------
 test_case_data:
-test_case_id: default_png_uri
-test_case_name: default_png_uri
-test_case_file_name: default_png_uri.log
-image_format: PNG_URI
+test_case_id: default_output_format_png_uri
+test_case_name: default_output_format_png_uri
+test_case_file_name: default_output_format_png_uri.log
+output_format: PNG_URI
 execution_mode: ALL
 error_handling_mode: CONTINUE_ON_ERROR
 top_folder_path: []
@@ -265,18 +266,19 @@ top_folder_path: []
 *********************************************** update_variables_in_file ***********************************************
 execution_mode: value_original was USER; target_value is ALL
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
+output_format: value_original was PNG; target_value is PNG_URI
 Executing "run_tc.bat"
 Iteration 8
-Time Stamp is: 11-11-2024  0:52:31.19
+Time Stamp is: 14-01-2025 12:10:40.26
 impra
-LAPTOP-AO84OQO2
+PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5011]
-
-
+Microsoft Windows [Version 10.0.19045.5247]
 
 
-"default_png_uri"
+
+
+"default_output_format_png_uri"
 Attempting to activate existing Virtual Environment
 Attempting to deactivate existing (and activated) Virtual Environment
 
@@ -287,12 +289,13 @@ Attempting to deactivate existing (and activated) Virtual Environment
 ******************************************************* clean_up *******************************************************
 execution_mode: value_original was ALL; target_value is USER
 top_folder_path: value_original was []; target_value is [os.pardir, os.pardir]
----------------------------------------------------- default_svg_uri ---------------------------------------------------
+output_format: value_original was PNG_URI; target_value is PNG
+--------------------------------------------- default_output_format_svg_uri --------------------------------------------
 test_case_data:
-test_case_id: default_svg_uri
-test_case_name: default_svg_uri
-test_case_file_name: default_svg_uri.log
-image_format: SVG_URI
+test_case_id: default_output_format_svg_uri
+test_case_name: default_output_format_svg_uri
+test_case_file_name: default_output_format_svg_uri.log
+output_format: SVG_URI
 execution_mode: ALL
 error_handling_mode: CONTINUE_ON_ERROR
 top_folder_path: []
@@ -300,19 +303,19 @@ top_folder_path: []
 *********************************************** update_variables_in_file ***********************************************
 execution_mode: value_original was USER; target_value is ALL
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
-image_format: value_original was PNG_URI; target_value is SVG_URI
+output_format: value_original was PNG; target_value is SVG_URI
 Executing "run_tc.bat"
 Iteration 9
-Time Stamp is: 11-11-2024  0:52:37.31
+Time Stamp is: 14-01-2025 12:10:51.81
 impra
-LAPTOP-AO84OQO2
+PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5011]
-
-
+Microsoft Windows [Version 10.0.19045.5247]
 
 
-"default_svg_uri"
+
+
+"default_output_format_svg_uri"
 Attempting to activate existing Virtual Environment
 Attempting to deactivate existing (and activated) Virtual Environment
 
@@ -323,13 +326,13 @@ Attempting to deactivate existing (and activated) Virtual Environment
 ******************************************************* clean_up *******************************************************
 execution_mode: value_original was ALL; target_value is USER
 top_folder_path: value_original was []; target_value is [os.pardir, os.pardir]
-image_format: value_original was SVG_URI; target_value is PNG_URI
------------------------------------------------------- default_svg -----------------------------------------------------
+output_format: value_original was SVG_URI; target_value is PNG
+----------------------------------------------- default_output_format_svg ----------------------------------------------
 test_case_data:
-test_case_id: default_svg
-test_case_name: default_svg
-test_case_file_name: default_svg.log
-image_format: SVG
+test_case_id: default_output_format_svg
+test_case_name: default_output_format_svg
+test_case_file_name: default_output_format_svg.log
+output_format: SVG
 execution_mode: ALL
 error_handling_mode: CONTINUE_ON_ERROR
 top_folder_path: []
@@ -337,19 +340,19 @@ top_folder_path: []
 *********************************************** update_variables_in_file ***********************************************
 execution_mode: value_original was USER; target_value is ALL
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
-image_format: value_original was PNG_URI; target_value is SVG
+output_format: value_original was PNG; target_value is SVG
 Executing "run_tc.bat"
 Iteration 10
-Time Stamp is: 11-11-2024  0:52:42.63
+Time Stamp is: 14-01-2025 12:11:02.01
 impra
-LAPTOP-AO84OQO2
+PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5011]
-
-
+Microsoft Windows [Version 10.0.19045.5247]
 
 
-"default_svg"
+
+
+"default_output_format_svg"
 Attempting to activate existing Virtual Environment
 Attempting to deactivate existing (and activated) Virtual Environment
 
@@ -360,7 +363,7 @@ Attempting to deactivate existing (and activated) Virtual Environment
 ******************************************************* clean_up *******************************************************
 execution_mode: value_original was ALL; target_value is USER
 top_folder_path: value_original was []; target_value is [os.pardir, os.pardir]
-image_format: value_original was SVG; target_value is PNG_URI
+output_format: value_original was SVG; target_value is PNG
 ----------------------------------------------------- cli_no_param -----------------------------------------------------
 test_case_data:
 test_case_id: cli_no_param
@@ -370,11 +373,11 @@ batch_params:
 
 Executing "run_tc.bat"
 Iteration 1
-Time Stamp is: 11-11-2024  0:52:48.05
+Time Stamp is: 14-01-2025 12:11:12.43
 impra
-LAPTOP-AO84OQO2
+PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5011]
+Microsoft Windows [Version 10.0.19045.5247]
 
 
 
@@ -396,11 +399,11 @@ batch_params: --help
 
 Executing "run_tc.bat"
 Iteration 2
-Time Stamp is: 11-11-2024  0:52:49.19
+Time Stamp is: 14-01-2025 12:11:13.56
 impra
-LAPTOP-AO84OQO2
+PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5011]
+Microsoft Windows [Version 10.0.19045.5247]
 
 
 

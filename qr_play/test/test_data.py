@@ -31,19 +31,19 @@ class TestData:
             {
                 PhKeys.VAR_EXECUTION_MODE: 'ALL',
             },
-        'default_png':
+        'default_output_format_png':
             {
                 PhKeys.OUTPUT_FORMAT: 'PNG',
             },
-        'default_png_uri':
+        'default_output_format_png_uri':
             {
                 PhKeys.OUTPUT_FORMAT: 'PNG_URI',
             },
-        'default_svg_uri':
+        'default_output_format_svg_uri':
             {
                 PhKeys.OUTPUT_FORMAT: 'SVG_URI',
             },
-        'default_svg':
+        'default_output_format_svg':
             {
                 PhKeys.OUTPUT_FORMAT: 'SVG',
             },

@@ -1,10 +1,9 @@
 from python_helpers.ph_keys import PhKeys
 
 from qr_play.main.data_type.data_type_master import DataTypeMaster
-from qr_play.main.data_type.sample import small_data, apj_url, bulk_data_2
+from qr_play.main.data_type.sample import text_msg_small_data, apj_url, bulk_data_2, bulk_data_1
 from qr_play.main.helper.data import Data
 from qr_play.main.helper.folders import Folders
-from qr_play.main.helper.formats import Formats
 
 
 class UnitTesting(DataTypeMaster):
@@ -80,41 +79,47 @@ class UnitTesting(DataTypeMaster):
         data_pool_positive = [
             #
             {
-                PhKeys.REMARKS: 'Simple Qr Png',
-                PhKeys.INPUT_DATA: 'small_data',
+                PhKeys.REMARKS: 'Text Message; web api; $QR_CODE_VERSION; $KEY_NAME',
+                PhKeys.INPUT_DATA: text_msg_small_data,
                 PhKeys.SIZE: '10',
                 PhKeys.QR_CODE_VERSION: '40',
             },
             #
             Data(
-                remarks='Simple Qr Png',
-                input_data=small_data,
+                remarks='Text Message; $QR_CODE_VERSION; $KEY_NAME',
+                input_data=text_msg_small_data,
                 size=10,
                 qr_code_version=40,
             ),
             #
             Data(
-                remarks='Simple Qr Png',
-                input_data=small_data,
+                remarks='Text Message; $SIZE; $KEY_NAME',
+                input_data=text_msg_small_data,
+                size=2,
+            ),
+            #
+            Data(
+                remarks='Text Message; $SIZE; $KEY_NAME',
+                input_data=text_msg_small_data,
                 size=10,
             ),
             #
             Data(
-                remarks='Simple Qr; qr_code_version=33; size=8 ',
-                input_data=small_data,
+                remarks='Text Message; $QR_CODE_VERSION; $SIZE; $KEY_NAME',
+                input_data=text_msg_small_data,
                 size=8,
                 qr_code_version=33,
             ),
             #
             Data(
-                remarks='Simple Qr; qr_code_version=20',
-                input_data=small_data,
+                remarks='Text Message; $QR_CODE_VERSION; $KEY_NAME',
+                input_data=text_msg_small_data,
                 qr_code_version=20,
             ),
             #
             Data(
-                remarks='Simple Qr; qr_code_version=40',
-                input_data=small_data,
+                remarks='Text Message; $QR_CODE_VERSION; $KEY_NAME',
+                input_data=text_msg_small_data,
                 qr_code_version=40,
             ),
         ]
@@ -123,7 +128,6 @@ class UnitTesting(DataTypeMaster):
             Data(
                 remarks='amenitypj.in; $DECORATE_QR; $KEY_NAME',
                 input_data=apj_url,
-                output_format=Formats.PNG,
                 split_qrs=False,
                 decorate_qr=False,
             ),
@@ -131,7 +135,6 @@ class UnitTesting(DataTypeMaster):
             Data(
                 remarks='amenitypj.in; $DECORATE_QR; $KEY_NAME',
                 input_data=apj_url,
-                output_format=Formats.PNG,
                 split_qrs=False,
                 decorate_qr=True,
             ),
@@ -139,7 +142,6 @@ class UnitTesting(DataTypeMaster):
             Data(
                 remarks='amenitypj.in; $DECORATE_QR; $KEY_NAME',
                 input_data=apj_url,
-                output_format=Formats.PNG_URI,
                 split_qrs=False,
                 decorate_qr=False,
             ),
@@ -147,16 +149,74 @@ class UnitTesting(DataTypeMaster):
             Data(
                 remarks='amenitypj.in; $DECORATE_QR; $KEY_NAME',
                 input_data=apj_url,
-                output_format=Formats.PNG_URI,
                 split_qrs=False,
                 decorate_qr=True,
+            ),
+            #
+            Data(
+                remarks='Text Message; $DECORATE_QR; $KEY_NAME',
+                input_data=text_msg_small_data,
+                decorate_qr=False,
+            ),
+            #
+            Data(
+                remarks='Text Message; $DECORATE_QR; $KEY_NAME',
+                input_data=text_msg_small_data,
+                decorate_qr=True,
+            ),
+            #
+            Data(
+                remarks='Text Message; $DECORATE_QR; $SIZE; $KEY_NAME',
+                input_data=text_msg_small_data,
+                split_qrs=False,
+                decorate_qr=False,
+                size=2,
+            ),
+            #
+            Data(
+                remarks='Text Message; $DECORATE_QR; $SIZE; $KEY_NAME',
+                input_data=text_msg_small_data,
+                split_qrs=False,
+                decorate_qr=True,
+                size=2,
+            ),
+            #
+            Data(
+                remarks='Text Message; $DECORATE_QR; $SIZE; $KEY_NAME',
+                input_data=text_msg_small_data,
+                split_qrs=False,
+                decorate_qr=False,
+                size=10,
+            ),
+            #
+            Data(
+                remarks='Text Message; $DECORATE_QR; $SIZE; $KEY_NAME',
+                input_data=text_msg_small_data,
+                split_qrs=False,
+                decorate_qr=True,
+                size=10,
+            ),
+            #
+            Data(
+                remarks='Text Message; $DECORATE_QR; $QR_CODE_VERSION; $KEY_NAME',
+                input_data=text_msg_small_data,
+                split_qrs=False,
+                decorate_qr=False,
+                qr_code_version=40,
+            ),
+            #
+            Data(
+                remarks='Text Message; $DECORATE_QR; $QR_CODE_VERSION; $KEY_NAME',
+                input_data=text_msg_small_data,
+                split_qrs=False,
+                decorate_qr=True,
+                qr_code_version=40,
             ),
             #
             Data(
                 remarks='Bulk Data Split Qrs; $DECORATE_QR; $KEY_NAME',
                 print_input=False,
                 input_data=bulk_data_2,
-                output_format=Formats.PNG,
                 qr_code_version=40,
                 decorate_qr=False,
                 split_qrs=True,
@@ -166,7 +226,6 @@ class UnitTesting(DataTypeMaster):
                 remarks='Bulk Data Split Qrs; $DECORATE_QR; $KEY_NAME',
                 print_input=False,
                 input_data=bulk_data_2,
-                output_format=Formats.PNG,
                 qr_code_version=40,
                 decorate_qr=True,
                 split_qrs=True,
@@ -175,21 +234,35 @@ class UnitTesting(DataTypeMaster):
         data_pool_output_path = [
             #
             Data(
-                remarks='Qr With image',
+                remarks='amenitypj.in; Output Path',
                 input_data=apj_url,
-                output_format=Formats.PNG,
                 split_qrs=False,
-                output_path=Folders.in_sample()
+                output_path=Folders.in_user()
             ),
             #
             Data(
                 remarks='amenitypj.in; email sig; $SIZE; $KEY_NAME',
                 input_data=apj_url,
-                output_format=Formats.PNG,
                 split_qrs=False,
                 decorate_qr=True,
                 size=3,
-                output_path=r'D:\Other\Github_Self\qrPlay\out',
+                output_path=r'D:\Other\Github_Self\qrPlay\data\user_data',
+            ),
+        ]
+        data_pool_bulk_data = [
+            #
+            Data(
+                remarks='Bulk Data Single Qr $SPLIT_QRS; $KEY_NAME',
+                input_data=bulk_data_1,
+                qr_code_version=40,
+                split_qrs=False,
+            ),
+            #
+            Data(
+                remarks='Bulk Data Single Qr $SPLIT_QRS; $KEY_NAME',
+                input_data=bulk_data_1,
+                qr_code_version=40,
+                split_qrs=True,
             ),
         ]
         data_pool_negative = [
@@ -199,5 +272,6 @@ class UnitTesting(DataTypeMaster):
             data_pool_positive
             + data_pool_decorate_qr
             + data_pool_output_path
+            + data_pool_bulk_data
             + data_pool_negative
         )

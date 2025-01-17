@@ -55,11 +55,13 @@ def print_data(data=None, meta_data=None, info_data=None, master_data=None):
         if info_data is not None:
             info_count = info_data.get_info_count()
             info_msg = info_data.get_info_str()
-            if info_msg:
+            info_present = info_msg
+            if info_present:
                 sep = PhConstants.SEPERATOR_MULTI_LINE_TABBED if info_count > 1 else PhConstants.SEPERATOR_ONE_LINE
                 meta_data.output_dic.update(PhUtil.get_dic_data_and_print(PhKeys.INFO_DATA, sep, info_msg))
-                meta_data.output_dic.update(
-                    PhUtil.get_dic_data_and_print(PhKeys.INFO_DATA, len_sep, info_msg, length_needed=True))
+                if data.print_info:
+                    meta_data.output_dic.update(
+                        PhUtil.get_dic_data_and_print(PhKeys.INFO_DATA, len_sep, info_msg, length_needed=True))
         info = PhConstants.SEPERATOR_MULTI_OBJ.join(filter(None, [
             PhUtil.get_dic_data_and_print(PhKeys.TRANSACTION_ID, PhConstants.SEPERATOR_ONE_LINE,
                                           meta_data.transaction_id, dic_format=False, print_also=False),
@@ -91,15 +93,17 @@ def print_data(data=None, meta_data=None, info_data=None, master_data=None):
     if data.print_input:
         meta_data.output_dic.update(
             PhUtil.get_dic_data_and_print(PhKeys.INPUT_DATA, input_sep, meta_data.input_data_org))
+    if data.print_info:
         meta_data.output_dic.update(
             PhUtil.get_dic_data_and_print(PhKeys.INPUT_DATA, len_sep, meta_data.input_data_org, length_needed=True))
     output_present = meta_data.parsed_data
-    print_output = data.print_output
-    if data.print_output and print_output:  # and meta_data.parsed_data:
-        meta_data.output_dic.update(
-            PhUtil.get_dic_data_and_print(PhKeys.OUTPUT_DATA, output_sep, meta_data.parsed_data))
-        meta_data.output_dic.update(
-            PhUtil.get_dic_data_and_print(PhKeys.OUTPUT_DATA, len_sep, meta_data.parsed_data, length_needed=True))
+    if output_present:
+        if data.print_output:
+            meta_data.output_dic.update(
+                PhUtil.get_dic_data_and_print(PhKeys.OUTPUT_DATA, output_sep, meta_data.parsed_data))
+        if data.print_info:
+            meta_data.output_dic.update(
+                PhUtil.get_dic_data_and_print(PhKeys.OUTPUT_DATA, len_sep, meta_data.parsed_data, length_needed=True))
     PhUtil.print_separator()
 
 

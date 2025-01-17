@@ -5,13 +5,13 @@ Python executable Path is D:\Other\Github_Self\qrPlay\venv\Scripts
 User Name is Pratik Jaiswal
 User Account is impra
 --------------------------------------------------------------------------------
-Time Stamp is Tuesday, Jan 14 2025, 12:09:59:273577, IST (GMT+0530)
+Time Stamp is Friday, Jan 17 2025, 08:28:37:712899, IST (GMT+0530)
 --------------------------------------------------------------------------------
-Git Summary is 671d5d1;  (HEAD -> main, origin/main, origin/HEAD); 2025-01-12 12:59:20 +0530; imPratik <impratikjaiswal@gmail.com>; experiments with border
+Git Summary is a754821;  (HEAD -> main); 2025-01-14 19:35:08 +0530; imPratik <impratikjaiswal@gmail.com>; Support of decorate qr verified
 --------------------------------------------------------------------------------
-pythonHelpers version is v5.2.0.dev33
+pythonHelpers version is v5.2.0.dev35
 --------------------------------------------------------------------------------
-qrPlay version is v4.0.0
+qrPlay version is v4.1.0.dev0
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 segno version is v1.6.1
@@ -30,11 +30,11 @@ execution_mode: value_original was USER; target_value is UNIT_TESTING
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 Executing "run_tc.bat"
 Iteration 1
-Time Stamp is: 14-01-2025 12:09:59.29
+Time Stamp is: 17-01-2025  8:28:37.75
 impra
 PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5247]
+Microsoft Windows [Version 10.0.19045.5371]
 
 
 
@@ -63,11 +63,11 @@ top_folder_path: []
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 Executing "run_tc.bat"
 Iteration 2
-Time Stamp is: 14-01-2025 12:10:06.21
+Time Stamp is: 17-01-2025  8:28:45.85
 impra
 PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5247]
+Microsoft Windows [Version 10.0.19045.5371]
 
 
 
@@ -96,11 +96,11 @@ execution_mode: value_original was USER; target_value is SAMPLES_LIST
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 Executing "run_tc.bat"
 Iteration 3
-Time Stamp is: 14-01-2025 12:10:07.32
+Time Stamp is: 17-01-2025  8:28:47.14
 impra
 PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5247]
+Microsoft Windows [Version 10.0.19045.5371]
 
 
 
@@ -130,11 +130,11 @@ execution_mode: value_original was USER; target_value is DEV
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 Executing "run_tc.bat"
 Iteration 4
-Time Stamp is: 14-01-2025 12:10:14.21
+Time Stamp is: 17-01-2025  8:28:54.89
 impra
 PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5247]
+Microsoft Windows [Version 10.0.19045.5371]
 
 
 
@@ -164,11 +164,11 @@ execution_mode: value_original was USER; target_value is UNIT_TESTING_EXTERNAL
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 Executing "run_tc.bat"
 Iteration 5
-Time Stamp is: 14-01-2025 12:10:15.97
+Time Stamp is: 17-01-2025  8:28:57.99
 impra
 PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5247]
+Microsoft Windows [Version 10.0.19045.5371]
 
 
 
@@ -198,11 +198,11 @@ execution_mode: value_original was USER; target_value is ALL
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 Executing "run_tc.bat"
 Iteration 6
-Time Stamp is: 14-01-2025 12:10:17.02
+Time Stamp is: 17-01-2025  8:28:59.43
 impra
 PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5247]
+Microsoft Windows [Version 10.0.19045.5371]
 
 
 
@@ -233,11 +233,11 @@ execution_mode: value_original was USER; target_value is ALL
 top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 Executing "run_tc.bat"
 Iteration 7
-Time Stamp is: 14-01-2025 12:10:28.63
+Time Stamp is: 17-01-2025  8:29:15.82
 impra
 PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5247]
+Microsoft Windows [Version 10.0.19045.5371]
 
 
 
@@ -269,11 +269,11 @@ top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 output_format: value_original was PNG; target_value is PNG_URI
 Executing "run_tc.bat"
 Iteration 8
-Time Stamp is: 14-01-2025 12:10:40.26
+Time Stamp is: 17-01-2025  8:29:36.17
 impra
 PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5247]
+Microsoft Windows [Version 10.0.19045.5371]
 
 
 
@@ -306,11 +306,11 @@ top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 output_format: value_original was PNG; target_value is SVG_URI
 Executing "run_tc.bat"
 Iteration 9
-Time Stamp is: 14-01-2025 12:10:51.81
+Time Stamp is: 17-01-2025  8:29:53.21
 impra
 PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5247]
+Microsoft Windows [Version 10.0.19045.5371]
 
 
 
@@ -343,11 +343,11 @@ top_folder_path: value_original was [os.pardir, os.pardir]; target_value is []
 output_format: value_original was PNG; target_value is SVG
 Executing "run_tc.bat"
 Iteration 10
-Time Stamp is: 14-01-2025 12:11:02.01
+Time Stamp is: 17-01-2025  8:30:06.32
 impra
 PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5247]
+Microsoft Windows [Version 10.0.19045.5371]
 
 
 
@@ -373,11 +373,11 @@ batch_params:
 
 Executing "run_tc.bat"
 Iteration 1
-Time Stamp is: 14-01-2025 12:11:12.43
+Time Stamp is: 17-01-2025  8:30:20.61
 impra
 PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5247]
+Microsoft Windows [Version 10.0.19045.5371]
 
 
 
@@ -399,11 +399,11 @@ batch_params: --help
 
 Executing "run_tc.bat"
 Iteration 2
-Time Stamp is: 14-01-2025 12:11:13.56
+Time Stamp is: 17-01-2025  8:30:21.82
 impra
 PJ-LEGION
 
-Microsoft Windows [Version 10.0.19045.5247]
+Microsoft Windows [Version 10.0.19045.5371]
 
 
 

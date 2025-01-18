@@ -1,8 +1,7 @@
 from python_helpers.ph_constants import PhConstants
 from python_helpers.ph_keys import PhKeys
 from python_helpers.ph_util import PhUtil
-
-from qr_play.main.helper.variables import Variables
+from python_helpers.ph_variables import PhVariables
 
 
 class Data:
@@ -108,31 +107,31 @@ class Data:
             return x
 
         def __expand_variable(x):
-            key_name_needed = True if Variables.KEY_NAME in x else False
+            key_name_needed = True if PhVariables.KEY_NAME in x else False
             if key_name_needed:
-                x = x.replace(Variables.KEY_NAME, '')
+                x = x.replace(PhVariables.KEY_NAME, '')
             #
-            var_name = Variables.OUTPUT_FORMAT
+            var_name = PhVariables.OUTPUT_FORMAT
             var_value = self.output_format
             key_ = PhKeys.OUTPUT_FORMAT
             x = __set_value(x=x, var_name=var_name, var_value=var_value, key_name_needed=key_name_needed, key_=key_)
             #
-            var_name = Variables.SIZE
+            var_name = PhVariables.SIZE
             var_value = self.size
             key_ = PhKeys.SIZE
             x = __set_value(x=x, var_name=var_name, var_value=var_value, key_name_needed=key_name_needed, key_=key_)
             #
-            var_name = Variables.QR_CODE_VERSION
+            var_name = PhVariables.QR_CODE_VERSION
             var_value = self.qr_code_version
             key_ = PhKeys.QR_CODE_VERSION
             x = __set_value(x=x, var_name=var_name, var_value=var_value, key_name_needed=key_name_needed, key_=key_)
             #
-            var_name = Variables.SPLIT_QRS
+            var_name = PhVariables.SPLIT_QRS
             var_value = self.split_qrs
             key_ = PhKeys.SPLIT_QRS
             x = __set_value(x=x, var_name=var_name, var_value=var_value, key_name_needed=key_name_needed, key_=key_)
             #
-            var_name = Variables.DECORATE_QR
+            var_name = PhVariables.DECORATE_QR
             var_value = self.decorate_qr
             key_ = PhKeys.DECORATE_QR
             x = __set_value(x=x, var_name=var_name, var_value=var_value, key_name_needed=key_name_needed, key_=key_)

@@ -46,7 +46,7 @@ def process_data():
     ]
     data_types_sample_generic = [
         #####
-        # Sample With Plenty vivid Examples
+        # Sample With Plenty vivid Examples; Single as well as Bulk
         #####
     ]
     data_types_samples = [
@@ -112,6 +112,8 @@ def process_data():
             data_type.set_remarks()
             data_type.set_encoding()
             data_type.set_encoding_errors()
+            data_type.set_output_path()
+            data_type.set_output_file_name_keyword()
             data_type.set_archive_output()
             data_type.set_archive_output_format()
             #
@@ -152,6 +154,9 @@ def set_configurations():
     """
     execution_mode = PhExecutionModes.USER
     error_handling_mode = PhErrorHandlingModes.CONTINUE_ON_ERROR
+    """
+    Set/Change if image should be opened after QR generation
+    """
     handler.show_image = False
 
 

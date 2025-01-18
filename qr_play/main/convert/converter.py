@@ -7,13 +7,13 @@ from python_helpers.ph_exception_helper import PhExceptionHelper
 from python_helpers.ph_file_extensions import PhFileExtensions
 from python_helpers.ph_keys import PhKeys
 from python_helpers.ph_util import PhUtil
+from python_helpers.ph_variables import PhVariables
 
 from qr_play.main.helper.data import Data
 from qr_play.main.helper.defaults import Defaults, DefaultTypesInclude
 from qr_play.main.helper.folders import Folders
 from qr_play.main.helper.formats import Formats
 from qr_play.main.helper.keywords import KeyWords
-from qr_play.main.helper.variables import Variables
 
 
 def print_data(data=None, meta_data=None, info_data=None, master_data=None):
@@ -65,8 +65,6 @@ def print_data(data=None, meta_data=None, info_data=None, master_data=None):
         info = PhConstants.SEPERATOR_MULTI_OBJ.join(filter(None, [
             PhUtil.get_dic_data_and_print(PhKeys.TRANSACTION_ID, PhConstants.SEPERATOR_ONE_LINE,
                                           meta_data.transaction_id, dic_format=False, print_also=False),
-            PhUtil.get_dic_data_and_print(PhKeys.OUTPUT_PATH, PhConstants.SEPERATOR_ONE_LINE, data.output_path,
-                                          dic_format=False, print_also=False) if data.output_path else None,
             PhUtil.get_dic_data_and_print(PhKeys.OUTPUT_FORMAT, PhConstants.SEPERATOR_ONE_LINE, data.output_format,
                                           dic_format=False, print_also=False) if data.output_format else None,
             PhUtil.get_dic_data_and_print(PhKeys.SIZE, PhConstants.SEPERATOR_ONE_LINE, data.size,
@@ -77,6 +75,12 @@ def print_data(data=None, meta_data=None, info_data=None, master_data=None):
                                           dic_format=False, print_also=False) if data.split_qrs else None,
             PhUtil.get_dic_data_and_print(PhKeys.DECORATE_QR, PhConstants.SEPERATOR_ONE_LINE, data.decorate_qr,
                                           dic_format=False, print_also=False) if data.decorate_qr else None,
+            PhUtil.get_dic_data_and_print(PhKeys.OUTPUT_PATH, PhConstants.SEPERATOR_ONE_LINE, data.output_path,
+                                          dic_format=False, print_also=False) if data.output_path else None,
+            PhUtil.get_dic_data_and_print(PhKeys.OUTPUT_FILE_NAME_KEYWORD, PhConstants.SEPERATOR_ONE_LINE,
+                                          data.output_file_name_keyword,
+                                          dic_format=False,
+                                          print_also=False) if data.output_file_name_keyword else None,
             PhUtil.get_dic_data_and_print(PhKeys.ENCODING, PhConstants.SEPERATOR_ONE_LINE, data.encoding,
                                           dic_format=False, print_also=False) if data.encoding else None,
             PhUtil.get_dic_data_and_print(PhKeys.ENCODING_ERRORS, PhConstants.SEPERATOR_ONE_LINE, data.encoding_errors,
@@ -90,12 +94,12 @@ def print_data(data=None, meta_data=None, info_data=None, master_data=None):
                                           dic_format=False, print_also=False) if data.quite_mode else None,
         ]))
         meta_data.output_dic.update(PhUtil.get_dic_data_and_print(PhKeys.INFO, PhConstants.SEPERATOR_INFO, info))
+    in_data = meta_data.input_data_org
     if data.print_input:
-        meta_data.output_dic.update(
-            PhUtil.get_dic_data_and_print(PhKeys.INPUT_DATA, input_sep, meta_data.input_data_org))
+        meta_data.output_dic.update(PhUtil.get_dic_data_and_print(PhKeys.INPUT_DATA, input_sep, in_data))
     if data.print_info:
         meta_data.output_dic.update(
-            PhUtil.get_dic_data_and_print(PhKeys.INPUT_DATA, len_sep, meta_data.input_data_org, length_needed=True))
+            PhUtil.get_dic_data_and_print(PhKeys.INPUT_DATA, len_sep, in_data, length_needed=True))
     output_present = meta_data.parsed_data
     if output_present:
         if data.print_output:
@@ -161,13 +165,16 @@ def set_defaults_for_common_objects(data):
     :param data:
     :return:
     """
-    data.quite_mode = PhUtil.set_if_none(data.quite_mode, Defaults.QUITE_MODE)
+    # input_data
     data.print_input = PhUtil.set_if_none(data.print_input, Defaults.PRINT_INPUT)
     data.print_output = PhUtil.set_if_none(data.print_output, Defaults.PRINT_OUTPUT)
     data.print_info = PhUtil.set_if_none(data.print_info, Defaults.PRINT_INFO)
+    data.quite_mode = PhUtil.set_if_none(data.quite_mode, Defaults.QUITE_MODE)
+    # Remarks
     data.encoding = PhUtil.set_if_none(data.encoding, Defaults.ENCODING)
     data.encoding_errors = PhUtil.set_if_none(data.encoding_errors, Defaults.ENCODING_ERRORS)
     data.output_path = PhUtil.set_if_none(data.output_path, Defaults.OUTPUT_PATH)
+    data.output_file_name_keyword = PhUtil.set_if_none(data.output_file_name_keyword, Defaults.OUTPUT_FILE_NAME_KEYWORD)
     data.archive_output = PhUtil.set_if_none(data.archive_output, Defaults.ARCHIVE_OUTPUT)
     data.archive_output_format = PhUtil.set_if_none(data.archive_output_format, Defaults.ARCHIVE_OUTPUT_FORMAT)
 
@@ -221,13 +228,13 @@ def set_output_file_path(data, meta_data):
         sample_file_ext = PhUtil.get_file_name_and_extn(output_path, only_extn=True)
         sample_file_folder = PhUtil.get_file_name_and_extn(output_path, only_path=True)
         sample_file_name = PhUtil.get_file_name_and_extn(output_path)
-        if Variables.ITEM_INDEX in sample_file_name:
+        if PhVariables.ITEM_INDEX in sample_file_name:
             remarks_with_indexes = True
-            sample_file_name = sample_file_name.replace(Variables.ITEM_INDEX, '')
-        if sample_file_name == Variables.REMARKS:
+            sample_file_name = sample_file_name.replace(PhVariables.ITEM_INDEX, '')
+        if sample_file_name == PhVariables.REMARKS:
             # Only Target Directory is provided; Remarks usage is explicitly mentioned
             remarks_needed = True
-            sample_file_name = sample_file_name.replace(Variables.REMARKS, '')
+            sample_file_name = sample_file_name.replace(PhVariables.REMARKS, '')
             output_file_location = sample_file_folder
         elif sample_file_ext:
             # Target File Provided

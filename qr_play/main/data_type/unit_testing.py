@@ -1,4 +1,5 @@
 from python_helpers.ph_keys import PhKeys
+from python_helpers.ph_variables import PhVariables
 
 from qr_play.main.data_type.data_type_master import DataTypeMaster
 from qr_play.main.data_type.sample import text_msg_small_data, apj_url, bulk_data_2, bulk_data_1
@@ -79,46 +80,46 @@ class UnitTesting(DataTypeMaster):
         data_pool_positive = [
             #
             {
-                PhKeys.REMARKS: 'Text Message; web api; $QR_CODE_VERSION; $KEY_NAME',
+                PhKeys.REMARKS: f'Text Message; web api; {PhVariables.QR_CODE_VERSION}; {PhVariables.KEY_NAME};',
                 PhKeys.INPUT_DATA: text_msg_small_data,
                 PhKeys.SIZE: '10',
                 PhKeys.QR_CODE_VERSION: '40',
             },
             #
             Data(
-                remarks='Text Message; $QR_CODE_VERSION; $KEY_NAME',
+                remarks=f'Text Message; {PhVariables.QR_CODE_VERSION}; {PhVariables.KEY_NAME};',
                 input_data=text_msg_small_data,
                 size=10,
                 qr_code_version=40,
             ),
             #
             Data(
-                remarks='Text Message; $SIZE; $KEY_NAME',
+                remarks=f'Text Message; {PhVariables.SIZE}; {PhVariables.KEY_NAME};',
                 input_data=text_msg_small_data,
                 size=2,
             ),
             #
             Data(
-                remarks='Text Message; $SIZE; $KEY_NAME',
+                remarks=f'Text Message; {PhVariables.SIZE}; {PhVariables.KEY_NAME};',
                 input_data=text_msg_small_data,
                 size=10,
             ),
             #
             Data(
-                remarks='Text Message; $QR_CODE_VERSION; $SIZE; $KEY_NAME',
+                remarks=f'Text Message; {PhVariables.QR_CODE_VERSION}; {PhVariables.SIZE}; {PhVariables.KEY_NAME};',
                 input_data=text_msg_small_data,
                 size=8,
                 qr_code_version=33,
             ),
             #
             Data(
-                remarks='Text Message; $QR_CODE_VERSION; $KEY_NAME',
+                remarks=f'Text Message; {PhVariables.QR_CODE_VERSION}; {PhVariables.KEY_NAME};',
                 input_data=text_msg_small_data,
                 qr_code_version=20,
             ),
             #
             Data(
-                remarks='Text Message; $QR_CODE_VERSION; $KEY_NAME',
+                remarks=f'Text Message; {PhVariables.QR_CODE_VERSION}; {PhVariables.KEY_NAME};',
                 input_data=text_msg_small_data,
                 qr_code_version=40,
             ),
@@ -126,47 +127,47 @@ class UnitTesting(DataTypeMaster):
         data_pool_decorate_qr = [
             #
             Data(
-                remarks='amenitypj.in; $DECORATE_QR; $KEY_NAME',
+                remarks=f'amenitypj.in; {PhVariables.DECORATE_QR}; {PhVariables.KEY_NAME};',
                 input_data=apj_url,
                 split_qrs=False,
                 decorate_qr=False,
             ),
             #
             Data(
-                remarks='amenitypj.in; $DECORATE_QR; $KEY_NAME',
+                remarks=f'amenitypj.in; {PhVariables.DECORATE_QR}; {PhVariables.KEY_NAME};',
                 input_data=apj_url,
                 split_qrs=False,
                 decorate_qr=True,
             ),
             #
             Data(
-                remarks='amenitypj.in; $DECORATE_QR; $KEY_NAME',
+                remarks=f'amenitypj.in; {PhVariables.DECORATE_QR}; {PhVariables.KEY_NAME};',
                 input_data=apj_url,
                 split_qrs=False,
                 decorate_qr=False,
             ),
             #
             Data(
-                remarks='amenitypj.in; $DECORATE_QR; $KEY_NAME',
+                remarks=f'amenitypj.in; {PhVariables.DECORATE_QR}; {PhVariables.KEY_NAME};',
                 input_data=apj_url,
                 split_qrs=False,
                 decorate_qr=True,
             ),
             #
             Data(
-                remarks='Text Message; $DECORATE_QR; $KEY_NAME',
+                remarks=f'Text Message; {PhVariables.DECORATE_QR}; {PhVariables.KEY_NAME};',
                 input_data=text_msg_small_data,
                 decorate_qr=False,
             ),
             #
             Data(
-                remarks='Text Message; $DECORATE_QR; $KEY_NAME',
+                remarks=f'Text Message; {PhVariables.DECORATE_QR}; {PhVariables.KEY_NAME};',
                 input_data=text_msg_small_data,
                 decorate_qr=True,
             ),
             #
             Data(
-                remarks='Text Message; $DECORATE_QR; $SIZE; $KEY_NAME',
+                remarks=f'Text Message; {PhVariables.DECORATE_QR}; {PhVariables.SIZE}; {PhVariables.KEY_NAME};',
                 input_data=text_msg_small_data,
                 split_qrs=False,
                 decorate_qr=False,
@@ -174,7 +175,7 @@ class UnitTesting(DataTypeMaster):
             ),
             #
             Data(
-                remarks='Text Message; $DECORATE_QR; $SIZE; $KEY_NAME',
+                remarks=f'Text Message; {PhVariables.DECORATE_QR}; {PhVariables.SIZE}; {PhVariables.KEY_NAME};',
                 input_data=text_msg_small_data,
                 split_qrs=False,
                 decorate_qr=True,
@@ -182,7 +183,7 @@ class UnitTesting(DataTypeMaster):
             ),
             #
             Data(
-                remarks='Text Message; $DECORATE_QR; $SIZE; $KEY_NAME',
+                remarks=f'Text Message; {PhVariables.DECORATE_QR}; {PhVariables.SIZE}; {PhVariables.KEY_NAME};',
                 input_data=text_msg_small_data,
                 split_qrs=False,
                 decorate_qr=False,
@@ -190,7 +191,7 @@ class UnitTesting(DataTypeMaster):
             ),
             #
             Data(
-                remarks='Text Message; $DECORATE_QR; $SIZE; $KEY_NAME',
+                remarks=f'Text Message; {PhVariables.DECORATE_QR}; {PhVariables.SIZE}; {PhVariables.KEY_NAME};',
                 input_data=text_msg_small_data,
                 split_qrs=False,
                 decorate_qr=True,
@@ -198,7 +199,7 @@ class UnitTesting(DataTypeMaster):
             ),
             #
             Data(
-                remarks='Text Message; $DECORATE_QR; $QR_CODE_VERSION; $KEY_NAME',
+                remarks=f'Text Message; {PhVariables.DECORATE_QR}; {PhVariables.QR_CODE_VERSION}; {PhVariables.KEY_NAME};',
                 input_data=text_msg_small_data,
                 split_qrs=False,
                 decorate_qr=False,
@@ -206,7 +207,7 @@ class UnitTesting(DataTypeMaster):
             ),
             #
             Data(
-                remarks='Text Message; $DECORATE_QR; $QR_CODE_VERSION; $KEY_NAME',
+                remarks=f'Text Message; {PhVariables.DECORATE_QR}; {PhVariables.QR_CODE_VERSION}; {PhVariables.KEY_NAME};',
                 input_data=text_msg_small_data,
                 split_qrs=False,
                 decorate_qr=True,
@@ -214,7 +215,7 @@ class UnitTesting(DataTypeMaster):
             ),
             #
             Data(
-                remarks='Bulk Data Split Qrs; $DECORATE_QR; $KEY_NAME',
+                remarks=f'Bulk Data Split Qrs; {PhVariables.DECORATE_QR}; {PhVariables.KEY_NAME};',
                 print_input=False,
                 input_data=bulk_data_2,
                 qr_code_version=40,
@@ -223,7 +224,7 @@ class UnitTesting(DataTypeMaster):
             ),
             #
             Data(
-                remarks='Bulk Data Split Qrs; $DECORATE_QR; $KEY_NAME',
+                remarks=f'Bulk Data Split Qrs; {PhVariables.DECORATE_QR}; {PhVariables.KEY_NAME};',
                 print_input=False,
                 input_data=bulk_data_2,
                 qr_code_version=40,
@@ -234,14 +235,14 @@ class UnitTesting(DataTypeMaster):
         data_pool_output_path = [
             #
             Data(
-                remarks='amenitypj.in; Output Path',
+                remarks=f'amenitypj.in; Output Path',
                 input_data=apj_url,
                 split_qrs=False,
                 output_path=Folders.in_user()
             ),
             #
             Data(
-                remarks='amenitypj.in; email sig; $SIZE; $KEY_NAME',
+                remarks=f'amenitypj.in; email sig; {PhVariables.SIZE}; {PhVariables.KEY_NAME};',
                 input_data=apj_url,
                 split_qrs=False,
                 decorate_qr=True,
@@ -252,14 +253,14 @@ class UnitTesting(DataTypeMaster):
         data_pool_bulk_data = [
             #
             Data(
-                remarks='Bulk Data Single Qr $SPLIT_QRS; $KEY_NAME',
+                remarks=f'Bulk Data Single Qr {PhVariables.SPLIT_QRS}; {PhVariables.KEY_NAME};',
                 input_data=bulk_data_1,
                 qr_code_version=40,
                 split_qrs=False,
             ),
             #
             Data(
-                remarks='Bulk Data Single Qr $SPLIT_QRS; $KEY_NAME',
+                remarks=f'Bulk Data Single Qr {PhVariables.SPLIT_QRS}; {PhVariables.KEY_NAME};',
                 input_data=bulk_data_1,
                 qr_code_version=40,
                 split_qrs=True,

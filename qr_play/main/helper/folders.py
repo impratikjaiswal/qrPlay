@@ -41,36 +41,42 @@ class Folders:
 
     @classmethod
     def in_res_images(cls, relative_path=''):
-        return cls.get_path(Folders.DIR_RES_IMAGES, relative_path)
+        return cls.__get_path(Folders.DIR_RES_IMAGES, relative_path)
 
     @classmethod
     def in_test(cls, relative_path=''):
-        return cls.get_path(Folders.DIR_TEST, relative_path)
+        return cls.__get_path(Folders.DIR_TEST, relative_path)
 
     @classmethod
     def in_test_logs(cls, relative_path=''):
-        return cls.get_path(Folders.DIR_TEST_LOGS, relative_path)
+        return cls.__get_path(Folders.DIR_TEST_LOGS, relative_path)
 
     @classmethod
     def in_sample(cls, relative_path=''):
-        return cls.get_path(Folders.DIR_SAMPLE_DATA, relative_path)
+        return cls.__get_path(Folders.DIR_SAMPLE_DATA, relative_path)
 
     @classmethod
     def in_sample_gen(cls, relative_path=''):
-        return cls.get_path(Folders.DIR_SAMPLE_DATA_GENERIC, relative_path)
+        return cls.__get_path(Folders.DIR_SAMPLE_DATA_GENERIC, relative_path)
 
     @classmethod
     def in_user(cls, relative_path=''):
-        return cls.get_path(Folders.DIR_USER_DATA, relative_path)
+        return cls.__get_path(Folders.DIR_USER_DATA, relative_path)
 
     @classmethod
     def in_user_gen(cls, relative_path=''):
-        return cls.get_path(Folders.DIR_USER_DATA_GENERIC, relative_path)
+        return cls.__get_path(Folders.DIR_USER_DATA_GENERIC, relative_path)
 
     @classmethod
-    def get_path(cls, folder_name, relative_path):
+    def __get_path(cls, folder_name, relative_path):
+        """
+
+        :param folder_name:
+        :param relative_path: str or list
+        :return:
+        """
         if folder_name not in cls.LOCATIONS_MAPPING:
-            raise ValueError('Unknown folder name')
+            raise ValueError('Unknown Folder name')
         return os.sep.join(
             filter(None, PhUtil.normalise_list(
                 [Folders.top_folder_path, cls.LOCATIONS_MAPPING.get(folder_name), relative_path])))

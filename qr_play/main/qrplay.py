@@ -93,7 +93,7 @@ def process_data():
         _data_type.set_data_pool(data_pool=[data_cli])
         data_types = [_data_type]
     for data_type in data_types:
-        PhUtil.print_heading(str_heading=str(data_type.__class__.__name__))
+        PhUtil.print_heading(str_heading=f'Data Class: {str(data_type.__class__.__name__)}')
         # if isinstance(data_type, UnitTesting):
         #     error_handling_mode = PhErrorHandlingModes.CONTINUE_ON_ERROR
         # if isinstance(data_type, Dev):
@@ -139,8 +139,12 @@ def handle_cli_request(**kwargs):
 
 def print_configurations():
     # Print Versions
-    PhUtil.print_version(ConfigConst.TOOL_NAME, ConfigConst.TOOL_VERSION)
-    PhUtil.print_version(PhModules.SEGNO, fetch_tool_version=True, no_additional_info=True)
+    version_parameters_pool = [
+        {'tool_name': ConfigConst.TOOL_NAME, 'tool_version': ConfigConst.TOOL_VERSION},
+        # TODO: Fetch & Store this version; Use Stored version throughout as this is not gonna be changed
+        {'tool_name': PhModules.SEGNO, 'fetch_tool_version': True},
+    ]
+    PhUtil.print_version(parameters_pool=version_parameters_pool)
 
 
 def set_configurations():

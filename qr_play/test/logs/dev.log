@@ -5,22 +5,22 @@ Python executable Path is D:\Other\Github_Self\qrPlay\venv\Scripts
 User Name is Pratik Jaiswal
 User Account is impra
 --------------------------------------------------------------------------------
-Time Stamp is Saturday, Jan 18 2025, 17:21:50:736169, IST (GMT+0530)
+Time Stamp is Tuesday, Jan 21 2025, 19:27:32:089810, IST (GMT+0530)
 --------------------------------------------------------------------------------
-Git Summary is 2c4e065;  (HEAD -> main, origin/main, origin/HEAD); 2025-01-17 10:49:55 +0530; imPratik <impratikjaiswal@gmail.com>; bulk Data Opportunity seperated  from regular test data
+Git Summary is 97f9280;  (HEAD -> main, origin/main, origin/HEAD); 2025-01-18 17:29:10 +0530; imPratik <impratikjaiswal@gmail.com>; sync with asnplay
 --------------------------------------------------------------------------------
-pythonHelpers version is v5.2.1.dev3
+pythonHelpers version is v5.2.3
 --------------------------------------------------------------------------------
 qrPlay version is v4.1.1
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 segno version is v1.6.1
 --------------------------------------------------------------------------------
----------------------------------------------------------- Dev ---------------------------------------------------------
+---------------------------------------------------- Data Class: Dev ---------------------------------------------------
 ******************************************** Bulk Data Opportunity Old Data ********************************************
 sequence_count is 5
 Remarks: Bulk Data Opportunity Old Data
-Info => Transaction Id: 404kzm7as9xi; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: p116ogmnuh21; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data Length: 14765
 Output Data: ['data/\\user_data\\Bulk_Data_Opportunity_Old_Data_item_1.png', 'data/\\user_data\\Bulk_Data_Opportunity_Old_Data_item_2.png', 'data/\\user_data\\Bulk_Data_Opportunity_Old_Data_item_3.png', 'data/\\user_data\\Bulk_Data_Opportunity_Old_Data_item_4.png', 'data/\\user_data\\Bulk_Data_Opportunity_Old_Data_item_5.png']
 Output Data Length: 315
@@ -28,7 +28,7 @@ Output Data Length: 315
 ******************************************** Bulk Data Opportunity Test Data *******************************************
 sequence_count is 5
 Remarks: Bulk Data Opportunity Test Data
-Info => Transaction Id: a02snk7gedfm; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: z8z29wgbjba7; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data Length: 14765
 Output Data: ['data/\\user_data\\Bulk_Data_Opportunity_Test_Data_item_1.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_item_2.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_item_3.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_item_4.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_item_5.png']
 Output Data Length: 320
@@ -36,15 +36,15 @@ Output Data Length: 320
 ******************************************* Bulk Data Opportunity Test Data 6 ******************************************
 sequence_count is 6
 Remarks: Bulk Data Opportunity Test Data 6
-Info => Transaction Id: 91tz4fp06xtx; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: jiy7a5onll89; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data Length: 14766
 Output Data: ['data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_1.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_2.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_3.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_4.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_5.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_6.png']
 Output Data Length: 396
 --------------------------------------------------------------------------------
 ---------------------------------- Time Details ----------------------------------
-Current Time Stamp: 2025-01-18 17:21:54.898702+05:30
-Execution Time: 00:00:04; Milliseconds: 4154.536247253418
-Execution Time CPU: 00:00:04; Milliseconds: 4140.625
+Current Time Stamp: 2025-01-21 19:27:37.598955+05:30
+Execution Time: 00:00:05; Milliseconds: 5502.141952514648
+Execution Time CPU: 00:00:05; Milliseconds: 5500.0
 Timer State: TIMER_OFF
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

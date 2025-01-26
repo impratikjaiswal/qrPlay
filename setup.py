@@ -39,22 +39,22 @@ setup(
     name=ConfigConst.TOOL_NAME,
     author="Pratik Jaiswal",
     author_email="impratikjaiswal@gmail.com",
-    description="Qr Code Generator.",
+    description=ConfigConst.TOOL_DESCRIPTION,
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/impratikjaiswal/qrPlay",
+    url=ConfigConst.TOOL_URL,
     project_urls={
-        "Bug Tracker": "https://github.com/impratikjaiswal/qrPlay/issues",
+        "Bug Tracker": ConfigConst.TOOL_URL_BUG_TRACKER,
     },
-    keywords="Qr Generator",
-    license="MIT",
+    keywords=ConfigConst.TOOL_META_KEYWORDS,
+    license="GNU GENERAL PUBLIC LICENSE v3.0",
     python_requires=">=3.9",
     packages=packages,
     install_requires=install_reqs,
     # Needed for Manifest.in
     # include_package_data=True,
     package_data={
-        # REf:
+        # Ref:
         "qr_play.res.images": ["*.png"],
     },
     # test_suite="test.sample_package",

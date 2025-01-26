@@ -5,22 +5,22 @@ Python executable Path is D:\Other\Github_Self\qrPlay\venv\Scripts
 User Name is Pratik Jaiswal
 User Account is impra
 --------------------------------------------------------------------------------
-Time Stamp is Sunday, Jan 26 2025, 11:43:56:686692, IST (GMT+0530)
+Time Stamp is Sunday, Jan 26 2025, 19:08:35:234760, IST (GMT+0530)
 --------------------------------------------------------------------------------
-Git Summary is 87f7192;  (HEAD -> main, origin/main, origin/HEAD); 2025-01-21 19:33:18 +0530; imPratik <impratikjaiswal@gmail.com>; support of array in print_version()
+Git Summary is 8ac2bd7;  (HEAD -> main); 2025-01-26 11:50:46 +0530; imPratik <impratikjaiswal@gmail.com>; info object collection is optimized
 --------------------------------------------------------------------------------
-pythonHelpers version is v5.2.4
+pythonHelpers version is v5.2.3.dev17
 --------------------------------------------------------------------------------
-qrPlay version is v4.2.0
+qrPlay version is v4.2.0.dev2
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 segno version is v1.6.1
 --------------------------------------------------------------------------------
 ---------------------------------------------------- Data Class: Dev ---------------------------------------------------
 ---------------------------------- Time Details ----------------------------------
-Current Time Stamp: 2025-01-26 11:43:56.715229+05:30
-Execution Time: 00:00:00; Milliseconds: 17.528772354125977
-Execution Time CPU: 00:00:00; Milliseconds: 31.25
+Current Time Stamp: 2025-01-26 19:08:35.240765+05:30
+Execution Time: 00:00:00; Milliseconds: 4.999399185180664
+Execution Time CPU: 00:00:00; Milliseconds: 0.0
 Timer State: TIMER_OFF
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

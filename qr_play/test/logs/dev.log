@@ -5,46 +5,22 @@ Python executable Path is D:\Other\Github_Self\qrPlay\venv\Scripts
 User Name is Pratik Jaiswal
 User Account is impra
 --------------------------------------------------------------------------------
-Time Stamp is Tuesday, Jan 21 2025, 19:27:32:089810, IST (GMT+0530)
+Time Stamp is Sunday, Jan 26 2025, 11:43:56:686692, IST (GMT+0530)
 --------------------------------------------------------------------------------
-Git Summary is 97f9280;  (HEAD -> main, origin/main, origin/HEAD); 2025-01-18 17:29:10 +0530; imPratik <impratikjaiswal@gmail.com>; sync with asnplay
+Git Summary is 87f7192;  (HEAD -> main, origin/main, origin/HEAD); 2025-01-21 19:33:18 +0530; imPratik <impratikjaiswal@gmail.com>; support of array in print_version()
 --------------------------------------------------------------------------------
-pythonHelpers version is v5.2.3
+pythonHelpers version is v5.2.4
 --------------------------------------------------------------------------------
-qrPlay version is v4.1.1
+qrPlay version is v4.2.0
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 segno version is v1.6.1
 --------------------------------------------------------------------------------
 ---------------------------------------------------- Data Class: Dev ---------------------------------------------------
-******************************************** Bulk Data Opportunity Old Data ********************************************
-sequence_count is 5
-Remarks: Bulk Data Opportunity Old Data
-Info => Transaction Id: p116ogmnuh21; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
-Input Data Length: 14765
-Output Data: ['data/\\user_data\\Bulk_Data_Opportunity_Old_Data_item_1.png', 'data/\\user_data\\Bulk_Data_Opportunity_Old_Data_item_2.png', 'data/\\user_data\\Bulk_Data_Opportunity_Old_Data_item_3.png', 'data/\\user_data\\Bulk_Data_Opportunity_Old_Data_item_4.png', 'data/\\user_data\\Bulk_Data_Opportunity_Old_Data_item_5.png']
-Output Data Length: 315
---------------------------------------------------------------------------------
-******************************************** Bulk Data Opportunity Test Data *******************************************
-sequence_count is 5
-Remarks: Bulk Data Opportunity Test Data
-Info => Transaction Id: z8z29wgbjba7; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
-Input Data Length: 14765
-Output Data: ['data/\\user_data\\Bulk_Data_Opportunity_Test_Data_item_1.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_item_2.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_item_3.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_item_4.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_item_5.png']
-Output Data Length: 320
---------------------------------------------------------------------------------
-******************************************* Bulk Data Opportunity Test Data 6 ******************************************
-sequence_count is 6
-Remarks: Bulk Data Opportunity Test Data 6
-Info => Transaction Id: jiy7a5onll89; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
-Input Data Length: 14766
-Output Data: ['data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_1.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_2.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_3.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_4.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_5.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_6.png']
-Output Data Length: 396
---------------------------------------------------------------------------------
 ---------------------------------- Time Details ----------------------------------
-Current Time Stamp: 2025-01-21 19:27:37.598955+05:30
-Execution Time: 00:00:05; Milliseconds: 5502.141952514648
-Execution Time CPU: 00:00:05; Milliseconds: 5500.0
+Current Time Stamp: 2025-01-26 11:43:56.715229+05:30
+Execution Time: 00:00:00; Milliseconds: 17.528772354125977
+Execution Time CPU: 00:00:00; Milliseconds: 31.25
 Timer State: TIMER_OFF
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

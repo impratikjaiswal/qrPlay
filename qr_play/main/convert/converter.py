@@ -62,38 +62,23 @@ def print_data(data=None, meta_data=None, info_data=None, master_data=None):
                 if data.print_info:
                     meta_data.output_dic.update(
                         PhUtil.get_dic_data_and_print(PhKeys.INFO_DATA, len_sep, info_msg, length_needed=True))
-        info = PhConstants.SEPERATOR_MULTI_OBJ.join(filter(None, [
-            PhUtil.get_dic_data_and_print(PhKeys.TRANSACTION_ID, PhConstants.SEPERATOR_ONE_LINE,
-                                          meta_data.transaction_id, dic_format=False, print_also=False),
-            PhUtil.get_dic_data_and_print(PhKeys.OUTPUT_FORMAT, PhConstants.SEPERATOR_ONE_LINE, data.output_format,
-                                          dic_format=False, print_also=False) if data.output_format else None,
-            PhUtil.get_dic_data_and_print(PhKeys.SIZE, PhConstants.SEPERATOR_ONE_LINE, data.size,
-                                          dic_format=False, print_also=False) if data.size else None,
-            PhUtil.get_dic_data_and_print(PhKeys.QR_CODE_VERSION, PhConstants.SEPERATOR_ONE_LINE, data.qr_code_version,
-                                          dic_format=False, print_also=False) if data.qr_code_version else None,
-            PhUtil.get_dic_data_and_print(PhKeys.SPLIT_QRS, PhConstants.SEPERATOR_ONE_LINE, data.split_qrs,
-                                          dic_format=False, print_also=False) if data.split_qrs else None,
-            PhUtil.get_dic_data_and_print(PhKeys.DECORATE_QR, PhConstants.SEPERATOR_ONE_LINE, data.decorate_qr,
-                                          dic_format=False, print_also=False) if data.decorate_qr else None,
-            PhUtil.get_dic_data_and_print(PhKeys.OUTPUT_PATH, PhConstants.SEPERATOR_ONE_LINE, data.output_path,
-                                          dic_format=False, print_also=False) if data.output_path else None,
-            PhUtil.get_dic_data_and_print(PhKeys.OUTPUT_FILE_NAME_KEYWORD, PhConstants.SEPERATOR_ONE_LINE,
-                                          data.output_file_name_keyword,
-                                          dic_format=False,
-                                          print_also=False) if data.output_file_name_keyword else None,
-            PhUtil.get_dic_data_and_print(PhKeys.ENCODING, PhConstants.SEPERATOR_ONE_LINE, data.encoding,
-                                          dic_format=False, print_also=False) if data.encoding else None,
-            PhUtil.get_dic_data_and_print(PhKeys.ENCODING_ERRORS, PhConstants.SEPERATOR_ONE_LINE, data.encoding_errors,
-                                          dic_format=False, print_also=False) if data.encoding_errors else None,
-            PhUtil.get_dic_data_and_print(PhKeys.ARCHIVE_OUTPUT, PhConstants.SEPERATOR_ONE_LINE, data.archive_output,
-                                          dic_format=False, print_also=False) if data.archive_output else None,
-            PhUtil.get_dic_data_and_print(PhKeys.ARCHIVE_OUTPUT_FORMAT, PhConstants.SEPERATOR_ONE_LINE,
-                                          data.archive_output_format,
-                                          dic_format=False, print_also=False) if data.archive_output_format else None,
-            PhUtil.get_dic_data_and_print(PhKeys.QUITE_MODE, PhConstants.SEPERATOR_ONE_LINE, data.quite_mode,
-                                          dic_format=False, print_also=False) if data.quite_mode else None,
-        ]))
-        meta_data.output_dic.update(PhUtil.get_dic_data_and_print(PhKeys.INFO, PhConstants.SEPERATOR_INFO, info))
+        info_contents_pool = {
+            PhKeys.TRANSACTION_ID: meta_data.transaction_id,
+            PhKeys.OUTPUT_FORMAT: data.output_format,
+            PhKeys.SIZE: data.size,
+            PhKeys.QR_CODE_VERSION: data.qr_code_version,
+            PhKeys.SPLIT_QRS: data.split_qrs,
+            PhKeys.DECORATE_QR: data.decorate_qr,
+            PhKeys.OUTPUT_PATH: data.output_path,
+            PhKeys.OUTPUT_FILE_NAME_KEYWORD: data.output_file_name_keyword,
+            PhKeys.ENCODING: data.encoding,
+            PhKeys.ENCODING_ERRORS: data.encoding_errors,
+            PhKeys.ARCHIVE_OUTPUT: data.archive_output,
+            PhKeys.ARCHIVE_OUTPUT_FORMAT: data.archive_output_format,
+            PhKeys.QUITE_MODE: data.quite_mode,
+        }
+        meta_data.output_dic.update(PhUtil.get_dic_data_and_print(PhKeys.INFO, PhConstants.SEPERATOR_INFO,
+                                                                  PhUtil.decorate_info_data(info_contents_pool)))
     in_data = meta_data.input_data_org
     if data.print_input:
         meta_data.output_dic.update(PhUtil.get_dic_data_and_print(PhKeys.INPUT_DATA, input_sep, in_data))

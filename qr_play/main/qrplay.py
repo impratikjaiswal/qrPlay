@@ -9,6 +9,7 @@ from qr_play.main.convert import handler
 from qr_play.main.convert.converter import handle_web_request
 from qr_play.main.data_type.data_type_master import DataTypeMaster
 from qr_play.main.data_type.dev import Dev
+from qr_play.main.data_type.known_issues import KnownIssues
 from qr_play.main.data_type.sample import Sample
 from qr_play.main.data_type.unit_testing import UnitTesting
 from qr_play.main.data_type.user_data import UserData
@@ -44,6 +45,12 @@ def process_data():
         #####
         Dev(),
     ]
+    data_type_known_issues = [
+        #####
+        # class for known issues
+        #####
+        KnownIssues(),
+    ]
     data_types_sample_generic = [
         #####
         # Sample With Plenty vivid Examples; Single as well as Bulk
@@ -78,6 +85,7 @@ def process_data():
         PhExecutionModes.UNIT_TESTING: data_type_unit_testing,
         PhExecutionModes.UNIT_TESTING_EXTERNAL: data_type_unit_testing_external,
         PhExecutionModes.DEV: data_type_dev,
+        PhExecutionModes.KNOWN_ISSUES: data_type_known_issues,
         PhExecutionModes.ALL: data_type_user
                               + data_types_samples
                               + data_types_sample_generic
@@ -85,6 +93,7 @@ def process_data():
                               + data_type_unit_testing
                               + data_type_unit_testing_external
         # + data_type_dev
+        # + data_type_known_issues
         ,
     }
     data_types = data_types_pool.get(execution_mode, Defaults.EXECUTION_MODE)
@@ -94,10 +103,10 @@ def process_data():
         data_types = [_data_type]
     for data_type in data_types:
         PhUtil.print_heading(str_heading=f'Data Class: {str(data_type.__class__.__name__)}')
-        # if isinstance(data_type, UnitTesting):
-        #     error_handling_mode = PhErrorHandlingModes.CONTINUE_ON_ERROR
-        # if isinstance(data_type, Dev):
-        #     error_handling_mode = PhErrorHandlingModes.STOP_ON_ERROR
+        if isinstance(data_type, UnitTesting):
+            error_handling_mode = PhErrorHandlingModes.CONTINUE_ON_ERROR
+        if isinstance(data_type, Dev):
+            error_handling_mode = PhErrorHandlingModes.STOP_ON_ERROR
         if isinstance(data_type, Test):
             Test.test_all()
             continue
@@ -147,23 +156,6 @@ def print_configurations():
     PhUtil.print_version(parameters_pool=version_parameters_pool)
 
 
-def set_configurations():
-    """
-
-    :return:
-    """
-    global execution_mode, error_handling_mode
-    """
-    Set Execution Mode, First time users can try #PhExecutionModes.SAMPLE_GENERIC
-    """
-    execution_mode = PhExecutionModes.USER
-    error_handling_mode = PhErrorHandlingModes.CONTINUE_ON_ERROR
-    """
-    Set/Change if image should be opened after QR generation
-    """
-    handler.show_image = False
-
-
 def main():
     """
 
@@ -202,6 +194,23 @@ def main():
     ph_time_obj.stop()
     ph_time_obj.print()
     PhUtil.print_done()
+
+
+def set_configurations():
+    """
+
+    :return:
+    """
+    global execution_mode, error_handling_mode
+    """
+    Set Execution Mode, First time users can try #PhExecutionModes.SAMPLE_GENERIC
+    """
+    execution_mode = PhExecutionModes.USER
+    error_handling_mode = PhErrorHandlingModes.CONTINUE_ON_ERROR
+    """
+    Set/Change if image should be opened after QR generation
+    """
+    handler.show_image = False
 
 
 if __name__ == '__main__':

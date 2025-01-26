@@ -18,7 +18,6 @@ from qr_play.main.helper.metadata import MetaData
 
 
 class DataTypeMaster(object):
-
     def __init__(self):
         # Common Objects
         self.print_input = None

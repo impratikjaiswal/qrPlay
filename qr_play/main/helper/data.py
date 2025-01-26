@@ -94,6 +94,15 @@ class Data:
         self.__extended_remarks_needed = None
         # Handle Remarks
         self.set_user_remarks(self.remarks)
+        # Handle Remarks Variables
+        self.__variables_pool = {
+            #           _key : (_var_name, _var_value)
+            PhKeys.OUTPUT_FORMAT: (PhVariables.OUTPUT_FORMAT, self.output_format),
+            PhKeys.SIZE: (PhVariables.SIZE, self.size),
+            PhKeys.QR_CODE_VERSION: (PhVariables.QR_CODE_VERSION, self.qr_code_version),
+            PhKeys.SPLIT_QRS: (PhVariables.SPLIT_QRS, self.split_qrs),
+            PhKeys.DECORATE_QR: (PhVariables.DECORATE_QR, self.decorate_qr),
+        }
 
     def set_user_remarks(self, remarks):
         self.remarks = PhUtil.to_list(remarks, trim_data=True, all_str=True)
@@ -110,32 +119,8 @@ class Data:
             key_name_needed = True if PhVariables.KEY_NAME in x else False
             if key_name_needed:
                 x = x.replace(PhVariables.KEY_NAME, '')
-            #
-            var_name = PhVariables.OUTPUT_FORMAT
-            var_value = self.output_format
-            key_ = PhKeys.OUTPUT_FORMAT
-            x = __set_value(x=x, var_name=var_name, var_value=var_value, key_name_needed=key_name_needed, key_=key_)
-            #
-            var_name = PhVariables.SIZE
-            var_value = self.size
-            key_ = PhKeys.SIZE
-            x = __set_value(x=x, var_name=var_name, var_value=var_value, key_name_needed=key_name_needed, key_=key_)
-            #
-            var_name = PhVariables.QR_CODE_VERSION
-            var_value = self.qr_code_version
-            key_ = PhKeys.QR_CODE_VERSION
-            x = __set_value(x=x, var_name=var_name, var_value=var_value, key_name_needed=key_name_needed, key_=key_)
-            #
-            var_name = PhVariables.SPLIT_QRS
-            var_value = self.split_qrs
-            key_ = PhKeys.SPLIT_QRS
-            x = __set_value(x=x, var_name=var_name, var_value=var_value, key_name_needed=key_name_needed, key_=key_)
-            #
-            var_name = PhVariables.DECORATE_QR
-            var_value = self.decorate_qr
-            key_ = PhKeys.DECORATE_QR
-            x = __set_value(x=x, var_name=var_name, var_value=var_value, key_name_needed=key_name_needed, key_=key_)
-            #
+            for key, value in self.__variables_pool.items():
+                x = __set_value(x=x, var_name=value[0], var_value=value[1], key_name_needed=key_name_needed, key_=key)
             return x
 
         self.remarks = [__expand_variable(x) for x in self.remarks]

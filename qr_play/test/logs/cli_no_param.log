@@ -5,13 +5,13 @@ Python executable Path is D:\Other\Github_Self\qrPlay\venv\Scripts
 User Name is Pratik Jaiswal
 User Account is impra
 --------------------------------------------------------------------------------
-Time Stamp is Sunday, Jan 26 2025, 19:09:48:372306, IST (GMT+0530)
+Time Stamp is Sunday, Jan 26 2025, 19:44:25:196693, IST (GMT+0530)
 --------------------------------------------------------------------------------
-Git Summary is 8ac2bd7;  (HEAD -> main); 2025-01-26 11:50:46 +0530; imPratik <impratikjaiswal@gmail.com>; info object collection is optimized
+Git Summary is 05cb16e;  (HEAD -> main); 2025-01-26 19:12:37 +0530; imPratik <impratikjaiswal@gmail.com>; libs synced
 --------------------------------------------------------------------------------
-pythonHelpers version is v5.2.3.dev17
+pythonHelpers version is v5.2.4
 --------------------------------------------------------------------------------
-qrPlay version is v4.2.0.dev2
+qrPlay version is v4.2.0
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 segno version is v1.6.1
@@ -19,7 +19,7 @@ segno version is v1.6.1
 ------------------------------------------------- Data Class: UserData -------------------------------------------------
 ************************************************ Website Url; Amenity Pj ***********************************************
 Remarks: Website Url; Amenity Pj
-Info => Transaction Id: koq2ua8xsjsm; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: False; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip; Quite Mode: False
+Info => Transaction Id: vpeytuwaxg8r; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: https://amenitypj.in/
 Input Data Length: 21
 Output Data: ['../../data/\\user_data\\Website_Url_Amenity_Pj.png']
@@ -27,7 +27,7 @@ Output Data Length: 54
 --------------------------------------------------------------------------------
 **************************************** Website Url; Amenity Pj; with out logo ****************************************
 Remarks: Website Url; Amenity Pj; with out logo
-Info => Transaction Id: 2l2p08ad4nfc; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: False; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip; Quite Mode: False
+Info => Transaction Id: h424376jwjik; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: https://amenitypj.in/
 Input Data Length: 21
 Output Data: ['../../data/\\user_data\\Website_Url_Amenity_Pj_with_out_logo.png']
@@ -35,15 +35,15 @@ Output Data Length: 68
 --------------------------------------------------------------------------------
 ***************************************************** Text Message *****************************************************
 Remarks: Text Message
-Info => Transaction Id: 12jhfgrlwly8; Output Format: png_uri; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: False; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip; Quite Mode: False
+Info => Transaction Id: x1z3adl7uguj; Output Format: png_uri; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhAQAAAAAWyO/XAAACC0lEQVR42u1YMY7DMAxTL0PGPME/ST4WoAXysfYnfkLGDEF1JO1bOxzuIA0pUCOJF4KiKcrmH34Pu3av3d/u7mZ2c6/+njYfn9Np4xOfRux+2aff/+0S1d39BXzAshY8uWuJRrXa+NqtgKatju/Ja3vNgGqoxwKGDptAUxZUqCBQUVLTA2VMgEq62tyWnRoHoBS64hnc14K6/SwJzmD3iCKhHzc/Wbz2LRRVhZrgV5CUUVImkB6tq0rJl2OGix6LKkgrDUY1VG/OwAUKa1Yf7gxyAfO3wQ90/N62RjsDXIodp9gMXQEQqEPvCT+D6DMyLQJqT+1bvF+RKwUH0nTMdq/xfmULrYCAzNBx1HaiUREGise3gj+MQsEm/AyCq7NAV3dkBizQ/Vni1e70dryscnQ7LN4Z9m6ldmuEDSRsqPF+BY07UW2VgBDeUcYkXLGWkBTU3qBFc1WQXx4K7+ZszIhbFp8ZnNFK5DArn3QuURecr6grWumJ4zfR5RNw1VuMkgwzjctPE6idA6rOoHoPlq3G60oupXCMQQfUgTWPr6BzstGgo5hsdAZPMOP0Zmj0Kx+9jxQJ5kFO9G3Q4VCY5U7GupUqkIb7Vbv9QIjh8Ru7MyRBhRg6a0pFM2SSsRR3Mhgf2GdkCv0eJIGuNJY6y8g4M8UnZM04Z5HkmWlcd5Ep7mSuu+tr9w93vwEowtlHNsUB2gAAAABJRU5ErkJggg==']
 Output Data Length: 802
 --------------------------------------------------------------------------------
 ---------------------------------- Time Details ----------------------------------
-Current Time Stamp: 2025-01-26 19:09:48.412341+05:30
-Execution Time: 00:00:00; Milliseconds: 39.002418518066406
+Current Time Stamp: 2025-01-26 19:44:25.245446+05:30
+Execution Time: 00:00:00; Milliseconds: 51.75042152404785
 Execution Time CPU: 00:00:00; Milliseconds: 46.875
 Timer State: TIMER_OFF
 --------------------------------------------------------------------------------

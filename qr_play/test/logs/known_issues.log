@@ -5,13 +5,13 @@ Python executable Path is D:\Other\Github_Self\qrPlay\venv\Scripts
 User Name is Pratik Jaiswal
 User Account is impra
 --------------------------------------------------------------------------------
-Time Stamp is Sunday, Jan 26 2025, 19:08:36:329747, IST (GMT+0530)
+Time Stamp is Sunday, Jan 26 2025, 19:43:08:787641, IST (GMT+0530)
 --------------------------------------------------------------------------------
-Git Summary is 8ac2bd7;  (HEAD -> main); 2025-01-26 11:50:46 +0530; imPratik <impratikjaiswal@gmail.com>; info object collection is optimized
+Git Summary is 05cb16e;  (HEAD -> main); 2025-01-26 19:12:37 +0530; imPratik <impratikjaiswal@gmail.com>; libs synced
 --------------------------------------------------------------------------------
-pythonHelpers version is v5.2.3.dev17
+pythonHelpers version is v5.2.4
 --------------------------------------------------------------------------------
-qrPlay version is v4.2.0.dev2
+qrPlay version is v4.2.0
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 segno version is v1.6.1
@@ -20,7 +20,7 @@ segno version is v1.6.1
 ******************************************** Bulk Data Opportunity Old Data ********************************************
 sequence_count is 5
 Remarks: Bulk Data Opportunity Old Data
-Info => Transaction Id: 3ak6om8puiu8; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Decorate Qr: False; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip; Quite Mode: False
+Info => Transaction Id: wbw38bqcmj4t; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data Length: 14765
 Output Data: ['data/\\user_data\\Bulk_Data_Opportunity_Old_Data_item_1.png', 'data/\\user_data\\Bulk_Data_Opportunity_Old_Data_item_2.png', 'data/\\user_data\\Bulk_Data_Opportunity_Old_Data_item_3.png', 'data/\\user_data\\Bulk_Data_Opportunity_Old_Data_item_4.png', 'data/\\user_data\\Bulk_Data_Opportunity_Old_Data_item_5.png']
 Output Data Length: 315
@@ -28,7 +28,7 @@ Output Data Length: 315
 ******************************************** Bulk Data Opportunity Test Data *******************************************
 sequence_count is 5
 Remarks: Bulk Data Opportunity Test Data
-Info => Transaction Id: 5ntkizn21ta5; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Decorate Qr: False; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip; Quite Mode: False
+Info => Transaction Id: bck77vf4aj4l; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data Length: 14765
 Output Data: ['data/\\user_data\\Bulk_Data_Opportunity_Test_Data_item_1.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_item_2.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_item_3.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_item_4.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_item_5.png']
 Output Data Length: 320
@@ -36,15 +36,15 @@ Output Data Length: 320
 ******************************************* Bulk Data Opportunity Test Data 6 ******************************************
 sequence_count is 6
 Remarks: Bulk Data Opportunity Test Data 6
-Info => Transaction Id: q7o47e1nrtma; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Decorate Qr: False; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip; Quite Mode: False
+Info => Transaction Id: 2xy6c7b06051; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data Length: 14766
 Output Data: ['data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_1.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_2.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_3.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_4.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_5.png', 'data/\\user_data\\Bulk_Data_Opportunity_Test_Data_6_item_6.png']
 Output Data Length: 396
 --------------------------------------------------------------------------------
 ---------------------------------- Time Details ----------------------------------
-Current Time Stamp: 2025-01-26 19:08:40.451648+05:30
-Execution Time: 00:00:04; Milliseconds: 4123.583078384399
-Execution Time CPU: 00:00:04; Milliseconds: 4109.375
+Current Time Stamp: 2025-01-26 19:43:13.190003+05:30
+Execution Time: 00:00:04; Milliseconds: 4404.363393783569
+Execution Time CPU: 00:00:04; Milliseconds: 4406.25
 Timer State: TIMER_OFF
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

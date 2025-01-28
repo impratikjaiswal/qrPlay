@@ -269,6 +269,7 @@ class UnitTesting(DataTypeMaster):
         data_pool_negative = [
             #
         ]
+        #
         super().set_data_pool(
             data_pool_positive
             + data_pool_decorate_qr

@@ -3,6 +3,7 @@ import io
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageOps
+from python_helpers.ph_colors import PhColors
 from python_helpers.ph_constants import PhConstants
 from python_helpers.ph_formats import PhFormats, PhMimeTypes
 
@@ -18,8 +19,8 @@ class Util:
 
     @classmethod
     def change_colors(cls, im,
-                      source_color_rbg=(255, 255, 255),  # white
-                      target_color_rgb=(255, 0, 0),  # red
+                      source_color_rbg=PhColors.WHITE,
+                      target_color_rgb=PhColors.RED,
                       source_color_negation=True,
                       ):
         cls.get_colors(im)

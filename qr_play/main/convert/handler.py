@@ -3,7 +3,8 @@ import os
 from importlib.resources import files
 
 import segno
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
+from python_helpers.ph_colors import PhColors
 from python_helpers.ph_constants import PhConstants
 from python_helpers.ph_exception_helper import PhExceptionHelper
 from python_helpers.ph_formats import PhFormats
@@ -50,8 +51,10 @@ def __handle_data(data, meta_data, info_data):
     # PhUtil.to_file(output_lines=data.input_data, back_up_file=True)
     # PhUtil.print_iter(data, header='data')
     # TODO: In future, logo_path should be user specific path ( / uploaded image)
-    logo = prepare_logo(logo_path=None,
-                        file_path=meta_data.output_file_path) if data.decorate_qr and data.output_format in FormatsGroup.OUTPUT_FORMATS_PNG_IMAGES else None
+    logo = None
+    if data.output_format in FormatsGroup.OUTPUT_FORMATS_PNG_IMAGES:
+        if data.decorate_qr:
+            logo = prepare_logo(logo_path=None, file_path=meta_data.output_file_path)
     if data.split_qrs:
         qrcode_split = segno.make_sequence(data.input_data, version=data.qr_code_version)
         sequence_count = len(qrcode_split)
@@ -95,12 +98,15 @@ def handle_individual_qr_code(data, meta_data, qrcode, logo, file_path):
         output = file_path
         qrcode.save(file_path, scale=data.size, border=border)
     #
-    if logo and data.output_format in FormatsGroup.OUTPUT_FORMATS_PNG_IMAGES:
-        qrcode_io_bytes = io.BytesIO()
-        # Nothing special here, let Segno generate the QR code and save it as PNG in a buffer
-        qrcode.save(qrcode_io_bytes, scale=data.size, kind='png', border=border)
-        qrcode_io_bytes.seek(0)  # Important to let Pillow load the PNG
-        output = attach_logo(data, meta_data, qrcode_io_bytes, logo, file_path)
+    if data.output_format in FormatsGroup.OUTPUT_FORMATS_PNG_IMAGES:
+        if logo:
+            qrcode_io_bytes = io.BytesIO()
+            # Nothing special here, let Segno generate the QR code and save it as PNG in a buffer
+            qrcode.save(qrcode_io_bytes, scale=data.size, kind='png', border=border)
+            qrcode_io_bytes.seek(0)  # Important to let Pillow load the PNG
+            output = attach_logo(data, meta_data, qrcode_io_bytes, logo, file_path)
+        if data.label:
+            output = attach_label(data, meta_data, output)
     open_image(data, output)
     return output
 
@@ -122,13 +128,12 @@ def open_image(data, file_path):
 
 def prepare_logo(logo_path=None, file_path=None):
     # Default Values
-    # logo_path = PhUtil.set_if_none(logo_path, Folders.in_res_images('pj_crop.png'))
     if logo_path is None:
         resource_path = files('qr_play.res')
         logo_path = resource_path.joinpath(os.sep.join(['images', 'pj_crop.png']))
         # print(f'logo_path: {logo_path}')
     corner_radios_logo = 0
-    source_color_rgb = (255, 255, 255)  # white
+    source_color_rgb = PhColors.WHITE
     target_color_rgb = None
     source_color_negation = True
     add_border = False
@@ -147,13 +152,152 @@ def prepare_logo(logo_path=None, file_path=None):
                                         target_color_rgb=target_color_rgb,
                                         source_color_negation=source_color_negation)
     if add_border:
-        logo_img = QrUtil.add_borders(logo_img, border_width=50, fill_color='brown')
+        logo_img = QrUtil.add_borders(logo_img, border_width=50, fill_color=PhColors.BROWN)
     if corner_radios_logo > 0:
         logo_img = QrUtil.add_corners(logo_img, corner_radios_logo)  # Ensure Corners
     if save_logo:
         logo_image_path = PhUtil.append_in_file_name(file_path, str_append=['logo'])
         logo_img.save(fp=logo_image_path)
     return logo_img
+
+
+def get_text_width_height(image_width, image_height, text, font):
+    # Create a blank canvas
+    canvas = Image.new('RGB', (image_width, image_height))
+    draw = ImageDraw.Draw(canvas)
+    draw.text((1, 1), text, font=font, fill=PhColors.WHITE)
+    # Find bounding box
+    bbox = canvas.getbbox()
+    text_width = bbox[2] - bbox[0]
+    text_height = bbox[3] - bbox[1]
+    return text_width, text_height
+
+
+def append_padding(image_width, image_height, padding_location, padding_value):
+    padding_top = 0
+    padding_bottom = 0
+    padding_left = 0
+    padding_right = 0
+    padded_image_top = 0
+    padded_image_left = 0
+    sep_line_start = (0, 0)
+    sep_line_end = (0, 0)
+    if padding_location == PhConstants.Position.TOP:
+        padding_top = padding_value
+        padded_image_top = 0
+        sep_line_start = (0, padding_top)
+        sep_line_end = (image_width, padding_top)
+    if padding_location == PhConstants.Position.BOTTOM:
+        padding_bottom = padding_value
+        padded_image_top = image_height
+        sep_line_start = (0, padded_image_top)
+        sep_line_end = (image_width, padded_image_top)
+    if padding_location == PhConstants.Position.LEFT:
+        padding_left = padding_value
+        padded_image_left = 0
+        sep_line_start = (padding_left, 0)
+        sep_line_end = (padding_left, image_height)
+    if padding_location == PhConstants.Position.RIGHT:
+        padding_right = padding_value
+        padded_image_left = image_width
+        sep_line_start = (image_width, 0)
+        sep_line_end = (image_height, image_width)
+    image_width_new = image_width + padding_right + padding_left
+    image_height_new = image_height + padding_top + padding_bottom
+    new_image_size = (image_width_new, image_height_new)
+    # padded_image_size = (
+    #     image_width_new if (image_width_new - image_width) > 0 else image_width,
+    #     image_height_new if (image_height_new - image_height) > 0 else image_height,
+    # )
+    padded_image_size = (
+        image_width_new - image_width,
+        image_height_new - image_height
+    )
+    actual_image_position = (padding_left, padding_top)
+    padded_image_position = (padded_image_left, padded_image_top)
+    line_position = [sep_line_start, sep_line_end]
+    return new_image_size, actual_image_position, padded_image_size, padded_image_position, line_position
+
+
+def attach_label(data, meta_data, input_img_path):
+    """
+
+    :param data:
+    :param meta_data:
+    :param input_img_path:
+    :return:
+    """
+    label_position = data.label_position
+    label = data.label
+    # font_name = 'FreeMono.ttf'
+    # font_name = 'andale-mono.ttf'
+    font_name = 'DejaVuSans.ttf'
+    font_size = 25
+    text_color = PhColors.BLACK.hex_format()
+    padding_factor = 2
+    #
+    # Play ground
+    # padding_bottom = 100
+
+    # font_size = 36
+    # text_color = PhColors.RED.hex_format()
+    # Default Values
+    """
+    Load the image
+    """
+    image = Image.open(input_img_path)
+    image_width, image_height = image.size
+    print(f'image_width: {image_width}')
+    print(f'image_height: {image_height}')
+    """
+    Prepare Text
+    """
+    # Custom font style and font size
+    resource_path = files('qr_play.res')
+    font_path = resource_path.joinpath(os.sep.join(['fonts', font_name]))
+    # print(f'font_path: {font_path}')
+    font = ImageFont.truetype(font_path, font_size)
+    text_width, text_height = get_text_width_height(image_width, image_height, label, font)
+    print(f'text_width: {text_width}')
+    print(f'text_height: {text_height}')
+    """
+    Append Padding (Space for Text)
+    """
+    padding_value = 0
+    if label_position in [PhConstants.Position.BOTTOM, PhConstants.Position.TOP]:
+        padding_value = text_height
+    if label_position in [PhConstants.Position.LEFT, PhConstants.Position.RIGHT]:
+        padding_value = text_width
+    if padding_factor:
+        padding_value *= padding_factor
+    new_image_size, actual_image_position, padded_image_size, padded_image_position, line_position = append_padding(
+        image_width,
+        image_height,
+        padding_location=label_position,
+        padding_value=padding_value)
+    image_w_padding = Image.new(image.mode, new_image_size, PhColors.WHITE.hex_format())
+    image_w_padding.paste(image, actual_image_position)
+    """
+    Start Drawling (Create a drawing contextm (add 2D graphics in an image))
+    """
+    draw = ImageDraw.Draw(image_w_padding)
+    """
+    Add Sep line
+    """
+    draw.line(line_position, fill=PhColors.BLUE.hex_format())
+    """
+    Add Text
+    """
+    # Calculate the position to center the text
+    x = padded_image_size[0] if padded_image_size[0] > 0 else image_width
+    y = padded_image_size[1] if padded_image_size[1] > 0 else image_height
+    x = padded_image_position[0] + (x - text_width) // 2
+    y = padded_image_position[1] + (y - text_height) // 2
+    # Add text to the image
+    draw.text((x, y), label, fill=text_color, font=font)
+    output_img_path = PhUtil.append_in_file_name(input_img_path, str_append=['w', 'label'])
+    image_w_padding.save(output_img_path)
+    return output_img_path
 
 
 def attach_logo(data, meta_data, qrcode_io_bytes, logo_img, file_path):
@@ -178,9 +322,7 @@ def attach_logo(data, meta_data, qrcode_io_bytes, logo_img, file_path):
     logo_img.thumbnail((logo_max_size, logo_max_size), Image.Resampling.LANCZOS)
     box = ((img_width - logo_img.size[0]) // 2, (img_height - logo_img.size[1]) // 2)
     img.paste(logo_img, box)
-    if data.output_format == Formats.SVG_URI:
-        pass
-    elif data.output_format == Formats.PNG_URI:
+    if data.output_format == Formats.PNG_URI:
         output = QrUtil.image_to_uri(img, input_format=PhFormats.PNG)
     else:
         output = file_path

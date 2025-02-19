@@ -1,8 +1,9 @@
+from python_helpers.ph_constants import PhConstants
 from python_helpers.ph_keys import PhKeys
 from python_helpers.ph_variables import PhVariables
 
 from qr_play.main.data_type.data_type_master import DataTypeMaster
-from qr_play.main.data_type.sample import text_msg_small_data, apj_url, bulk_data_2, bulk_data_1
+from qr_play.main.data_type.sample import text_msg_small_data, apj_url, bulk_data_2, bulk_data_1, sample_vcard
 from qr_play.main.helper.data import Data
 from qr_play.main.helper.folders import Folders
 
@@ -76,7 +77,17 @@ class UnitTesting(DataTypeMaster):
         decorate_qr = None
         super().set_decorate_qr(decorate_qr)
 
+    def set_label(self):
+        label = None
+        super().set_label(label)
+
+    def set_label_position(self):
+        label_position = None
+        super().set_label_position(label_position)
+
     def set_data_pool(self):
+        data_pool_empty_dummy = []
+        #
         data_pool_positive = [
             #
             {
@@ -124,6 +135,7 @@ class UnitTesting(DataTypeMaster):
                 qr_code_version=40,
             ),
         ]
+        #
         data_pool_decorate_qr = [
             #
             Data(
@@ -232,6 +244,7 @@ class UnitTesting(DataTypeMaster):
                 split_qrs=True,
             ),
         ]
+        #
         data_pool_output_path = [
             #
             Data(
@@ -250,6 +263,7 @@ class UnitTesting(DataTypeMaster):
                 output_path=r'D:\Other\Github_Self\qrPlay\data\user_data',
             ),
         ]
+        #
         data_pool_bulk_data = [
             #
             Data(
@@ -266,14 +280,34 @@ class UnitTesting(DataTypeMaster):
                 split_qrs=True,
             ),
         ]
+        #
+        data_pool_vcard = []
+        decorate_qr = [True, False]
+        for _ in PhConstants.Position:
+            for __ in decorate_qr:
+                data_pool_vcard.append(
+                    #
+                    Data(
+                        remarks=f'vCard; {PhVariables.DECORATE_QR}; {PhVariables.LABEL_POSITION}; {PhVariables.KEY_NAME};',
+                        input_data=sample_vcard,
+                        qr_code_version=40,
+                        split_qrs=False,
+                        label_position=_,
+                        decorate_qr=__,
+                        label='Qr Play',
+                    ),
+                )
+        #
         data_pool_negative = [
             #
         ]
         #
         super().set_data_pool(
-            data_pool_positive
+            data_pool_empty_dummy
+            + data_pool_positive
             + data_pool_decorate_qr
             + data_pool_output_path
             + data_pool_bulk_data
+            + data_pool_vcard
             + data_pool_negative
         )

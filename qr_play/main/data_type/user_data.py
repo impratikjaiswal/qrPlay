@@ -72,6 +72,14 @@ class UserData(DataTypeMaster):
         decorate_qr = None
         super().set_decorate_qr(decorate_qr)
 
+    def set_label(self):
+        label = None
+        super().set_label(label)
+
+    def set_label_position(self):
+        label_position = None
+        super().set_label_position(label_position)
+
     def set_data_pool(self):
         data_pool = [
             #

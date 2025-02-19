@@ -56,6 +56,7 @@ setup(
     package_data={
         # Ref:
         "qr_play.res.images": ["*.png"],
+        "qr_play.res.fonts": ["*.ttf", "*.otf"],
     },
     # test_suite="test.sample_package",
 )

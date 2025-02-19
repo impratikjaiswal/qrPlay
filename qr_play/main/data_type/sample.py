@@ -15,6 +15,20 @@ text_msg_multi_line = """Welcome To QrPlay
 
 "QR Code" and "Micro QR Code" are registered trademarks of DENSO WAVE INCORPORATED."""
 
+sample_vcard = """BEGIN:VCARD
+n:Jaiswal;Pratik;
+NICKNAME:Pj
+TEL;TYPE=work,VOICE:(91) 80000-12345
+TEL;TYPE=home,VOICE:(91) 80000-54321
+EMAIL;TYPE=work:pj@amenitypj.in
+EMAIL;TYPE=home:pj@gmail.com
+ORG:Amenity Pj
+TITLE:Founder
+ADR;TYPE=WORK,PREF:;;123 ABC;XYZ;Bangalore;560000;India
+URL:www.amenitypj.in/
+VERSION:3.0
+END:VCARD"""
+
 bulk_data_1 = """}**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
 CLI
@@ -409,6 +423,14 @@ class Sample(DataTypeMaster):
         decorate_qr = None
         super().set_decorate_qr(decorate_qr)
 
+    def set_label(self):
+        label = None
+        super().set_label(label)
+
+    def set_label_position(self):
+        label_position = None
+        super().set_label_position(label_position)
+
     def set_data_pool(self):
         data_pool = [
             #
@@ -425,7 +447,14 @@ class Sample(DataTypeMaster):
             ),
             #
             Data(
-                remarks='LPA',
+                remarks='Contact Card; vCard (Virtual Contact Card); Android; iOS',
+                input_data=sample_vcard,
+                split_qrs=False,
+                qr_code_version=20,
+            ),
+            #
+            Data(
+                remarks='LPA (Local Profile Assistant); eSIM Sample Qr Code',
                 input_data='LPA:1$SMDP.EXAMPLE.COM$04386-AGYFT-A74Y8-3F815',
             ),
             #

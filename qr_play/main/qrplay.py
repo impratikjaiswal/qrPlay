@@ -131,6 +131,8 @@ def process_data():
             data_type.set_qr_code_version()
             data_type.set_split_qrs()
             data_type.set_decorate_qr()
+            data_type.set_label()
+            data_type.set_label_position()
             #
             data_type.set_data_pool()
         DataTypeMaster.process_safe(data_type, error_handling_mode)

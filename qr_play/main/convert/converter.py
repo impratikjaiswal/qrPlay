@@ -69,6 +69,8 @@ def print_data(data=None, meta_data=None, info_data=None, master_data=None):
             PhKeys.QR_CODE_VERSION: data.qr_code_version,
             PhKeys.SPLIT_QRS: data.split_qrs,
             PhKeys.DECORATE_QR: data.decorate_qr,
+            PhKeys.LABEL: data.label,
+            PhKeys.LABEL_POSITION: data.label_position,
             PhKeys.OUTPUT_PATH: data.output_path,
             PhKeys.OUTPUT_FILE_NAME_KEYWORD: data.output_file_name_keyword,
             PhKeys.ENCODING: data.encoding,
@@ -125,6 +127,8 @@ def dict_to_data(config_data):
         PhKeys.QR_CODE_VERSION: DefaultTypesInclude.QR_CODE_VERSION,
         PhKeys.SPLIT_QRS: DefaultTypesInclude.SPLIT_QRS,
         PhKeys.DECORATE_QR: DefaultTypesInclude.DECORATE_QR,
+        PhKeys.LABEL: DefaultTypesInclude.LABEL,
+        PhKeys.LABEL_POSITION: DefaultTypesInclude.LABEL_POSITION,
     }
     data_types_exclude = {
         # Common Param
@@ -176,6 +180,8 @@ def set_defaults(data, meta_data):
     data.qr_code_version = PhUtil.set_if_none(data.qr_code_version, Defaults.QR_CODE_VERSION)
     data.split_qrs = PhUtil.set_if_none(data.split_qrs, Defaults.SPLIT_QRS)
     data.decorate_qr = PhUtil.set_if_none(data.decorate_qr, Defaults.DECORATE_QR)
+    data.label = PhUtil.set_if_none(data.label, Defaults.LABEL)
+    data.label_position = PhUtil.set_if_none(data.label_position, Defaults.LABEL_POSITION)
     if meta_data is None:
         return
     default_output_file_mapping = {

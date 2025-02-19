@@ -1,3 +1,6 @@
+import enum
+from collections import OrderedDict
+
 from python_helpers.ph_constants import PhConstants
 from python_helpers.ph_keys import PhKeys
 from python_helpers.ph_util import PhUtil
@@ -25,6 +28,8 @@ class Data:
                  qr_code_version=None,
                  split_qrs=None,
                  decorate_qr=None,
+                 label=None,
+                 label_position=None,
                  # Unknown/System Param
                  **kwargs,
                  ):
@@ -77,6 +82,8 @@ class Data:
         self.qr_code_version = qr_code_version
         self.split_qrs = split_qrs
         self.decorate_qr = decorate_qr
+        self.label = label
+        self.label_position = label_position
         # Handle kwargs
         if self.input_data is None and PhKeys.RAW_DATA in kwargs:
             self.input_data = kwargs[PhKeys.RAW_DATA]
@@ -102,7 +109,11 @@ class Data:
             PhKeys.QR_CODE_VERSION: (PhVariables.QR_CODE_VERSION, self.qr_code_version),
             PhKeys.SPLIT_QRS: (PhVariables.SPLIT_QRS, self.split_qrs),
             PhKeys.DECORATE_QR: (PhVariables.DECORATE_QR, self.decorate_qr),
+            PhKeys.LABEL: (PhVariables.LABEL, self.label),
+            PhKeys.LABEL_POSITION: (PhVariables.LABEL_POSITION, self.label_position),
         }
+        # Needed for the scenarios when 'label' (subset) & 'label_position' (superset) both are there.
+        self.__variables_pool = OrderedDict(sorted(self.__variables_pool.items(), reverse=True))
 
     def set_user_remarks(self, remarks):
         self.remarks = PhUtil.to_list(remarks, trim_data=True, all_str=True)
@@ -110,6 +121,8 @@ class Data:
     def set_user_remarks_expand_variables(self):
         def __set_value(x, var_name, var_value, key_name_needed, key_):
             if var_name in x and var_value is not None:
+                if isinstance(var_value, enum.Enum):
+                    var_value = var_value.name
                 var_value = str(var_value)
                 y = '_'.join([key_, var_value]) if key_name_needed else var_value
                 return x.replace(var_name, y)

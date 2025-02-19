@@ -1,3 +1,4 @@
+from python_helpers.ph_constants import PhConstants
 from python_helpers.ph_defaults import PhDefaults, PhDefaultTypesInclude, PhDefaultTypesExclude
 from python_helpers.ph_file_extensions import PhFileExtensions
 
@@ -33,6 +34,8 @@ class Defaults:
     QR_CODE_VERSION = 5
     SPLIT_QRS = True
     DECORATE_QR = False
+    LABEL = None
+    LABEL_POSITION = PhConstants.Position.BOTTOM
 
 
 class DefaultTypesInclude:
@@ -54,6 +57,8 @@ class DefaultTypesInclude:
     QR_CODE_VERSION = int
     SPLIT_QRS = bool
     DECORATE_QR = bool
+    LABEL = str
+    LABEL_POSITION = str
 
 
 class DefaultTypesExclude:

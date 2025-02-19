@@ -37,6 +37,8 @@ class DataTypeMaster(object):
         self.qr_code_version = None
         self.split_qrs = None
         self.decorate_qr = None
+        self.label = None
+        self.label_position = None
         self.data_pool = []
         self.__master_data = PhMasterData(
             data=Data(input_data=None),
@@ -92,6 +94,12 @@ class DataTypeMaster(object):
 
     def set_decorate_qr(self, decorate_qr):
         self.decorate_qr = decorate_qr
+
+    def set_label(self, label):
+        self.label = label
+
+    def set_label_position(self, label_position):
+        self.label_position = label_position
 
     def set_data_pool(self, data_pool):
         self.data_pool = data_pool
@@ -180,6 +188,8 @@ class DataTypeMaster(object):
             data.qr_code_version = data.qr_code_version if data.qr_code_version is not None else self.qr_code_version
             data.split_qrs = data.split_qrs if data.split_qrs is not None else self.split_qrs
             data.decorate_qr = data.decorate_qr if data.decorate_qr is not None else self.decorate_qr
+            data.label = data.label if data.label is not None else self.label
+            data.label_position = data.label_position if data.label_position is not None else self.label_position
         else:
             data = Data(
                 input_data=data,
@@ -199,6 +209,8 @@ class DataTypeMaster(object):
                 qr_code_version=self.qr_code_version,
                 split_qrs=self.split_qrs,
                 decorate_qr=self.decorate_qr,
+                label=self.label,
+                label_position=self.label_position,
             )
         meta_data = MetaData(input_data_org=data.input_data)
         info_data = InfoData()
@@ -239,6 +251,8 @@ class DataTypeMaster(object):
             PhKeys.QR_CODE_VERSION: data.qr_code_version,
             PhKeys.SPLIT_QRS: data.split_qrs,
             PhKeys.DECORATE_QR: data.decorate_qr,
+            PhKeys.LABEL: data.label,
+            PhKeys.LABEL_POSITION: data.label_position,
             #
             PhKeys.DATA_GROUP: data.data_group,
         }

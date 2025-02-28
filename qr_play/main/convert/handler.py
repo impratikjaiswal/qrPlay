@@ -245,7 +245,10 @@ def attach_label(data, meta_data, input_img_path):
     """
     Load the image
     """
-    image = Image.open(input_img_path)
+    if data.output_format == Formats.PNG_URI:
+        image = QrUtil.uri_to_image(input_img_path)
+    else:
+        image = Image.open(input_img_path)
     image_width, image_height = image.size
     print(f'image_width: {image_width}')
     print(f'image_height: {image_height}')
@@ -295,9 +298,14 @@ def attach_label(data, meta_data, input_img_path):
     y = padded_image_position[1] + (y - text_height) // 2
     # Add text to the image
     draw.text((x, y), label, fill=text_color, font=font)
-    output_img_path = PhUtil.append_in_file_name(input_img_path, str_append=['w', 'label'])
-    image_w_padding.save(output_img_path)
-    return output_img_path
+    # output_img_path = PhUtil.append_in_file_name(input_img_path, str_append=['w', 'label'])
+    output_img_path = input_img_path
+    if data.output_format == Formats.PNG_URI:
+        output = QrUtil.image_to_uri(image_w_padding, input_format=PhFormats.PNG)
+    else:
+        output = output_img_path
+        image_w_padding.save(fp=output_img_path)
+    return output
 
 
 def attach_logo(data, meta_data, qrcode_io_bytes, logo_img, file_path):

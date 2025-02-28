@@ -70,7 +70,7 @@ def print_data(data=None, meta_data=None, info_data=None, master_data=None):
             PhKeys.SPLIT_QRS: data.split_qrs,
             PhKeys.DECORATE_QR: data.decorate_qr,
             PhKeys.LABEL: data.label,
-            PhKeys.LABEL_POSITION: data.label_position,
+            PhKeys.LABEL_POSITION: data.label_position if data.label else None,
             PhKeys.OUTPUT_PATH: data.output_path,
             PhKeys.OUTPUT_FILE_NAME_KEYWORD: data.output_file_name_keyword,
             PhKeys.ENCODING: data.encoding,

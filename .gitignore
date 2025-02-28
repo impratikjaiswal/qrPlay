@@ -261,6 +261,10 @@ hs_err_pid*.log
 # Private Folder
 HCS
 
+# Private File / Folder
+*pj_exclusive*
+*pjexclusive*
+
 # Bkp Files
 backup_*bkp
 

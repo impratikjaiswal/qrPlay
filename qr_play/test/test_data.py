@@ -19,6 +19,14 @@ class TestData:
             {
                 PhKeys.VAR_EXECUTION_MODE: 'SAMPLES_LIST',
             },
+        PhExecutionModes.SAMPLE_GENERIC:
+            {
+                PhKeys.VAR_EXECUTION_MODE: 'SAMPLE_GENERIC',
+            },
+        PhExecutionModes.SAMPLE_SPECIFIC:
+            {
+                PhKeys.VAR_EXECUTION_MODE: 'SAMPLE_SPECIFIC',
+            },
         PhExecutionModes.DEV:
             {
                 PhKeys.VAR_EXECUTION_MODE: 'DEV',
@@ -26,6 +34,10 @@ class TestData:
         PhExecutionModes.KNOWN_ISSUES:
             {
                 PhKeys.VAR_EXECUTION_MODE: 'KNOWN_ISSUES',
+            },
+        PhExecutionModes.PJ_EXCLUSIVE:
+            {
+                PhKeys.VAR_EXECUTION_MODE: 'PJ_EXCLUSIVE',
             },
         PhExecutionModes.UNIT_TESTING_EXTERNAL:
             {

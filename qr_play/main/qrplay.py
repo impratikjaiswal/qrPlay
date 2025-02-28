@@ -10,6 +10,7 @@ from qr_play.main.convert.converter import handle_web_request
 from qr_play.main.data_type.data_type_master import DataTypeMaster
 from qr_play.main.data_type.dev import Dev
 from qr_play.main.data_type.known_issues import KnownIssues
+from qr_play.main.data_type.pj_exclusive import PjExclusive
 from qr_play.main.data_type.sample import Sample
 from qr_play.main.data_type.unit_testing import UnitTesting
 from qr_play.main.data_type.user_data import UserData
@@ -51,6 +52,12 @@ def process_data():
         #####
         KnownIssues(),
     ]
+    data_type_pj_exclusive = [
+        #####
+        # class for Exclusive Stuff of Pj
+        #####
+        PjExclusive(),
+    ]
     data_types_sample_generic = [
         #####
         # Sample With Plenty vivid Examples; Single as well as Bulk
@@ -84,17 +91,17 @@ def process_data():
         PhExecutionModes.SAMPLE_SPECIFIC: data_types_sample_specific,
         PhExecutionModes.UNIT_TESTING: data_type_unit_testing,
         PhExecutionModes.UNIT_TESTING_EXTERNAL: data_type_unit_testing_external,
+        #
         PhExecutionModes.DEV: data_type_dev,
         PhExecutionModes.KNOWN_ISSUES: data_type_known_issues,
+        PhExecutionModes.PJ_EXCLUSIVE: data_type_pj_exclusive,
+        #
         PhExecutionModes.ALL: data_type_user
                               + data_types_samples
                               + data_types_sample_generic
                               + data_types_sample_specific
                               + data_type_unit_testing
                               + data_type_unit_testing_external
-        # + data_type_dev
-        # + data_type_known_issues
-        ,
     }
     data_types = data_types_pool.get(execution_mode, Defaults.EXECUTION_MODE)
     if data_cli:

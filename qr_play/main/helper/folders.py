@@ -19,6 +19,8 @@ class Folders:
     DIR_TEST = 9
     DIR_TEST_LOGS = 91
 
+    DIR_PJ_EXCLUSIVE = 999
+
     LOCATIONS_MAPPING = {
         #
         DIR_DATA: ['data'],
@@ -31,6 +33,8 @@ class Folders:
         #
         DIR_TEST: [PACKAGE_NAME, 'test'],
         DIR_TEST_LOGS: [PACKAGE_NAME, 'test', 'logs'],
+        #
+        DIR_PJ_EXCLUSIVE: ['data', 'pj_exclusive'],
     }
 
     @classmethod
@@ -56,6 +60,10 @@ class Folders:
     @classmethod
     def in_user_gen(cls, relative_path=''):
         return cls.__get_path(Folders.DIR_USER_DATA_GENERIC, relative_path)
+
+    @classmethod
+    def in_pj_exclusive(cls, relative_path=''):
+        return cls.__get_path(Folders.DIR_PJ_EXCLUSIVE, relative_path)
 
     @classmethod
     def __get_path(cls, folder_name, relative_path):

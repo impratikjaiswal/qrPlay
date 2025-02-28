@@ -67,11 +67,26 @@ class Util:
         :param im:
         :param input_format: image/jpeg, image/png, and image/svg+xml
         :param encoding:
-        :return:
+        :return: base64 Str
         """
         buff = io.BytesIO()
         im.save(buff, format=input_format)
         return f'data:{PhMimeTypes.format_to_mimetype_mappings.get(input_format)};base64,{base64.b64encode(buff.getvalue()).decode(encoding)}'
+
+    @classmethod
+    def uri_to_image(cls, base64_str, encoding=PhConstants.CHAR_ENCODING_UTF8):
+        """
+
+        :param im:
+        :param input_format: image/jpeg, image/png, and image/svg+xml
+        :param encoding:
+        :return:
+        """
+        # Split mimetypes
+        split_str = str(base64_str).split(sep=',')
+        base64_str_wo_mimetype = split_str[1] if len(split_str) > 1 else base64_str
+        deco = base64.decodebytes(bytes(base64_str_wo_mimetype, encoding))
+        return Image.open(io.BytesIO(deco))
 
 
 class Shapes:

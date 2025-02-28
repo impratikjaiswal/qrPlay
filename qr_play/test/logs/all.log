@@ -5,13 +5,13 @@ Python executable Path is D:\Other\Github_Self\qrPlay\venv\Scripts
 User Name is Pratik Jaiswal
 User Account is impra
 --------------------------------------------------------------------------------
-Time Stamp is Sunday, Jan 26 2025, 19:43:15:333702, IST (GMT+0530)
+Time Stamp is Friday, Feb 28 2025, 09:04:30:880376, IST (GMT+0530)
 --------------------------------------------------------------------------------
-Git Summary is 05cb16e;  (HEAD -> main); 2025-01-26 19:12:37 +0530; imPratik <impratikjaiswal@gmail.com>; libs synced
+Git Summary is 5ef3e8d;  (HEAD -> main, origin/main, origin/HEAD); 2025-02-28 08:57:22 +0530; imPratik <impratikjaiswal@gmail.com>; lable fixed for PNG_URI
 --------------------------------------------------------------------------------
-pythonHelpers version is v5.2.4
+pythonHelpers version is v5.3.1
 --------------------------------------------------------------------------------
-qrPlay version is v4.2.0
+qrPlay version is v4.3.0
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 segno version is v1.6.1
@@ -19,7 +19,7 @@ segno version is v1.6.1
 ------------------------------------------------- Data Class: UserData -------------------------------------------------
 ************************************************ Website Url; Amenity Pj ***********************************************
 Remarks: Website Url; Amenity Pj
-Info => Transaction Id: sadmolhy5d84; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: zjqspl50ws4u; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: https://amenitypj.in/
 Input Data Length: 21
 Output Data: ['data/\\user_data\\Website_Url_Amenity_Pj.png']
@@ -27,7 +27,7 @@ Output Data Length: 48
 --------------------------------------------------------------------------------
 **************************************** Website Url; Amenity Pj; with out logo ****************************************
 Remarks: Website Url; Amenity Pj; with out logo
-Info => Transaction Id: zfuikzz58cpg; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: sa6lnba4o4xl; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: https://amenitypj.in/
 Input Data Length: 21
 Output Data: ['data/\\user_data\\Website_Url_Amenity_Pj_with_out_logo.png']
@@ -35,7 +35,7 @@ Output Data Length: 62
 --------------------------------------------------------------------------------
 ***************************************************** Text Message *****************************************************
 Remarks: Text Message
-Info => Transaction Id: 8ur4bb7gdo81; Output Format: png_uri; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: sp0s65wh9ndt; Output Format: png_uri; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhAQAAAAAWyO/XAAACC0lEQVR42u1YMY7DMAxTL0PGPME/ST4WoAXysfYnfkLGDEF1JO1bOxzuIA0pUCOJF4KiKcrmH34Pu3av3d/u7mZ2c6/+njYfn9Np4xOfRux+2aff/+0S1d39BXzAshY8uWuJRrXa+NqtgKatju/Ja3vNgGqoxwKGDptAUxZUqCBQUVLTA2VMgEq62tyWnRoHoBS64hnc14K6/SwJzmD3iCKhHzc/Wbz2LRRVhZrgV5CUUVImkB6tq0rJl2OGix6LKkgrDUY1VG/OwAUKa1Yf7gxyAfO3wQ90/N62RjsDXIodp9gMXQEQqEPvCT+D6DMyLQJqT+1bvF+RKwUH0nTMdq/xfmULrYCAzNBx1HaiUREGise3gj+MQsEm/AyCq7NAV3dkBizQ/Vni1e70dryscnQ7LN4Z9m6ldmuEDSRsqPF+BY07UW2VgBDeUcYkXLGWkBTU3qBFc1WQXx4K7+ZszIhbFp8ZnNFK5DArn3QuURecr6grWumJ4zfR5RNw1VuMkgwzjctPE6idA6rOoHoPlq3G60oupXCMQQfUgTWPr6BzstGgo5hsdAZPMOP0Zmj0Kx+9jxQJ5kFO9G3Q4VCY5U7GupUqkIb7Vbv9QIjh8Ru7MyRBhRg6a0pFM2SSsRR3Mhgf2GdkCv0eJIGuNJY6y8g4M8UnZM04Z5HkmWlcd5Ep7mSuu+tr9w93vwEowtlHNsUB2gAAAABJRU5ErkJggg==']
@@ -51,6 +51,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: True
+label_position: Position.BOTTOM
 data_group: Website Url
 
 Website Url; Amenity Pj; No Logo:
@@ -61,17 +62,42 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Website Url
 
-LPA:
+Contact Card; vCard (Virtual Contact Card); Android; iOS:
+input_data: BEGIN:VCARD
+n:Jaiswal;Pratik;
+NICKNAME:Pj
+TEL;TYPE=work,VOICE:(91) 80000-12345
+TEL;TYPE=home,VOICE:(91) 80000-54321
+EMAIL;TYPE=work:pj@amenitypj.in
+EMAIL;TYPE=home:pj@gmail.com
+ORG:Amenity Pj
+TITLE:Founder
+ADR;TYPE=WORK,PREF:;;123 ABC;XYZ;Bangalore;560000;India
+URL:www.amenitypj.in/
+VERSION:3.0
+END:VCARD
+remarks: Contact Card; vCard (Virtual Contact Card); Android; iOS
+output_format: png
+size: 5
+qr_code_version: 20
+split_qrs: False
+decorate_qr: False
+label_position: Position.BOTTOM
+data_group: Contact Card
+
+LPA (Local Profile Assistant); eSIM Sample Qr Code:
 input_data: LPA:1$SMDP.EXAMPLE.COM$04386-AGYFT-A74Y8-3F815
-remarks: LPA
+remarks: LPA (Local Profile Assistant); eSIM Sample Qr Code
 output_format: png
 size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: False
-data_group: LPA
+label_position: Position.BOTTOM
+data_group: LPA (Local Profile Assistant)
 
 UPI; Google Pay/GPay:
 input_data: upi://pay?pa=impratikjaiswal@okicici&pn=Pratik%20Jaiswal&aid=uGICAgICw6tuJBw
@@ -81,6 +107,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: UPI
 
 UPI; Google Pay/GPay; with Logo; Decorate Qr:
@@ -91,6 +118,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: True
+label_position: Position.BOTTOM
 data_group: UPI
 
 Text Message:
@@ -101,6 +129,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Text Message
 
 Text Message; with Logo; Decorate Qr:
@@ -111,6 +140,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: True
+label_position: Position.BOTTOM
 data_group: Text Message
 
 Text Message; qr_code_version=20; size=8:
@@ -121,6 +151,7 @@ size: 10
 qr_code_version: 20
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Text Message
 
 Text Message; png uri:
@@ -131,6 +162,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Text Message
 
 Text Message; svg:
@@ -141,6 +173,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Text Message
 
 Text Message; svg uri:
@@ -151,6 +184,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Text Message
 
 Bulk Data Single Qr:
@@ -211,6 +245,7 @@ size: 5
 qr_code_version: 40
 split_qrs: False
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Bulk Data Single Qr
 
 Bulk Data Split Qrs:
@@ -476,6 +511,7 @@ size: 5
 qr_code_version: 40
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Bulk Data Split Qrs
 
 Bulk Data Single Qr; PNG URI:
@@ -536,6 +572,7 @@ size: 5
 qr_code_version: 40
 split_qrs: False
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Bulk Data Single Qr
 
 Bulk Data Split Qrs; PNG URI:
@@ -801,6 +838,7 @@ size: 5
 qr_code_version: 40
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Bulk Data Split Qrs
 
 Bulk Data Split Qrs; PNG URI; with Logo; Decorate Qr:
@@ -1066,11 +1104,12 @@ size: 5
 qr_code_version: 40
 split_qrs: True
 decorate_qr: True
+label_position: Position.BOTTOM
 data_group: Bulk Data Split Qrs
 
 ************************************ Website Url; Amenity Pj; with Logo; Decorate Qr ***********************************
 Remarks: Website Url; Amenity Pj; with Logo; Decorate Qr
-Info => Transaction Id: 7rlmf9hyhu7o; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: 4wygdpodui1m; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: https://amenitypj.in/
 Input Data Length: 21
 Output Data: ['data/\\user_data\\Website_Url_Amenity_Pj_with_Logo_Decorate_Qr.png']
@@ -1078,23 +1117,43 @@ Output Data Length: 70
 --------------------------------------------------------------------------------
 ******************************************* Website Url; Amenity Pj; No Logo *******************************************
 Remarks: Website Url; Amenity Pj; No Logo
-Info => Transaction Id: hzvm9o15kxly; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: 7xblh6u3ngye; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: https://amenitypj.in/
 Input Data Length: 21
 Output Data: ['data/\\user_data\\Website_Url_Amenity_Pj_No_Logo.png']
 Output Data Length: 56
 --------------------------------------------------------------------------------
-********************************************************** LPA *********************************************************
-Remarks: LPA
-Info => Transaction Id: m5d2ygbdvas3; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+******************************* Contact Card; vCard (Virtual Contact Card); Android; iOS *******************************
+Remarks: Contact Card; vCard (Virtual Contact Card); Android; iOS
+Info => Transaction Id: f24w1rvv5gzx; Output Format: png; Size: 5; Qr Code Version: 20; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Input Data: BEGIN:VCARD
+n:Jaiswal;Pratik;
+NICKNAME:Pj
+TEL;TYPE=work,VOICE:(91) 80000-12345
+TEL;TYPE=home,VOICE:(91) 80000-54321
+EMAIL;TYPE=work:pj@amenitypj.in
+EMAIL;TYPE=home:pj@gmail.com
+ORG:Amenity Pj
+TITLE:Founder
+ADR;TYPE=WORK,PREF:;;123 ABC;XYZ;Bangalore;560000;India
+URL:www.amenitypj.in/
+VERSION:3.0
+END:VCARD
+Input Data Length: 305
+Output Data: data/\user_data\Contact_Card_vCard_Virtual_Contact_Card_Android_iOS.png
+Output Data Length: 71
+--------------------------------------------------------------------------------
+********************************** LPA (Local Profile Assistant); eSIM Sample Qr Code **********************************
+Remarks: LPA (Local Profile Assistant); eSIM Sample Qr Code
+Info => Transaction Id: g1xv5p0qd4kz; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: LPA:1$SMDP.EXAMPLE.COM$04386-AGYFT-A74Y8-3F815
 Input Data Length: 46
-Output Data: ['data/\\user_data\\LPA.png']
-Output Data Length: 29
+Output Data: ['data/\\user_data\\LPA_Local_Profile_Assistant_eSIM_Sample_Qr_Code.png']
+Output Data Length: 73
 --------------------------------------------------------------------------------
 ************************************************* UPI; Google Pay/GPay *************************************************
 Remarks: UPI; Google Pay/GPay
-Info => Transaction Id: oqqogisr762p; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: rkxmmjcd86u4; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: upi://pay?pa=impratikjaiswal@okicici&pn=Pratik%20Jaiswal&aid=uGICAgICw6tuJBw
 Input Data Length: 76
 Output Data: ['data/\\user_data\\UPI_Google_Pay_GPay.png']
@@ -1102,7 +1161,7 @@ Output Data Length: 45
 --------------------------------------------------------------------------------
 ************************************* UPI; Google Pay/GPay; with Logo; Decorate Qr *************************************
 Remarks: UPI; Google Pay/GPay; with Logo; Decorate Qr
-Info => Transaction Id: 6obrw5puf4ry; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: 0uai5o9e0q85; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: upi://pay?pa=impratikjaiswal@okicici&pn=Pratik%20Jaiswal&aid=uGICAgICw6tuJBw
 Input Data Length: 76
 Output Data: ['data/\\user_data\\UPI_Google_Pay_GPay_with_Logo_Decorate_Qr.png']
@@ -1110,7 +1169,7 @@ Output Data Length: 67
 --------------------------------------------------------------------------------
 ***************************************************** Text Message *****************************************************
 Remarks: Text Message
-Info => Transaction Id: 8zv0u7rbijdn; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: fhs3iixqc1pb; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message.png']
@@ -1118,7 +1177,7 @@ Output Data Length: 38
 --------------------------------------------------------------------------------
 ***************************************** Text Message; with Logo; Decorate Qr *****************************************
 Remarks: Text Message; with Logo; Decorate Qr
-Info => Transaction Id: 52a5uc9g2ris; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: dp135hpbf9ws; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message_with_Logo_Decorate_Qr.png']
@@ -1126,7 +1185,7 @@ Output Data Length: 60
 --------------------------------------------------------------------------------
 *************************************** Text Message; qr_code_version=20; size=8 ***************************************
 Remarks: Text Message; qr_code_version=20; size=8
-Info => Transaction Id: u15em2og74et; Output Format: png; Size: 10; Qr Code Version: 20; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: glrzymvbqiv8; Output Format: png; Size: 10; Qr Code Version: 20; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message_qr_code_version_20_size_8.png']
@@ -1134,7 +1193,7 @@ Output Data Length: 64
 --------------------------------------------------------------------------------
 ************************************************* Text Message; png uri ************************************************
 Remarks: Text Message; png uri
-Info => Transaction Id: mceral0pfy9h; Output Format: png_uri; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: fz6nwicgab6l; Output Format: png_uri; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhAQAAAAAWyO/XAAACC0lEQVR42u1YMY7DMAxTL0PGPME/ST4WoAXysfYnfkLGDEF1JO1bOxzuIA0pUCOJF4KiKcrmH34Pu3av3d/u7mZ2c6/+njYfn9Np4xOfRux+2aff/+0S1d39BXzAshY8uWuJRrXa+NqtgKatju/Ja3vNgGqoxwKGDptAUxZUqCBQUVLTA2VMgEq62tyWnRoHoBS64hnc14K6/SwJzmD3iCKhHzc/Wbz2LRRVhZrgV5CUUVImkB6tq0rJl2OGix6LKkgrDUY1VG/OwAUKa1Yf7gxyAfO3wQ90/N62RjsDXIodp9gMXQEQqEPvCT+D6DMyLQJqT+1bvF+RKwUH0nTMdq/xfmULrYCAzNBx1HaiUREGise3gj+MQsEm/AyCq7NAV3dkBizQ/Vni1e70dryscnQ7LN4Z9m6ldmuEDSRsqPF+BY07UW2VgBDeUcYkXLGWkBTU3qBFc1WQXx4K7+ZszIhbFp8ZnNFK5DArn3QuURecr6grWumJ4zfR5RNw1VuMkgwzjctPE6idA6rOoHoPlq3G60oupXCMQQfUgTWPr6BzstGgo5hsdAZPMOP0Zmj0Kx+9jxQJ5kFO9G3Q4VCY5U7GupUqkIb7Vbv9QIjh8Ru7MyRBhRg6a0pFM2SSsRR3Mhgf2GdkCv0eJIGuNJY6y8g4M8UnZM04Z5HkmWlcd5Ep7mSuu+tr9w93vwEowtlHNsUB2gAAAABJRU5ErkJggg==']
@@ -1142,7 +1201,7 @@ Output Data Length: 802
 --------------------------------------------------------------------------------
 *************************************************** Text Message; svg **************************************************
 Remarks: Text Message; svg
-Info => Transaction Id: n4ixryukzi74; Output Format: svg; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: eopdhnvxm5ym; Output Format: svg; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message_svg.svg']
@@ -1150,7 +1209,7 @@ Output Data Length: 42
 --------------------------------------------------------------------------------
 ************************************************* Text Message; svg uri ************************************************
 Remarks: Text Message; svg uri
-Info => Transaction Id: nz6pv75kjax3; Output Format: svg_uri; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: q52djopo8497; Output Format: svg_uri; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27225%27%20height%3D%27225%27%20class%3D%27segno%27%3E%3Cpath%20transform%3D%27scale%285%29%27%20class%3D%27qrline%27%20stroke%3D%27%23000%27%20d%3D%27M4%204.5h7m4%200h1m3%200h1m1%200h1m2%200h1m1%200h2m2%200h3m1%200h7m-37%201h1m5%200h1m2%200h4m1%200h3m1%200h1m3%200h1m7%200h1m5%200h1m-37%201h1m1%200h3m1%200h1m1%200h3m1%200h1m1%200h2m1%200h1m1%200h2m2%200h1m3%200h2m1%200h1m1%200h3m1%200h1m-37%201h1m1%200h3m1%200h1m1%200h2m1%200h1m1%200h1m7%200h3m4%200h1m1%200h1m1%200h3m1%200h1m-37%201h1m1%200h3m1%200h1m2%200h3m1%200h1m4%200h3m1%200h2m1%200h2m3%200h1m1%200h3m1%200h1m-37%201h1m5%200h1m2%200h1m2%200h2m2%200h5m3%200h3m3%200h1m5%200h1m-37%201h7m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h7m-28%201h2m1%200h1m2%200h1m3%200h1m1%200h2m3%200h1m1%200h1m-26%201h2m1%200h2m3%200h1m2%200h2m1%200h3m2%200h1m1%200h4m5%200h2m-35%201h1m2%200h1m4%200h1m1%200h1m2%200h1m1%200h1m1%200h1m3%200h1m2%200h1m1%200h1m1%200h1m1%200h2m2%200h3m-37%201h2m1%200h1m2%200h1m1%200h2m1%200h1m1%200h1m2%200h2m1%200h1m1%200h2m1%200h1m1%200h5m4%200h2m-37%201h1m1%200h1m1%200h1m4%200h3m3%200h4m1%200h1m1%200h1m5%200h1m2%200h2m1%200h1m1%200h1m-35%201h2m2%200h1m2%200h2m1%200h2m1%200h1m1%200h4m2%200h3m1%200h1m2%200h3m1%200h3m-36%201h1m1%200h2m3%200h1m6%200h3m1%200h2m3%200h1m8%200h1m1%200h2m-37%201h7m2%200h2m1%200h3m4%200h1m2%200h3m1%200h2m1%200h1m1%200h2m2%200h2m-33%201h2m3%200h2m3%200h3m1%200h6m1%200h2m1%200h1m1%200h2m1%200h2m1%200h1m-36%201h2m1%200h1m1%200h4m1%200h8m1%200h5m2%200h1m2%200h1m2%200h4m-37%201h1m1%200h1m1%200h2m4%200h1m4%200h2m4%200h4m3%200h2m1%200h1m2%200h1m1%200h1m-36%201h1m1%200h1m2%200h2m3%200h6m1%200h1m6%200h3m1%200h4m1%200h1m1%200h1m-37%201h4m4%200h2m1%200h4m3%200h1m4%200h3m3%200h5m1%200h2m-35%201h6m3%200h4m2%200h1m1%200h1m1%200h5m2%200h1m1%200h3m3%200h1m-37%201h4m4%200h2m1%200h1m5%200h1m2%200h2m1%200h2m2%200h1m1%200h5m2%200h1m-35%201h1m2%200h2m2%200h4m1%200h1m1%200h4m2%200h2m2%200h5m1%200h3m-35%201h1m3%200h1m2%200h1m4%200h1m4%200h4m1%200h1m3%200h1m3%200h4m1%200h1m-33%201h5m4%200h2m4%200h2m1%200h3m1%200h2m1%200h3m1%200h3m-35%201h1m1%200h2m1%200h1m1%200h2m2%200h1m1%200h1m2%200h2m1%200h1m2%200h1m1%200h2m2%200h7m1%200h1m-37%201h4m2%200h3m1%200h1m1%200h3m2%200h1m1%200h3m3%200h2m1%200h2m3%200h1m1%200h1m-36%201h1m6%200h3m4%200h1m1%200h6m2%200h1m1%200h2m1%200h1m2%200h2m-34%201h1m1%200h2m2%200h1m1%200h1m1%200h1m1%200h3m1%200h1m1%200h1m2%200h1m1%200h1m1%200h1m2%200h6m-26%201h1m1%200h1m1%200h2m4%200h4m1%200h2m3%200h1m3%200h4m-36%201h7m1%200h1m1%200h1m2%200h1m5%200h1m2%200h2m1%200h4m1%200h1m1%200h1m1%200h3m-37%201h1m5%200h1m2%200h6m2%200h4m1%200h1m1%200h2m1%200h2m3%200h2m1%200h1m-36%201h1m1%200h3m1%200h1m1%200h1m4%200h1m3%200h2m1%200h1m1%200h1m1%200h2m2%200h6m1%200h1m-36%201h1m1%200h3m1%200h1m1%200h1m1%200h4m1%200h1m1%200h3m2%200h1m2%200h1m3%200h4m1%200h3m-37%201h1m1%200h3m1%200h1m2%200h1m1%200h2m1%200h4m1%200h1m1%200h1m2%200h2m2%200h2m2%200h5m-37%201h1m5%200h1m4%200h2m8%200h1m3%200h1m1%200h1m1%200h3m1%200h4m-37%201h7m3%200h1m3%200h1m2%200h3m4%200h2m2%200h1m1%200h3m1%200h1m1%200h1%27%2F%3E%3C%2Fsvg%3E']
@@ -1158,7 +1217,7 @@ Output Data Length: 3170
 --------------------------------------------------------------------------------
 ************************************************** Bulk Data Single Qr *************************************************
 Remarks: Bulk Data Single Qr
-Info => Transaction Id: eglwtv3m7sa3; Output Format: png; Size: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: jwy45ywy4idt; Output Format: png; Size: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: }**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
 CLI
@@ -1217,7 +1276,7 @@ Output Data Length: 39
 ************************************************** Bulk Data Split Qrs *************************************************
 sequence_count is 6
 Remarks: Bulk Data Split Qrs
-Info => Transaction Id: a3kq10hli6ht; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: 1dp8do1zght9; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: }**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
 CLI
@@ -1480,7 +1539,7 @@ Output Data Length: 312
 --------------------------------------------------------------------------------
 ********************************************* Bulk Data Single Qr; PNG URI *********************************************
 Remarks: Bulk Data Single Qr; PNG URI
-Info => Transaction Id: lribmnb624mf; Output Format: png_uri; Size: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: verwroazws8o; Output Format: png_uri; Size: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: }**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
 CLI
@@ -1539,7 +1598,7 @@ Output Data Length: 10962
 ********************************************* Bulk Data Split Qrs; PNG URI *********************************************
 sequence_count is 6
 Remarks: Bulk Data Split Qrs; PNG URI
-Info => Transaction Id: c4qdj0jyb2w1; Output Format: png_uri; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: a5064uh9mr5u; Output Format: png_uri; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: }**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
 CLI
@@ -1803,7 +1862,7 @@ Output Data Length: 65792
 ********************************* Bulk Data Split Qrs; PNG URI; with Logo; Decorate Qr *********************************
 sequence_count is 6
 Remarks: Bulk Data Split Qrs; PNG URI; with Logo; Decorate Qr
-Info => Transaction Id: snx0f4d1ocjb; Output Format: png_uri; Size: 5; Qr Code Version: 40; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: u383vsns9ly5; Output Format: png_uri; Size: 5; Qr Code Version: 40; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: }**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
 CLI
@@ -2067,7 +2126,7 @@ Output Data Length: 232476
 ------------------------------------------------ Data Class: UnitTesting -----------------------------------------------
 ********************************** Text Message; web api; $qr_code_version; $KEY_NAME **********************************
 Remarks: Text Message; web api; qr_code_version_40
-Info => Transaction Id: 4za01a3mnhqx; Output Format: png; Size: 10; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: 64yzcwdva2ay; Output Format: png; Size: 10; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message_web_api_qr_code_version_40.png']
@@ -2075,7 +2134,7 @@ Output Data Length: 65
 --------------------------------------------------------------------------------
 *************************************** Text Message; $qr_code_version; $KEY_NAME **************************************
 Remarks: Text Message; qr_code_version_40
-Info => Transaction Id: vuzk16spljph; Output Format: png; Size: 10; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: n3qj5vefyrw9; Output Format: png; Size: 10; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message_qr_code_version_40.png']
@@ -2083,7 +2142,7 @@ Output Data Length: 57
 --------------------------------------------------------------------------------
 ******************************************** Text Message; $size; $KEY_NAME ********************************************
 Remarks: Text Message; size_2
-Info => Transaction Id: 3bg85r83p507; Output Format: png; Size: 2; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: vjosz3y14e75; Output Format: png; Size: 2; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message_size_2.png']
@@ -2091,7 +2150,7 @@ Output Data Length: 45
 --------------------------------------------------------------------------------
 ******************************************** Text Message; $size; $KEY_NAME ********************************************
 Remarks: Text Message; size_10
-Info => Transaction Id: oq46tude1377; Output Format: png; Size: 10; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: xxqh5yloy910; Output Format: png; Size: 10; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message_size_10.png']
@@ -2099,7 +2158,7 @@ Output Data Length: 46
 --------------------------------------------------------------------------------
 *********************************** Text Message; $qr_code_version; $size; $KEY_NAME ***********************************
 Remarks: Text Message; qr_code_version_33; size_8
-Info => Transaction Id: u40ffma645f6; Output Format: png; Size: 8; Qr Code Version: 33; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: aliim2sks482; Output Format: png; Size: 8; Qr Code Version: 33; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message_qr_code_version_33_size_8.png']
@@ -2107,7 +2166,7 @@ Output Data Length: 64
 --------------------------------------------------------------------------------
 *************************************** Text Message; $qr_code_version; $KEY_NAME **************************************
 Remarks: Text Message; qr_code_version_20
-Info => Transaction Id: 88ifn8zq8cf7; Output Format: png; Size: 5; Qr Code Version: 20; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: vl39fz6x4jsj; Output Format: png; Size: 5; Qr Code Version: 20; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message_qr_code_version_20.png']
@@ -2115,7 +2174,7 @@ Output Data Length: 57
 --------------------------------------------------------------------------------
 *************************************** Text Message; $qr_code_version; $KEY_NAME **************************************
 Remarks: Text Message; qr_code_version_40
-Info => Transaction Id: ulm7k1viletk; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: 1lkqd1c6ir9i; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message_qr_code_version_40.png']
@@ -2123,7 +2182,7 @@ Output Data Length: 57
 --------------------------------------------------------------------------------
 ***************************************** amenitypj.in; $decorate_qr; $KEY_NAME ****************************************
 Remarks: amenitypj.in; decorate_qr_False
-Info => Transaction Id: xkctorbywk1v; Output Format: png; Size: 5; Qr Code Version: 5; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: 273o7w47t56p; Output Format: png; Size: 5; Qr Code Version: 5; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: https://amenitypj.in/
 Input Data Length: 21
 Output Data: data/\user_data\amenitypj.in_decorate_qr_False.png
@@ -2131,7 +2190,7 @@ Output Data Length: 50
 --------------------------------------------------------------------------------
 ***************************************** amenitypj.in; $decorate_qr; $KEY_NAME ****************************************
 Remarks: amenitypj.in; decorate_qr_True
-Info => Transaction Id: jlgurrygnucp; Output Format: png; Size: 5; Qr Code Version: 5; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: kh6tfk2pstt8; Output Format: png; Size: 5; Qr Code Version: 5; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: https://amenitypj.in/
 Input Data Length: 21
 Output Data: data/\user_data\amenitypj.in_decorate_qr_True.png
@@ -2139,7 +2198,7 @@ Output Data Length: 49
 --------------------------------------------------------------------------------
 ***************************************** amenitypj.in; $decorate_qr; $KEY_NAME ****************************************
 Remarks: amenitypj.in; decorate_qr_False
-Info => Transaction Id: e545dlzeogu7; Output Format: png; Size: 5; Qr Code Version: 5; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: lg36zj03q1dv; Output Format: png; Size: 5; Qr Code Version: 5; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: https://amenitypj.in/
 Input Data Length: 21
 Output Data: data/\user_data\amenitypj.in_decorate_qr_False.png
@@ -2147,7 +2206,7 @@ Output Data Length: 50
 --------------------------------------------------------------------------------
 ***************************************** amenitypj.in; $decorate_qr; $KEY_NAME ****************************************
 Remarks: amenitypj.in; decorate_qr_True
-Info => Transaction Id: xnguplpa5vs9; Output Format: png; Size: 5; Qr Code Version: 5; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: akqjxqu9ntyb; Output Format: png; Size: 5; Qr Code Version: 5; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: https://amenitypj.in/
 Input Data Length: 21
 Output Data: data/\user_data\amenitypj.in_decorate_qr_True.png
@@ -2155,7 +2214,7 @@ Output Data Length: 49
 --------------------------------------------------------------------------------
 ***************************************** Text Message; $decorate_qr; $KEY_NAME ****************************************
 Remarks: Text Message; decorate_qr_False
-Info => Transaction Id: 6wsxki0mruxa; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: j72de1v5pemm; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message_decorate_qr_False.png']
@@ -2163,7 +2222,7 @@ Output Data Length: 56
 --------------------------------------------------------------------------------
 ***************************************** Text Message; $decorate_qr; $KEY_NAME ****************************************
 Remarks: Text Message; decorate_qr_True
-Info => Transaction Id: qirrnxbdslac; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: j82bakwysa7i; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message_decorate_qr_True.png']
@@ -2171,7 +2230,7 @@ Output Data Length: 55
 --------------------------------------------------------------------------------
 ************************************* Text Message; $decorate_qr; $size; $KEY_NAME *************************************
 Remarks: Text Message; decorate_qr_False; size_2
-Info => Transaction Id: 3we6dhlc3nb4; Output Format: png; Size: 2; Qr Code Version: 5; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: oh0ykwylxavb; Output Format: png; Size: 2; Qr Code Version: 5; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: data/\user_data\Text_Message_decorate_qr_False_size_2.png
@@ -2179,7 +2238,7 @@ Output Data Length: 57
 --------------------------------------------------------------------------------
 ************************************* Text Message; $decorate_qr; $size; $KEY_NAME *************************************
 Remarks: Text Message; decorate_qr_True; size_2
-Info => Transaction Id: u3s84z7p2e5a; Output Format: png; Size: 2; Qr Code Version: 5; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: ygchmeklxxd1; Output Format: png; Size: 2; Qr Code Version: 5; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: data/\user_data\Text_Message_decorate_qr_True_size_2.png
@@ -2187,7 +2246,7 @@ Output Data Length: 56
 --------------------------------------------------------------------------------
 ************************************* Text Message; $decorate_qr; $size; $KEY_NAME *************************************
 Remarks: Text Message; decorate_qr_False; size_10
-Info => Transaction Id: 83k2dzzode5w; Output Format: png; Size: 10; Qr Code Version: 5; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: v9j3lkddyp7s; Output Format: png; Size: 10; Qr Code Version: 5; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: data/\user_data\Text_Message_decorate_qr_False_size_10.png
@@ -2195,7 +2254,7 @@ Output Data Length: 58
 --------------------------------------------------------------------------------
 ************************************* Text Message; $decorate_qr; $size; $KEY_NAME *************************************
 Remarks: Text Message; decorate_qr_True; size_10
-Info => Transaction Id: o9xedm4be9y4; Output Format: png; Size: 10; Qr Code Version: 5; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: 97n86w0j9uz4; Output Format: png; Size: 10; Qr Code Version: 5; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: data/\user_data\Text_Message_decorate_qr_True_size_10.png
@@ -2203,7 +2262,7 @@ Output Data Length: 57
 --------------------------------------------------------------------------------
 ******************************** Text Message; $decorate_qr; $qr_code_version; $KEY_NAME *******************************
 Remarks: Text Message; decorate_qr_False; qr_code_version_40
-Info => Transaction Id: 5o563jozh2e3; Output Format: png; Size: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: br3b9gorytd3; Output Format: png; Size: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: data/\user_data\Text_Message_decorate_qr_False_qr_code_version_40.png
@@ -2211,7 +2270,7 @@ Output Data Length: 69
 --------------------------------------------------------------------------------
 ******************************** Text Message; $decorate_qr; $qr_code_version; $KEY_NAME *******************************
 Remarks: Text Message; decorate_qr_True; qr_code_version_40
-Info => Transaction Id: zikinea38z4h; Output Format: png; Size: 5; Qr Code Version: 40; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: xlulgs3ewis3; Output Format: png; Size: 5; Qr Code Version: 40; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: data/\user_data\Text_Message_decorate_qr_True_qr_code_version_40.png
@@ -2220,7 +2279,7 @@ Output Data Length: 68
 ************************************* Bulk Data Split Qrs; $decorate_qr; $KEY_NAME *************************************
 sequence_count is 6
 Remarks: Bulk Data Split Qrs; decorate_qr_False
-Info => Transaction Id: h7lhy5hb7o8u; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: uap8i2ah2r9e; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data Length: 14766
 Output Data: ['data/\\user_data\\Bulk_Data_Split_Qrs_decorate_qr_False_item_1.png', 'data/\\user_data\\Bulk_Data_Split_Qrs_decorate_qr_False_item_2.png', 'data/\\user_data\\Bulk_Data_Split_Qrs_decorate_qr_False_item_3.png', 'data/\\user_data\\Bulk_Data_Split_Qrs_decorate_qr_False_item_4.png', 'data/\\user_data\\Bulk_Data_Split_Qrs_decorate_qr_False_item_5.png', 'data/\\user_data\\Bulk_Data_Split_Qrs_decorate_qr_False_item_6.png']
 Output Data Length: 420
@@ -2228,14 +2287,14 @@ Output Data Length: 420
 ************************************* Bulk Data Split Qrs; $decorate_qr; $KEY_NAME *************************************
 sequence_count is 6
 Remarks: Bulk Data Split Qrs; decorate_qr_True
-Info => Transaction Id: qbln8w1dznre; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: m6v5s93olz5a; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data Length: 14766
 Output Data: ['data/\\user_data\\Bulk_Data_Split_Qrs_decorate_qr_True_item_1.png', 'data/\\user_data\\Bulk_Data_Split_Qrs_decorate_qr_True_item_2.png', 'data/\\user_data\\Bulk_Data_Split_Qrs_decorate_qr_True_item_3.png', 'data/\\user_data\\Bulk_Data_Split_Qrs_decorate_qr_True_item_4.png', 'data/\\user_data\\Bulk_Data_Split_Qrs_decorate_qr_True_item_5.png', 'data/\\user_data\\Bulk_Data_Split_Qrs_decorate_qr_True_item_6.png']
 Output Data Length: 414
 --------------------------------------------------------------------------------
 *********************************************** amenitypj.in; Output Path **********************************************
 Remarks: amenitypj.in; Output Path
-Info => Transaction Id: ybw24ig4ypkv; Output Format: png; Size: 5; Qr Code Version: 5; Output Path: data\user_data; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: 9rhxgdy3wkdq; Output Format: png; Size: 5; Qr Code Version: 5; Output Path: data\user_data; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: https://amenitypj.in/
 Input Data Length: 21
 Output Data: data/\user_data\amenitypj.in_Output_Path.png
@@ -2243,7 +2302,7 @@ Output Data Length: 44
 --------------------------------------------------------------------------------
 *************************************** amenitypj.in; email sig; $size; $KEY_NAME **************************************
 Remarks: amenitypj.in; email sig; size_3
-Info => Transaction Id: mp363oan90sj; Output Format: png; Size: 3; Qr Code Version: 5; Decorate Qr: True; Output Path: D:\Other\Github_Self\qrPlay\data\user_data; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: jij0gmmdylhi; Output Format: png; Size: 3; Qr Code Version: 5; Decorate Qr: True; Output Path: D:\Other\Github_Self\qrPlay\data\user_data; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: https://amenitypj.in/
 Input Data Length: 21
 Output Data: D:/Other/Github_Self/qrPlay/data/\user_data\amenitypj.in_email_sig_size_3.png
@@ -2251,7 +2310,7 @@ Output Data Length: 77
 --------------------------------------------------------------------------------
 *************************************** Bulk Data Single Qr $split_qrs; $KEY_NAME **************************************
 Remarks: Bulk Data Single Qr split_qrs_False
-Info => Transaction Id: l46kd3kydgnx; Output Format: png; Size: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: ljz7fsryot15; Output Format: png; Size: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: }**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
 CLI
@@ -2309,7 +2368,7 @@ Output Data Length: 55
 --------------------------------------------------------------------------------
 *************************************** Bulk Data Single Qr $split_qrs; $KEY_NAME **************************************
 Remarks: Bulk Data Single Qr split_qrs_True
-Info => Transaction Id: 4g0vf6hdix3n; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: lbqzv4pyk37g; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: }**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
 CLI
@@ -2365,13 +2424,205 @@ Input Data Length: 2945
 Output Data: ['data/\\user_data\\Bulk_Data_Single_Qr_split_qrs_True.png']
 Output Data Length: 60
 --------------------------------------------------------------------------------
+************************************ vCard; $decorate_qr; $label_position; $KEY_NAME ***********************************
+image_width: 925
+image_height: 925
+text_width: 88
+text_height: 24
+Remarks: vCard; decorate_qr_True; label_position_TOP
+Info => Transaction Id: icw5iof9avkr; Output Format: png; Size: 5; Qr Code Version: 40; Decorate Qr: True; Label: Qr Play; Label Position: Position.TOP; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Input Data: BEGIN:VCARD
+n:Jaiswal;Pratik;
+NICKNAME:Pj
+TEL;TYPE=work,VOICE:(91) 80000-12345
+TEL;TYPE=home,VOICE:(91) 80000-54321
+EMAIL;TYPE=work:pj@amenitypj.in
+EMAIL;TYPE=home:pj@gmail.com
+ORG:Amenity Pj
+TITLE:Founder
+ADR;TYPE=WORK,PREF:;;123 ABC;XYZ;Bangalore;560000;India
+URL:www.amenitypj.in/
+VERSION:3.0
+END:VCARD
+Input Data Length: 305
+Output Data: data/\user_data\vCard_decorate_qr_True_label_position_TOP.png
+Output Data Length: 61
+--------------------------------------------------------------------------------
+************************************ vCard; $decorate_qr; $label_position; $KEY_NAME ***********************************
+image_width: 925
+image_height: 925
+text_width: 88
+text_height: 24
+Remarks: vCard; decorate_qr_False; label_position_TOP
+Info => Transaction Id: 4grtgwg6l1w9; Output Format: png; Size: 5; Qr Code Version: 40; Label: Qr Play; Label Position: Position.TOP; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Input Data: BEGIN:VCARD
+n:Jaiswal;Pratik;
+NICKNAME:Pj
+TEL;TYPE=work,VOICE:(91) 80000-12345
+TEL;TYPE=home,VOICE:(91) 80000-54321
+EMAIL;TYPE=work:pj@amenitypj.in
+EMAIL;TYPE=home:pj@gmail.com
+ORG:Amenity Pj
+TITLE:Founder
+ADR;TYPE=WORK,PREF:;;123 ABC;XYZ;Bangalore;560000;India
+URL:www.amenitypj.in/
+VERSION:3.0
+END:VCARD
+Input Data Length: 305
+Output Data: data/\user_data\vCard_decorate_qr_False_label_position_TOP.png
+Output Data Length: 62
+--------------------------------------------------------------------------------
+************************************ vCard; $decorate_qr; $label_position; $KEY_NAME ***********************************
+image_width: 925
+image_height: 925
+text_width: 88
+text_height: 24
+Remarks: vCard; decorate_qr_True; label_position_RIGHT
+Info => Transaction Id: nockpynt76n8; Output Format: png; Size: 5; Qr Code Version: 40; Decorate Qr: True; Label: Qr Play; Label Position: Position.RIGHT; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Input Data: BEGIN:VCARD
+n:Jaiswal;Pratik;
+NICKNAME:Pj
+TEL;TYPE=work,VOICE:(91) 80000-12345
+TEL;TYPE=home,VOICE:(91) 80000-54321
+EMAIL;TYPE=work:pj@amenitypj.in
+EMAIL;TYPE=home:pj@gmail.com
+ORG:Amenity Pj
+TITLE:Founder
+ADR;TYPE=WORK,PREF:;;123 ABC;XYZ;Bangalore;560000;India
+URL:www.amenitypj.in/
+VERSION:3.0
+END:VCARD
+Input Data Length: 305
+Output Data: data/\user_data\vCard_decorate_qr_True_label_position_RIGHT.png
+Output Data Length: 63
+--------------------------------------------------------------------------------
+************************************ vCard; $decorate_qr; $label_position; $KEY_NAME ***********************************
+image_width: 925
+image_height: 925
+text_width: 88
+text_height: 24
+Remarks: vCard; decorate_qr_False; label_position_RIGHT
+Info => Transaction Id: sdpbzo5dnmvf; Output Format: png; Size: 5; Qr Code Version: 40; Label: Qr Play; Label Position: Position.RIGHT; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Input Data: BEGIN:VCARD
+n:Jaiswal;Pratik;
+NICKNAME:Pj
+TEL;TYPE=work,VOICE:(91) 80000-12345
+TEL;TYPE=home,VOICE:(91) 80000-54321
+EMAIL;TYPE=work:pj@amenitypj.in
+EMAIL;TYPE=home:pj@gmail.com
+ORG:Amenity Pj
+TITLE:Founder
+ADR;TYPE=WORK,PREF:;;123 ABC;XYZ;Bangalore;560000;India
+URL:www.amenitypj.in/
+VERSION:3.0
+END:VCARD
+Input Data Length: 305
+Output Data: data/\user_data\vCard_decorate_qr_False_label_position_RIGHT.png
+Output Data Length: 64
+--------------------------------------------------------------------------------
+************************************ vCard; $decorate_qr; $label_position; $KEY_NAME ***********************************
+image_width: 925
+image_height: 925
+text_width: 88
+text_height: 24
+Remarks: vCard; decorate_qr_True; label_position_BOTTOM
+Info => Transaction Id: 3a58n7rcst7b; Output Format: png; Size: 5; Qr Code Version: 40; Decorate Qr: True; Label: Qr Play; Label Position: Position.BOTTOM; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Input Data: BEGIN:VCARD
+n:Jaiswal;Pratik;
+NICKNAME:Pj
+TEL;TYPE=work,VOICE:(91) 80000-12345
+TEL;TYPE=home,VOICE:(91) 80000-54321
+EMAIL;TYPE=work:pj@amenitypj.in
+EMAIL;TYPE=home:pj@gmail.com
+ORG:Amenity Pj
+TITLE:Founder
+ADR;TYPE=WORK,PREF:;;123 ABC;XYZ;Bangalore;560000;India
+URL:www.amenitypj.in/
+VERSION:3.0
+END:VCARD
+Input Data Length: 305
+Output Data: data/\user_data\vCard_decorate_qr_True_label_position_BOTTOM.png
+Output Data Length: 64
+--------------------------------------------------------------------------------
+************************************ vCard; $decorate_qr; $label_position; $KEY_NAME ***********************************
+image_width: 925
+image_height: 925
+text_width: 88
+text_height: 24
+Remarks: vCard; decorate_qr_False; label_position_BOTTOM
+Info => Transaction Id: 3ds2ri5y97xk; Output Format: png; Size: 5; Qr Code Version: 40; Label: Qr Play; Label Position: Position.BOTTOM; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Input Data: BEGIN:VCARD
+n:Jaiswal;Pratik;
+NICKNAME:Pj
+TEL;TYPE=work,VOICE:(91) 80000-12345
+TEL;TYPE=home,VOICE:(91) 80000-54321
+EMAIL;TYPE=work:pj@amenitypj.in
+EMAIL;TYPE=home:pj@gmail.com
+ORG:Amenity Pj
+TITLE:Founder
+ADR;TYPE=WORK,PREF:;;123 ABC;XYZ;Bangalore;560000;India
+URL:www.amenitypj.in/
+VERSION:3.0
+END:VCARD
+Input Data Length: 305
+Output Data: data/\user_data\vCard_decorate_qr_False_label_position_BOTTOM.png
+Output Data Length: 65
+--------------------------------------------------------------------------------
+************************************ vCard; $decorate_qr; $label_position; $KEY_NAME ***********************************
+image_width: 925
+image_height: 925
+text_width: 88
+text_height: 24
+Remarks: vCard; decorate_qr_True; label_position_LEFT
+Info => Transaction Id: kdgowwy3g1hk; Output Format: png; Size: 5; Qr Code Version: 40; Decorate Qr: True; Label: Qr Play; Label Position: Position.LEFT; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Input Data: BEGIN:VCARD
+n:Jaiswal;Pratik;
+NICKNAME:Pj
+TEL;TYPE=work,VOICE:(91) 80000-12345
+TEL;TYPE=home,VOICE:(91) 80000-54321
+EMAIL;TYPE=work:pj@amenitypj.in
+EMAIL;TYPE=home:pj@gmail.com
+ORG:Amenity Pj
+TITLE:Founder
+ADR;TYPE=WORK,PREF:;;123 ABC;XYZ;Bangalore;560000;India
+URL:www.amenitypj.in/
+VERSION:3.0
+END:VCARD
+Input Data Length: 305
+Output Data: data/\user_data\vCard_decorate_qr_True_label_position_LEFT.png
+Output Data Length: 62
+--------------------------------------------------------------------------------
+************************************ vCard; $decorate_qr; $label_position; $KEY_NAME ***********************************
+image_width: 925
+image_height: 925
+text_width: 88
+text_height: 24
+Remarks: vCard; decorate_qr_False; label_position_LEFT
+Info => Transaction Id: 4xs6djdz520w; Output Format: png; Size: 5; Qr Code Version: 40; Label: Qr Play; Label Position: Position.LEFT; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Input Data: BEGIN:VCARD
+n:Jaiswal;Pratik;
+NICKNAME:Pj
+TEL;TYPE=work,VOICE:(91) 80000-12345
+TEL;TYPE=home,VOICE:(91) 80000-54321
+EMAIL;TYPE=work:pj@amenitypj.in
+EMAIL;TYPE=home:pj@gmail.com
+ORG:Amenity Pj
+TITLE:Founder
+ADR;TYPE=WORK,PREF:;;123 ABC;XYZ;Bangalore;560000;India
+URL:www.amenitypj.in/
+VERSION:3.0
+END:VCARD
+Input Data Length: 305
+Output Data: data/\user_data\vCard_decorate_qr_False_label_position_LEFT.png
+Output Data Length: 63
+--------------------------------------------------------------------------------
 --------------------------------------------------- Data Class: Test ---------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 ---------------------------------- Time Details ----------------------------------
-Current Time Stamp: 2025-01-26 19:43:28.978759+05:30
-Execution Time: 00:00:13; Milliseconds: 13646.790027618408
-Execution Time CPU: 00:00:13; Milliseconds: 13562.5
+Current Time Stamp: 2025-02-28 09:04:45.738901+05:30
+Execution Time: 00:00:14; Milliseconds: 14861.376523971558
+Execution Time CPU: 00:00:14; Milliseconds: 14796.875
 Timer State: TIMER_OFF
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

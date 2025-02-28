@@ -5,13 +5,13 @@ Python executable Path is D:\Other\Github_Self\qrPlay\venv\Scripts
 User Name is Pratik Jaiswal
 User Account is impra
 --------------------------------------------------------------------------------
-Time Stamp is Sunday, Jan 26 2025, 19:42:59:671267, IST (GMT+0530)
+Time Stamp is Friday, Feb 28 2025, 09:04:09:288854, IST (GMT+0530)
 --------------------------------------------------------------------------------
-Git Summary is 05cb16e;  (HEAD -> main); 2025-01-26 19:12:37 +0530; imPratik <impratikjaiswal@gmail.com>; libs synced
+Git Summary is 5ef3e8d;  (HEAD -> main, origin/main, origin/HEAD); 2025-02-28 08:57:22 +0530; imPratik <impratikjaiswal@gmail.com>; lable fixed for PNG_URI
 --------------------------------------------------------------------------------
-pythonHelpers version is v5.2.4
+pythonHelpers version is v5.3.1
 --------------------------------------------------------------------------------
-qrPlay version is v4.2.0
+qrPlay version is v4.3.0
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 segno version is v1.6.1
@@ -26,6 +26,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: True
+label_position: Position.BOTTOM
 data_group: Website Url
 
 Website Url; Amenity Pj; No Logo:
@@ -36,17 +37,42 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Website Url
 
-LPA:
+Contact Card; vCard (Virtual Contact Card); Android; iOS:
+input_data: BEGIN:VCARD
+n:Jaiswal;Pratik;
+NICKNAME:Pj
+TEL;TYPE=work,VOICE:(91) 80000-12345
+TEL;TYPE=home,VOICE:(91) 80000-54321
+EMAIL;TYPE=work:pj@amenitypj.in
+EMAIL;TYPE=home:pj@gmail.com
+ORG:Amenity Pj
+TITLE:Founder
+ADR;TYPE=WORK,PREF:;;123 ABC;XYZ;Bangalore;560000;India
+URL:www.amenitypj.in/
+VERSION:3.0
+END:VCARD
+remarks: Contact Card; vCard (Virtual Contact Card); Android; iOS
+output_format: png
+size: 5
+qr_code_version: 20
+split_qrs: False
+decorate_qr: False
+label_position: Position.BOTTOM
+data_group: Contact Card
+
+LPA (Local Profile Assistant); eSIM Sample Qr Code:
 input_data: LPA:1$SMDP.EXAMPLE.COM$04386-AGYFT-A74Y8-3F815
-remarks: LPA
+remarks: LPA (Local Profile Assistant); eSIM Sample Qr Code
 output_format: png
 size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: False
-data_group: LPA
+label_position: Position.BOTTOM
+data_group: LPA (Local Profile Assistant)
 
 UPI; Google Pay/GPay:
 input_data: upi://pay?pa=impratikjaiswal@okicici&pn=Pratik%20Jaiswal&aid=uGICAgICw6tuJBw
@@ -56,6 +82,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: UPI
 
 UPI; Google Pay/GPay; with Logo; Decorate Qr:
@@ -66,6 +93,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: True
+label_position: Position.BOTTOM
 data_group: UPI
 
 Text Message:
@@ -76,6 +104,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Text Message
 
 Text Message; with Logo; Decorate Qr:
@@ -86,6 +115,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: True
+label_position: Position.BOTTOM
 data_group: Text Message
 
 Text Message; qr_code_version=20; size=8:
@@ -96,6 +126,7 @@ size: 10
 qr_code_version: 20
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Text Message
 
 Text Message; png uri:
@@ -106,6 +137,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Text Message
 
 Text Message; svg:
@@ -116,6 +148,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Text Message
 
 Text Message; svg uri:
@@ -126,6 +159,7 @@ size: 5
 qr_code_version: 5
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Text Message
 
 Bulk Data Single Qr:
@@ -186,6 +220,7 @@ size: 5
 qr_code_version: 40
 split_qrs: False
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Bulk Data Single Qr
 
 Bulk Data Split Qrs:
@@ -451,6 +486,7 @@ size: 5
 qr_code_version: 40
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Bulk Data Split Qrs
 
 Bulk Data Single Qr; PNG URI:
@@ -511,6 +547,7 @@ size: 5
 qr_code_version: 40
 split_qrs: False
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Bulk Data Single Qr
 
 Bulk Data Split Qrs; PNG URI:
@@ -776,6 +813,7 @@ size: 5
 qr_code_version: 40
 split_qrs: True
 decorate_qr: False
+label_position: Position.BOTTOM
 data_group: Bulk Data Split Qrs
 
 Bulk Data Split Qrs; PNG URI; with Logo; Decorate Qr:
@@ -1041,11 +1079,12 @@ size: 5
 qr_code_version: 40
 split_qrs: True
 decorate_qr: True
+label_position: Position.BOTTOM
 data_group: Bulk Data Split Qrs
 
 ************************************ Website Url; Amenity Pj; with Logo; Decorate Qr ***********************************
 Remarks: Website Url; Amenity Pj; with Logo; Decorate Qr
-Info => Transaction Id: ft7qc9an6hmt; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: yr9kzxomp35y; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: https://amenitypj.in/
 Input Data Length: 21
 Output Data: ['data/\\user_data\\Website_Url_Amenity_Pj_with_Logo_Decorate_Qr.png']
@@ -1053,23 +1092,43 @@ Output Data Length: 70
 --------------------------------------------------------------------------------
 ******************************************* Website Url; Amenity Pj; No Logo *******************************************
 Remarks: Website Url; Amenity Pj; No Logo
-Info => Transaction Id: jchme6bvz40h; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: h3hk1ijozkvr; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: https://amenitypj.in/
 Input Data Length: 21
 Output Data: ['data/\\user_data\\Website_Url_Amenity_Pj_No_Logo.png']
 Output Data Length: 56
 --------------------------------------------------------------------------------
-********************************************************** LPA *********************************************************
-Remarks: LPA
-Info => Transaction Id: zefgzm94desp; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+******************************* Contact Card; vCard (Virtual Contact Card); Android; iOS *******************************
+Remarks: Contact Card; vCard (Virtual Contact Card); Android; iOS
+Info => Transaction Id: pl6n8rwzgcdr; Output Format: png; Size: 5; Qr Code Version: 20; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Input Data: BEGIN:VCARD
+n:Jaiswal;Pratik;
+NICKNAME:Pj
+TEL;TYPE=work,VOICE:(91) 80000-12345
+TEL;TYPE=home,VOICE:(91) 80000-54321
+EMAIL;TYPE=work:pj@amenitypj.in
+EMAIL;TYPE=home:pj@gmail.com
+ORG:Amenity Pj
+TITLE:Founder
+ADR;TYPE=WORK,PREF:;;123 ABC;XYZ;Bangalore;560000;India
+URL:www.amenitypj.in/
+VERSION:3.0
+END:VCARD
+Input Data Length: 305
+Output Data: data/\user_data\Contact_Card_vCard_Virtual_Contact_Card_Android_iOS.png
+Output Data Length: 71
+--------------------------------------------------------------------------------
+********************************** LPA (Local Profile Assistant); eSIM Sample Qr Code **********************************
+Remarks: LPA (Local Profile Assistant); eSIM Sample Qr Code
+Info => Transaction Id: rlwl8bxo5ih5; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: LPA:1$SMDP.EXAMPLE.COM$04386-AGYFT-A74Y8-3F815
 Input Data Length: 46
-Output Data: ['data/\\user_data\\LPA.png']
-Output Data Length: 29
+Output Data: ['data/\\user_data\\LPA_Local_Profile_Assistant_eSIM_Sample_Qr_Code.png']
+Output Data Length: 73
 --------------------------------------------------------------------------------
 ************************************************* UPI; Google Pay/GPay *************************************************
 Remarks: UPI; Google Pay/GPay
-Info => Transaction Id: cznmizweg8ry; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: s7mg08ko8f5c; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: upi://pay?pa=impratikjaiswal@okicici&pn=Pratik%20Jaiswal&aid=uGICAgICw6tuJBw
 Input Data Length: 76
 Output Data: ['data/\\user_data\\UPI_Google_Pay_GPay.png']
@@ -1077,7 +1136,7 @@ Output Data Length: 45
 --------------------------------------------------------------------------------
 ************************************* UPI; Google Pay/GPay; with Logo; Decorate Qr *************************************
 Remarks: UPI; Google Pay/GPay; with Logo; Decorate Qr
-Info => Transaction Id: a8vi5od3zz5o; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: 5zdk8w7fqpqx; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: upi://pay?pa=impratikjaiswal@okicici&pn=Pratik%20Jaiswal&aid=uGICAgICw6tuJBw
 Input Data Length: 76
 Output Data: ['data/\\user_data\\UPI_Google_Pay_GPay_with_Logo_Decorate_Qr.png']
@@ -1085,7 +1144,7 @@ Output Data Length: 67
 --------------------------------------------------------------------------------
 ***************************************************** Text Message *****************************************************
 Remarks: Text Message
-Info => Transaction Id: er730ntb5fyx; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: z619xzuztflb; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message.png']
@@ -1093,7 +1152,7 @@ Output Data Length: 38
 --------------------------------------------------------------------------------
 ***************************************** Text Message; with Logo; Decorate Qr *****************************************
 Remarks: Text Message; with Logo; Decorate Qr
-Info => Transaction Id: ryzo475apbqh; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: ee1p6g46xtjo; Output Format: png; Size: 5; Qr Code Version: 5; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message_with_Logo_Decorate_Qr.png']
@@ -1101,7 +1160,7 @@ Output Data Length: 60
 --------------------------------------------------------------------------------
 *************************************** Text Message; qr_code_version=20; size=8 ***************************************
 Remarks: Text Message; qr_code_version=20; size=8
-Info => Transaction Id: zopz4iu213mr; Output Format: png; Size: 10; Qr Code Version: 20; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: 0nu7cjqzpimd; Output Format: png; Size: 10; Qr Code Version: 20; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message_qr_code_version_20_size_8.png']
@@ -1109,7 +1168,7 @@ Output Data Length: 64
 --------------------------------------------------------------------------------
 ************************************************* Text Message; png uri ************************************************
 Remarks: Text Message; png uri
-Info => Transaction Id: x4gz7li8itqm; Output Format: png_uri; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: jflhhansnybx; Output Format: png_uri; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhAQAAAAAWyO/XAAACC0lEQVR42u1YMY7DMAxTL0PGPME/ST4WoAXysfYnfkLGDEF1JO1bOxzuIA0pUCOJF4KiKcrmH34Pu3av3d/u7mZ2c6/+njYfn9Np4xOfRux+2aff/+0S1d39BXzAshY8uWuJRrXa+NqtgKatju/Ja3vNgGqoxwKGDptAUxZUqCBQUVLTA2VMgEq62tyWnRoHoBS64hnc14K6/SwJzmD3iCKhHzc/Wbz2LRRVhZrgV5CUUVImkB6tq0rJl2OGix6LKkgrDUY1VG/OwAUKa1Yf7gxyAfO3wQ90/N62RjsDXIodp9gMXQEQqEPvCT+D6DMyLQJqT+1bvF+RKwUH0nTMdq/xfmULrYCAzNBx1HaiUREGise3gj+MQsEm/AyCq7NAV3dkBizQ/Vni1e70dryscnQ7LN4Z9m6ldmuEDSRsqPF+BY07UW2VgBDeUcYkXLGWkBTU3qBFc1WQXx4K7+ZszIhbFp8ZnNFK5DArn3QuURecr6grWumJ4zfR5RNw1VuMkgwzjctPE6idA6rOoHoPlq3G60oupXCMQQfUgTWPr6BzstGgo5hsdAZPMOP0Zmj0Kx+9jxQJ5kFO9G3Q4VCY5U7GupUqkIb7Vbv9QIjh8Ru7MyRBhRg6a0pFM2SSsRR3Mhgf2GdkCv0eJIGuNJY6y8g4M8UnZM04Z5HkmWlcd5Ep7mSuu+tr9w93vwEowtlHNsUB2gAAAABJRU5ErkJggg==']
@@ -1117,7 +1176,7 @@ Output Data Length: 802
 --------------------------------------------------------------------------------
 *************************************************** Text Message; svg **************************************************
 Remarks: Text Message; svg
-Info => Transaction Id: 6fwkcup2lxyv; Output Format: svg; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: j9v7q0qgpfek; Output Format: svg; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data/\\user_data\\Text_Message_svg.svg']
@@ -1125,7 +1184,7 @@ Output Data Length: 42
 --------------------------------------------------------------------------------
 ************************************************* Text Message; svg uri ************************************************
 Remarks: Text Message; svg uri
-Info => Transaction Id: ixnse37dv7px; Output Format: svg_uri; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: gebpb3idl92x; Output Format: svg_uri; Size: 5; Qr Code Version: 5; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: Welcome To QrPlay
 Input Data Length: 17
 Output Data: ['data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27225%27%20height%3D%27225%27%20class%3D%27segno%27%3E%3Cpath%20transform%3D%27scale%285%29%27%20class%3D%27qrline%27%20stroke%3D%27%23000%27%20d%3D%27M4%204.5h7m4%200h1m3%200h1m1%200h1m2%200h1m1%200h2m2%200h3m1%200h7m-37%201h1m5%200h1m2%200h4m1%200h3m1%200h1m3%200h1m7%200h1m5%200h1m-37%201h1m1%200h3m1%200h1m1%200h3m1%200h1m1%200h2m1%200h1m1%200h2m2%200h1m3%200h2m1%200h1m1%200h3m1%200h1m-37%201h1m1%200h3m1%200h1m1%200h2m1%200h1m1%200h1m7%200h3m4%200h1m1%200h1m1%200h3m1%200h1m-37%201h1m1%200h3m1%200h1m2%200h3m1%200h1m4%200h3m1%200h2m1%200h2m3%200h1m1%200h3m1%200h1m-37%201h1m5%200h1m2%200h1m2%200h2m2%200h5m3%200h3m3%200h1m5%200h1m-37%201h7m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h7m-28%201h2m1%200h1m2%200h1m3%200h1m1%200h2m3%200h1m1%200h1m-26%201h2m1%200h2m3%200h1m2%200h2m1%200h3m2%200h1m1%200h4m5%200h2m-35%201h1m2%200h1m4%200h1m1%200h1m2%200h1m1%200h1m1%200h1m3%200h1m2%200h1m1%200h1m1%200h1m1%200h2m2%200h3m-37%201h2m1%200h1m2%200h1m1%200h2m1%200h1m1%200h1m2%200h2m1%200h1m1%200h2m1%200h1m1%200h5m4%200h2m-37%201h1m1%200h1m1%200h1m4%200h3m3%200h4m1%200h1m1%200h1m5%200h1m2%200h2m1%200h1m1%200h1m-35%201h2m2%200h1m2%200h2m1%200h2m1%200h1m1%200h4m2%200h3m1%200h1m2%200h3m1%200h3m-36%201h1m1%200h2m3%200h1m6%200h3m1%200h2m3%200h1m8%200h1m1%200h2m-37%201h7m2%200h2m1%200h3m4%200h1m2%200h3m1%200h2m1%200h1m1%200h2m2%200h2m-33%201h2m3%200h2m3%200h3m1%200h6m1%200h2m1%200h1m1%200h2m1%200h2m1%200h1m-36%201h2m1%200h1m1%200h4m1%200h8m1%200h5m2%200h1m2%200h1m2%200h4m-37%201h1m1%200h1m1%200h2m4%200h1m4%200h2m4%200h4m3%200h2m1%200h1m2%200h1m1%200h1m-36%201h1m1%200h1m2%200h2m3%200h6m1%200h1m6%200h3m1%200h4m1%200h1m1%200h1m-37%201h4m4%200h2m1%200h4m3%200h1m4%200h3m3%200h5m1%200h2m-35%201h6m3%200h4m2%200h1m1%200h1m1%200h5m2%200h1m1%200h3m3%200h1m-37%201h4m4%200h2m1%200h1m5%200h1m2%200h2m1%200h2m2%200h1m1%200h5m2%200h1m-35%201h1m2%200h2m2%200h4m1%200h1m1%200h4m2%200h2m2%200h5m1%200h3m-35%201h1m3%200h1m2%200h1m4%200h1m4%200h4m1%200h1m3%200h1m3%200h4m1%200h1m-33%201h5m4%200h2m4%200h2m1%200h3m1%200h2m1%200h3m1%200h3m-35%201h1m1%200h2m1%200h1m1%200h2m2%200h1m1%200h1m2%200h2m1%200h1m2%200h1m1%200h2m2%200h7m1%200h1m-37%201h4m2%200h3m1%200h1m1%200h3m2%200h1m1%200h3m3%200h2m1%200h2m3%200h1m1%200h1m-36%201h1m6%200h3m4%200h1m1%200h6m2%200h1m1%200h2m1%200h1m2%200h2m-34%201h1m1%200h2m2%200h1m1%200h1m1%200h1m1%200h3m1%200h1m1%200h1m2%200h1m1%200h1m1%200h1m2%200h6m-26%201h1m1%200h1m1%200h2m4%200h4m1%200h2m3%200h1m3%200h4m-36%201h7m1%200h1m1%200h1m2%200h1m5%200h1m2%200h2m1%200h4m1%200h1m1%200h1m1%200h3m-37%201h1m5%200h1m2%200h6m2%200h4m1%200h1m1%200h2m1%200h2m3%200h2m1%200h1m-36%201h1m1%200h3m1%200h1m1%200h1m4%200h1m3%200h2m1%200h1m1%200h1m1%200h2m2%200h6m1%200h1m-36%201h1m1%200h3m1%200h1m1%200h1m1%200h4m1%200h1m1%200h3m2%200h1m2%200h1m3%200h4m1%200h3m-37%201h1m1%200h3m1%200h1m2%200h1m1%200h2m1%200h4m1%200h1m1%200h1m2%200h2m2%200h2m2%200h5m-37%201h1m5%200h1m4%200h2m8%200h1m3%200h1m1%200h1m1%200h3m1%200h4m-37%201h7m3%200h1m3%200h1m2%200h3m4%200h2m2%200h1m1%200h3m1%200h1m1%200h1%27%2F%3E%3C%2Fsvg%3E']
@@ -1133,7 +1192,7 @@ Output Data Length: 3170
 --------------------------------------------------------------------------------
 ************************************************** Bulk Data Single Qr *************************************************
 Remarks: Bulk Data Single Qr
-Info => Transaction Id: 4z4i5a9rur2s; Output Format: png; Size: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: wv27ik1yuciy; Output Format: png; Size: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: }**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
 CLI
@@ -1192,7 +1251,7 @@ Output Data Length: 39
 ************************************************** Bulk Data Split Qrs *************************************************
 sequence_count is 6
 Remarks: Bulk Data Split Qrs
-Info => Transaction Id: 7oq77yizvjma; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: 7jk0s9c0vhyt; Output Format: png; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: }**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
 CLI
@@ -1455,7 +1514,7 @@ Output Data Length: 312
 --------------------------------------------------------------------------------
 ********************************************* Bulk Data Single Qr; PNG URI *********************************************
 Remarks: Bulk Data Single Qr; PNG URI
-Info => Transaction Id: 7ehm2cbn8mwr; Output Format: png_uri; Size: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: eaa86kgupgvd; Output Format: png_uri; Size: 5; Qr Code Version: 40; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: }**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
 CLI
@@ -1514,7 +1573,7 @@ Output Data Length: 10962
 ********************************************* Bulk Data Split Qrs; PNG URI *********************************************
 sequence_count is 6
 Remarks: Bulk Data Split Qrs; PNG URI
-Info => Transaction Id: bvmcvagnrnnl; Output Format: png_uri; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: k7n6rj1uewbh; Output Format: png_uri; Size: 5; Qr Code Version: 40; Split Qrs: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: }**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
 CLI
@@ -1778,7 +1837,7 @@ Output Data Length: 65792
 ********************************* Bulk Data Split Qrs; PNG URI; with Logo; Decorate Qr *********************************
 sequence_count is 6
 Remarks: Bulk Data Split Qrs; PNG URI; with Logo; Decorate Qr
-Info => Transaction Id: igkzoa3evr95; Output Format: png_uri; Size: 5; Qr Code Version: 40; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
+Info => Transaction Id: yskgdnheh027; Output Format: png_uri; Size: 5; Qr Code Version: 40; Split Qrs: True; Decorate Qr: True; Encoding: utf-8; Encoding Errors: replace; Archive Output: True; Archive Output Format: .zip
 Input Data: }**************************************************{ ToDO
 }+++++++++++++++++++++++++{ Explore 
 CLI
@@ -2040,9 +2099,9 @@ Output Data: ['data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA50AAAOdCAYAAAAGLAZ
 Output Data Length: 232476
 --------------------------------------------------------------------------------
 ---------------------------------- Time Details ----------------------------------
-Current Time Stamp: 2025-01-26 19:43:06.662850+05:30
-Execution Time: 00:00:06; Milliseconds: 6989.015102386475
-Execution Time CPU: 00:00:06; Milliseconds: 6921.875
+Current Time Stamp: 2025-02-28 09:04:18.934883+05:30
+Execution Time: 00:00:09; Milliseconds: 9637.034177780151
+Execution Time CPU: 00:00:09; Milliseconds: 9640.625
 Timer State: TIMER_OFF
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

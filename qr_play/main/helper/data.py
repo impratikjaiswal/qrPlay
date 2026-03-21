@@ -1,6 +1,6 @@
-import enum
 from collections import OrderedDict
 
+import enum
 from play_helpers.ph_constants import PhConstants
 from play_helpers.ph_keys import PhKeys
 from play_helpers.ph_util import PhUtil

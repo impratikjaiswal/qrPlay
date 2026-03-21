@@ -1,7 +1,7 @@
-import io
-import os
 from importlib.resources import files
 
+import io
+import os
 import segno
 from PIL import Image, ImageDraw, ImageFont
 from play_helpers.ph_colors import PhColors

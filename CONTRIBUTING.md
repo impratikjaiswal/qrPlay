@@ -32,7 +32,7 @@ case to convince the project's developers of the merits of this feature. Please
 provide as much detail and context as possible.
 
 If you've an idea in
-If you've an idea in mind, [please submit a feature request](https://github.com/impratikjaiswal/qrPlay/discussions/new?category=ideas).
+mind, [please submit a feature request](https://github.com/impratikjaiswal/qrPlay/discussions/new?category=ideas).
 
 Your ideas and suggestions are always welcome!
 

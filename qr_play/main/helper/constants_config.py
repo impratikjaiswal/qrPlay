@@ -1,14 +1,35 @@
-from qr_play._git_info import GIT_SUMMARY
-from qr_play._tool_name import TOOL_NAME
-from qr_play._version import __version__
+from qr_play import _defaults
+from qr_play._tool_name import TOOL_NAME, TOOL_TITLE, TOOL_SW_PACKAGE_NAME, TOOL_TEST_PACKAGE_NAME, TOOL_SW_MODULE_NAME
+
+_run_time_incremental = False
+_run_time_play_helpers = False
+try:
+    from qr_play._version import __version__
+
+    # incremental module is available post installation, run time only,
+    _run_time_incremental = True
+except ImportError:
+    pass
+try:
+    from play_helpers.ph_defaults import PhDefaults
+    from qr_play._git_info import GIT_SUMMARY
+
+    # play_helpers module is available post installation, run time only,
+    _run_time_play_helpers = True
+except ImportError:
+    pass
 
 
 class ConfigConst:
-    TOOL_VERSION = __version__.public()
+    TOOL_VERSION = __version__.public() if _run_time_incremental else (
+        PhDefaults.VERSION if _run_time_play_helpers else _defaults.VERSION)
     TOOL_VERSION_DETAILED = f'v{TOOL_VERSION}'
     TOOL_NAME = TOOL_NAME
-    TOOL_TITLE = 'QR Play'
-    TOOL_GIT_SUMMARY = GIT_SUMMARY
+    TOOL_TITLE = TOOL_TITLE
+    TOOL_SW_PACKAGE_NAME = TOOL_SW_PACKAGE_NAME
+    TOOL_TEST_PACKAGE_NAME = TOOL_TEST_PACKAGE_NAME
+    TOOL_SW_MODULE_NAME = TOOL_SW_MODULE_NAME
+    TOOL_GIT_SUMMARY = GIT_SUMMARY if _run_time_play_helpers else _defaults.GIT_SUMMARY
     TOOL_DESCRIPTION = f'Qr Code Generator. Multiple Qr codes can be generated automatically when input text does not fit in one.'
     TOOL_META_DESCRIPTION = f'{TOOL_DESCRIPTION}'
     TOOL_META_KEYWORDS = f'{TOOL_TITLE}, QR, QR code, QR Code Generator, Quick Response Code, QRcode Generator, Qrcode, Multiple Qrcode Generator, Multiple Qr Code Generator'

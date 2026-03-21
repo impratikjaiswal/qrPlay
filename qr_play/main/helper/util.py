@@ -3,9 +3,9 @@ import io
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageOps
-from python_helpers.ph_colors import PhColors
-from python_helpers.ph_constants import PhConstants
-from python_helpers.ph_formats import PhFormats, PhMimeTypes
+from play_helpers.ph_colors import PhColors
+from play_helpers.ph_constants import PhConstants
+from play_helpers.ph_formats import PhFormats, PhMimeTypes
 
 
 class Util:

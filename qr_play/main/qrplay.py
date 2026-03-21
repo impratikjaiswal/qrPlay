@@ -1,9 +1,9 @@
 import sys
-from python_helpers.ph_modes_error_handling import PhErrorHandlingModes
-from python_helpers.ph_modes_execution import PhExecutionModes
-from python_helpers.ph_modules import PhModules
-from python_helpers.ph_time import PhTime
-from python_helpers.ph_util import PhUtil
+from play_helpers.ph_modes_error_handling import PhErrorHandlingModes
+from play_helpers.ph_modes_execution import PhExecutionModes
+from play_helpers.ph_modules import PhModules
+from play_helpers.ph_time import PhTime
+from play_helpers.ph_util import PhUtil
 
 from qr_play.main.convert import handler
 from qr_play.main.convert.converter import handle_web_request
@@ -33,7 +33,7 @@ def process_data():
 
     :return:
     """
-    global execution_mode, error_handling_mode, data_cli
+    global error_handling_mode
     data_type_user = [
         #####
         # Empty class for user usage

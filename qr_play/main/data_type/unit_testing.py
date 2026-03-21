@@ -1,6 +1,6 @@
-from python_helpers.ph_constants import PhConstants
-from python_helpers.ph_keys import PhKeys
-from python_helpers.ph_variables import PhVariables
+from play_helpers.ph_constants import PhConstants
+from play_helpers.ph_keys import PhKeys
+from play_helpers.ph_variables import PhVariables
 
 from qr_play.main.data_type.data_type_master import DataTypeMaster
 from qr_play.main.data_type.sample import text_msg_small_data, apj_url, bulk_data_2, bulk_data_1, sample_vcard

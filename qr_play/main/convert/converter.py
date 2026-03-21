@@ -1,13 +1,13 @@
 import os
 
-from python_helpers.ph_constants import PhConstants
-from python_helpers.ph_data_master import PhMasterData, PhMasterDataKeys
-from python_helpers.ph_defaults import PhDefaultTypesExclude
-from python_helpers.ph_exception_helper import PhExceptionHelper
-from python_helpers.ph_file_extensions import PhFileExtensions
-from python_helpers.ph_keys import PhKeys
-from python_helpers.ph_util import PhUtil
-from python_helpers.ph_variables import PhVariables
+from play_helpers.ph_constants import PhConstants
+from play_helpers.ph_data_master import PhMasterData, PhMasterDataKeys
+from play_helpers.ph_defaults import PhDefaultTypesExclude
+from play_helpers.ph_exception_helper import PhExceptionHelper
+from play_helpers.ph_file_extensions import PhFileExtensions
+from play_helpers.ph_keys import PhKeys
+from play_helpers.ph_util import PhUtil
+from play_helpers.ph_variables import PhVariables
 
 from qr_play.main.helper.data import Data
 from qr_play.main.helper.defaults import Defaults, DefaultTypesInclude

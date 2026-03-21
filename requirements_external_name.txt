@@ -1,9 +1,0 @@
-##################################################
-#### List of Needed External Tools / Libraries (Names Only)
-##################################################
-
-# Image
-pillow
-
-# Qr code
-segno

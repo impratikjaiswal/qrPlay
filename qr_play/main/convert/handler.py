@@ -4,11 +4,11 @@ from importlib.resources import files
 
 import segno
 from PIL import Image, ImageDraw, ImageFont
-from python_helpers.ph_colors import PhColors
-from python_helpers.ph_constants import PhConstants
-from python_helpers.ph_exception_helper import PhExceptionHelper
-from python_helpers.ph_formats import PhFormats
-from python_helpers.ph_util import PhUtil
+from play_helpers.ph_colors import PhColors
+from play_helpers.ph_constants import PhConstants
+from play_helpers.ph_exception_helper import PhExceptionHelper
+from play_helpers.ph_formats import PhFormats
+from play_helpers.ph_util import PhUtil
 
 from qr_play.main.helper.formats import Formats
 from qr_play.main.helper.formats_group import FormatsGroup

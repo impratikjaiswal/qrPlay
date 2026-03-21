@@ -1,5 +1,5 @@
-from python_helpers.ph_constants import PhConstants
-from python_helpers.ph_util import PhUtil
+from play_helpers.ph_constants import PhConstants
+from play_helpers.ph_util import PhUtil
 
 from qr_play.main.data_type.data_type_master import DataTypeMaster
 from qr_play.main.helper.data import Data
